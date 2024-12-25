@@ -38,6 +38,16 @@ body, html {
   position: relative;
 }
 
+/* Ressourcenanzeige oben links */
+#resources {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px; /* Schriftgröße */
+  color: white;
+  line-height: 1.5; /* Abstand zwischen den Zeilen */
+}
+
 /* Health and Energy Balken */
 #health-energy {
   position: absolute;
