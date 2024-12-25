@@ -20,12 +20,16 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
+    position: relative;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    position: absolute;
+    top: 50px;
+    width: 100%;
 }
 
 #resources {
@@ -39,12 +43,12 @@ header {
 }
 
 main {
-    flex-grow: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    justify-content: center;
-    margin-top: 500px;
+    grid-gap: 50px;
+    position: absolute;
+    top: 500px;
+    width: 100%;
 }
 
 .menu-item {
@@ -74,4 +78,11 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+#health, #energy {
+    font-size: 16px;
 }
