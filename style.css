@@ -49,8 +49,8 @@ body, html {
 }
 
 #health-bar, #energy-bar {
-  height: 30px; /* Erhöhte Höhe */
-  width: 45%; /* Die Balken nehmen jeweils 45% der Breite des Containers ein */
+  height: 30px; /* Höhe der Balken */
+  width: calc((100% - 45px) / 2); /* Balkenbreite berechnet für 15px Abstand */
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
@@ -68,9 +68,4 @@ body, html {
   background-color: #00BFFF; /* Elektrisches Blau */
   text-align: right;
   padding-right: 10px; /* Etwas Abstand vom rechten Rand des Balkens */
-}
-
-/* Abstand zwischen den Balken reduziert */
-#health-energy {
-  gap: 15px;
 }
