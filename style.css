@@ -62,7 +62,6 @@ body, html {
 #health-bar, #energy-bar {
   height: 30px; /* Höhe der Balken */
   flex: 1; /* Beide Balken nehmen gleich viel Platz ein */
-  max-width: calc(50% - 22.5px); /* Maximalbreite bei kleinem Bildschirm */
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
