@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('IMG_9630.jpg'); /* Hintergrundbild hinzufügen */
+    background-image: url('Tag.jpg'); /* Hintergrundbild mit dem Namen Tag.jpg */
     background-size: cover; /* Bild so skalieren, dass es den gesamten Bildschirm abdeckt */
     background-position: center; /* Bild wird zentriert */
     background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
@@ -26,7 +26,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 22px;
+    font-size: 16px; /* Schriftgröße auf 16px geändert */
     display: block;
 }
 
