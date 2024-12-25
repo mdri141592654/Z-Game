@@ -9,7 +9,7 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     background-image: url('Tag.jpg'); /* Hintergrundbild */
-    background-size: 1168px 2000px; /* Hintergrundbild in exakter Größe */
+    background-size: 1168px 2000px; /* Bildgröße exakt auf die Bildgröße setzen */
     background-position: center center; /* Bild wird zentriert */
     background-repeat: no-repeat; /* Kein wiederholtes Bild */
     width: 1168px; /* Breite des Hintergrundbildes */
@@ -35,7 +35,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 16px;
+    font-size: 22px; /* Schriftgröße angepasst */
     display: block;
 }
 
