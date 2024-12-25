@@ -51,17 +51,18 @@ body, html {
 /* Health and Energy Balken */
 #health-energy {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
-  right: 15px; /* Sorgt für symmetrische Abstände */
+  bottom: 15px; /* Abstand zum unteren Rand */
+  width: 1148px; /* Gesamtbreite der beiden Balken + Zwischenraum */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between; /* Verteilt die Balken gleichmäßig */
+  justify-content: space-between;
   align-items: center;
 }
 
 #health-bar, #energy-bar {
   height: 30px; /* Höhe der Balken */
-  flex: 1; /* Beide Balken nehmen gleich viel Platz ein */
+  width: 561.5px; /* Exakte Länge der Balken */
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
@@ -73,11 +74,10 @@ body, html {
   background-color: green;
   text-align: left;
   padding-left: 10px; /* Text leicht eingerückt */
-  margin-right: 15px; /* Abstand zwischen den Balken */
 }
 
 #energy-bar {
-  background-color: #008CDB; /* Dunkleres elektrisches Blau */
+  background-color: #0078C8; /* Elektrisches Blau, etwas dunkler */
   text-align: right;
   padding-right: 10px; /* Text leicht eingerückt */
 }
