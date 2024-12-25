@@ -1,40 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zombie Survival Game</title>
+    <title>Zombie-Survival Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <header>
-            <div id="resources">
-                <div>Materialien: <span id="materials">0</span></div>
-                <div>Medizin: <span id="medicine">0</span></div>
-                <div>Nahrung: <span id="food">0</span></div>
-                <div>Munition: <span id="ammo">0</span></div>
-            </div>
-        </header>
-        <main id="main-menu">
-            <div class="menu-item">
-                <button id="scavenge-btn">Plündern</button>
-            </div>
-            <div class="menu-item">
-                <button id="targeted-scavenge-btn">Gezieltes Plündern</button>
-            </div>
-            <div class="menu-item" style="margin-top: 500px;">
-                <button id="use-resources-btn">Ressourcen verwenden</button>
-            </div>
-            <div class="menu-item">
-                <button id="sleep-btn">Schlafen</button>
-            </div>
-        </main>
-        <footer>
-            <div id="health">Gesundheit: <span id="health-value">100</span>%</div>
-            <div id="energy">Energie: <span id="energy-value">100</span>%</div>
-        </footer>
+    <div class="game-container">
+        <div class="resources">
+            <div id="nahrung">Nahrung: 0</div>
+            <div id="medizin">Medizin: 0</div>
+            <div id="materialien">Materialien: 0</div>
+            <div id="munition">Munition: 0</div>
+        </div>
+        <div class="main-content">
+            <!-- Wechselnde Menüs und Spielinhalte kommen hierhin -->
+        </div>
     </div>
+
     <script src="game.js"></script>
 </body>
 </html>
