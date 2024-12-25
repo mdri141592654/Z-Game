@@ -1,52 +1,58 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Verhindert das Scrollen */
-    transform-origin: 0 0; /* Zoom auf den oberen linken Punkt fixieren */
+/* Generelle Stileinstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('Tag.jpg'); /* Hintergrundbild */
-    background-size: 1168px 2000px; /* Bildgröße exakt auf die Bildgröße setzen */
-    background-position: center center; /* Bild wird zentriert */
-    background-repeat: no-repeat; /* Kein wiederholtes Bild */
-    width: 1168px; /* Breite des Hintergrundbildes */
-    height: 2000px; /* Höhe des Hintergrundbildes */
-    display: block;
-    zoom: 1; /* Stellt sicher, dass beim Laden keine Skalierung angewendet wird */
+body, html {
+  height: 100%;
+  overflow: hidden;
 }
 
-.game-container {
-    width: 1168px; /* Exakte Breite des Bildes */
-    height: 2000px; /* Exakte Höhe des Bildes */
-    background-color: rgba(51, 51, 51, 0.8); /* Leicht transparenter Hintergrund für besseren Kontrast */
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
-    position: relative; /* Damit die Ressourcen oben links bleiben */
+#game-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('Tag.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-.resources {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 22px; /* Schriftgröße angepasst */
-    display: block;
+#resources {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-size: 18px;
+  color: white;
+  z-index: 10;
 }
 
-.resources div {
-    margin-bottom: 10px;
+#game-menu {
+  position: absolute;
+  top: 500px;
+  left: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+  z-index: 10;
 }
 
-.main-content {
-    margin-top: 100px;
-    width: 100%;
-    text-align: center;
+#health-energy {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-size: 18px;
+  color: white;
+  z-index: 10;
+}
+
+#health, #energy {
+  margin: 5px 0;
+}
+
+/* Verhindert das Zoomen auf mobilen Geräten */
+html {
+  touch-action: none;
 }
