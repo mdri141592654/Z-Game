@@ -1,19 +1,22 @@
 const mainMenu = document.getElementById("main-menu");
 const plunderMenu = document.getElementById("plunder-menu");
-const weaponMenu = document.getElementById("weapon-menu");
 
+function showMenu(menuToShow) {
+  document.querySelectorAll(".submenu, #main-menu").forEach(menu => {
+    menu.classList.remove("active");
+  });
+  menuToShow.classList.add("active");
+}
+
+// Hauptmenü anzeigen
+showMenu(mainMenu);
+
+// Plündern-Button
 document.getElementById("btn-plunder").addEventListener("click", () => {
-  mainMenu.style.display = "none";
-  plunderMenu.style.display = "block";
+  showMenu(plunderMenu);
 });
 
+// Zurück-Button
 document.getElementById("btn-back").addEventListener("click", () => {
-  plunderMenu.style.display = "none";
-  weaponMenu.style.display = "none";
-  mainMenu.style.display = "block";
-});
-
-document.getElementById("btn-difficulty-light").addEventListener("click", () => {
-  plunderMenu.style.display = "none";
-  weaponMenu.style.display = "block";
+  showMenu(mainMenu);
 });
