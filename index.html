@@ -8,31 +8,25 @@
 </head>
 <body>
   <div id="wrapper">
-    <!-- Stats -->
-    <div id="stats">
-      <div id="materials">Materialien: 100</div>
-      <div id="health">Gesundheit: 80%</div>
-      <div id="energy">Energie: 60%</div>
+    <!-- Stats oben -->
+    <div id="top-stats">
+      Materialien: <span id="materials">100</span>
+      Medizin: <span id="medicine">5</span>
+      Waffe: <span id="weapon">Messer</span>
     </div>
 
     <!-- Menü -->
     <div id="menu">
-      <!-- Hauptmenü -->
-      <div id="main-menu">
-        <button id="btn-plunder">Plündern</button>
-        <button id="btn-targeted-plunder">Gezieltes Plündern</button>
-        <button id="btn-resources">Ressourcen verwenden</button>
-        <button id="btn-sleep">Schlafen</button>
-      </div>
+      <button id="btn-plunder">Plündern</button>
+      <button id="btn-targeted-plunder">Gezieltes Plündern</button>
+      <button id="btn-resources">Ressourcen verwenden</button>
+      <button id="btn-sleep">Schlafen</button>
+    </div>
 
-      <!-- Plündern-Menü -->
-      <div id="plunder-menu" class="submenu">
-        <button id="btn-back">Zurück</button>
-        <button id="btn-difficulty-light">Leicht</button>
-        <button id="btn-difficulty-medium">Medium</button>
-        <button id="btn-difficulty-hard">Hart</button>
-        <button id="btn-difficulty-extreme">Extrem</button>
-      </div>
+    <!-- Stats unten -->
+    <div id="bottom-stats">
+      <div id="health">Gesundheit: 80%</div>
+      <div id="energy">Energie: 60%</div>
     </div>
   </div>
   <script src="script.js"></script>
