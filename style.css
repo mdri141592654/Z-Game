@@ -41,8 +41,8 @@ body, html {
 /* Ressourcenanzeige oben links */
 #resources {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 15px; /* Abstand nach oben */
+  left: 15px; /* Abstand nach links */
   font-size: 18px; /* Schriftgröße */
   color: white;
   line-height: 1.5; /* Abstand zwischen den Zeilen */
@@ -56,11 +56,12 @@ body, html {
   width: calc(100% - 30px); /* Berücksichtigt den Abstand zu den Rändern */
   display: flex;
   justify-content: space-between;
+  gap: 15px; /* Abstand zwischen den beiden Balken */
 }
 
 #health-bar, #energy-bar {
   height: 30px; /* Höhe der Balken */
-  width: calc((100% - 45px) / 2); /* Balkenbreite berechnet für 15px Abstand */
+  width: calc((50% - 22.5px)); /* Breite jedes Balkens für 15px Abstand */
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
