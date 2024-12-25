@@ -2,9 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #2f2f2f;
 }
 
@@ -26,9 +23,11 @@ body {
     top: 20px;
     left: 20px;
     font-size: 20px;
-    display: flex;
-    flex-direction: column; /* Anordnung vertikal */
-    gap: 10px; /* Abstand zwischen den Begriffen */
+    display: block; /* Verhindert Flexbox und sorgt dafür, dass die Begriffe untereinander stehen */
+}
+
+.resources div {
+    margin-bottom: 10px; /* Abstand zwischen den Begriffen */
 }
 
 .main-content {
