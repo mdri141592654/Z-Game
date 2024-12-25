@@ -1,26 +1,26 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Stellen Sie sicher, dass der gesamte Bildschirm genutzt wird */
     width: 100%;
+    height: 100%;
     overflow: hidden; /* Verhindert das Scrollen */
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('Tag.jpg'); /* Hintergrundbild mit dem Namen Tag.jpg */
-    background-size: contain; /* Bild wird in seiner Originalgröße angezeigt */
-    background-position: center; /* Bild wird zentriert */
-    background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
-    height: 2000px; /* Höhe des Hintergrundbildes */
+    background-image: url('Tag.jpg'); /* Hintergrundbild */
+    background-size: 1168px 2000px; /* Hintergrundbild in exakter Größe */
+    background-position: center center; /* Bild wird zentriert */
+    background-repeat: no-repeat; /* Kein wiederholtes Bild */
     width: 1168px; /* Breite des Hintergrundbildes */
+    height: 2000px; /* Höhe des Hintergrundbildes */
     display: block;
 }
 
 .game-container {
     width: 1168px; /* Exakte Breite des Bildes */
     height: 2000px; /* Exakte Höhe des Bildes */
-    background-color: rgba(51, 51, 51, 0.8); /* Leichter transparenter Hintergrund für besseren Kontrast */
+    background-color: rgba(51, 51, 51, 0.8); /* Leicht transparenter Hintergrund für besseren Kontrast */
     color: #fff;
     display: flex;
     flex-direction: column;
