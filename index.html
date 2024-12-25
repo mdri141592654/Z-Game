@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1168, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Zombie Survival Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Zombie Survival Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="resources">
-            <div>Nahrung: 50</div>
-            <div>Medizin: 30</div>
-            <div>Materialien: 100</div>
-            <div>Munition: 200</div>
-        </div>
-        <div class="main-content">
-            <!-- Hier kann dein Spielinhalt erscheinen -->
-        </div>
+  <div id="game-container">
+    <!-- Hier kommen deine Spielmenüs und Anzeigen -->
+    <div id="resources">
+      <!-- Ressourcenanzeige -->
     </div>
-    <script src="game.js"></script>
+    <div id="game-menu">
+      <!-- Dynamische Menüs -->
+    </div>
+    <div id="health-energy">
+      <div id="health">Gesundheit: 100</div>
+      <div id="energy">Energie: 100</div>
+    </div>
+  </div>
+  <script src="game.js"></script>
 </body>
 </html>
