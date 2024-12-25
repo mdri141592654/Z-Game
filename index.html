@@ -11,11 +11,11 @@
     <!-- Stats oben -->
     <div id="top-stats">
       Materialien: <span id="materials">100</span>
-      Medizin: <span id="medicine">5</span>
-      Waffe: <span id="weapon">Messer</span>
+      Medizin: <span id="medicine">3</span>
+      Waffe: <span id="weapon">30</span> <!-- Munition -->
     </div>
 
-    <!-- Menü -->
+    <!-- Hauptmenü -->
     <div id="menu">
       <button id="btn-plunder">Plündern</button>
       <button id="btn-targeted-plunder">Gezieltes Plündern</button>
@@ -23,10 +23,19 @@
       <button id="btn-sleep">Schlafen</button>
     </div>
 
+    <!-- Submenü: Plündern -->
+    <div id="submenu-plunder" class="submenu hidden">
+      <button id="btn-back">Zurück</button>
+      <button id="btn-easy">Leicht</button>
+      <button id="btn-medium">Medium</button>
+      <button id="btn-hard">Hart</button>
+      <button id="btn-extreme">Extrem</button>
+    </div>
+
     <!-- Stats unten -->
     <div id="bottom-stats">
-      <div id="health">Gesundheit: 80%</div>
-      <div id="energy">Energie: 60%</div>
+      <div id="health">Gesundheit: <span>80%</span></div>
+      <div id="energy">Energie: <span>60%</span></div>
     </div>
   </div>
   <script src="script.js"></script>
