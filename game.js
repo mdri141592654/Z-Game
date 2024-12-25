@@ -1,22 +1,19 @@
-const mainMenu = document.getElementById("main-menu");
-const plunderMenu = document.getElementById("plunder-menu");
+const menuButtons = document.querySelectorAll("#menu button");
 
-function showMenu(menuToShow) {
-  document.querySelectorAll(".submenu, #main-menu").forEach(menu => {
+// Hauptmenü aktivieren
+function showMenu(menuId) {
+  document.querySelectorAll(".submenu, #menu").forEach(menu => {
     menu.classList.remove("active");
   });
-  menuToShow.classList.add("active");
+  document.getElementById(menuId).classList.add("active");
 }
 
-// Hauptmenü anzeigen
-showMenu(mainMenu);
-
-// Plündern-Button
-document.getElementById("btn-plunder").addEventListener("click", () => {
-  showMenu(plunderMenu);
-});
-
-// Zurück-Button
-document.getElementById("btn-back").addEventListener("click", () => {
-  showMenu(mainMenu);
+// Event-Listener
+menuButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Beispiel-Logik, um das nächste Menü zu aktivieren
+    if (button.id === "btn-plunder") {
+      alert("Nächstes Menü erscheint hier!");
+    }
+  });
 });
