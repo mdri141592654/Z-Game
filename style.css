@@ -49,29 +49,28 @@ body, html {
 }
 
 #health-bar, #energy-bar {
-  height: 25px;
+  height: 30px; /* Erhöhte Höhe */
   width: 45%; /* Die Balken nehmen jeweils 45% der Breite des Containers ein */
   color: white;
   text-align: center;
-  line-height: 25px;
+  line-height: 30px; /* Zentrierter Text */
   font-size: 14px;
   border-radius: 5px;
 }
 
 #health-bar {
   background-color: green;
-}
-
-#energy-bar {
-  background-color: blue;
-}
-
-#health-bar {
   text-align: left;
   padding-left: 10px; /* Etwas Abstand vom linken Rand des Balkens */
 }
 
 #energy-bar {
+  background-color: #00BFFF; /* Elektrisches Blau */
   text-align: right;
   padding-right: 10px; /* Etwas Abstand vom rechten Rand des Balkens */
+}
+
+/* Abstand zwischen den Balken reduziert */
+#health-energy {
+  gap: 15px;
 }
