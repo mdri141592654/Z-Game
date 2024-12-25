@@ -1,6 +1,12 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%; /* Stellen Sie sicher, dass der gesamte Bildschirm genutzt wird */
+    width: 100%;
+    overflow: hidden; /* Verhindert das Scrollen */
+}
+
+body {
     font-family: Arial, sans-serif;
     background-image: url('Tag.jpg'); /* Hintergrundbild mit dem Namen Tag.jpg */
     background-size: contain; /* Bild wird in seiner Originalgröße angezeigt */
@@ -9,7 +15,6 @@ body {
     height: 2000px; /* Höhe des Hintergrundbildes */
     width: 1168px; /* Breite des Hintergrundbildes */
     display: block;
-    overflow: hidden; /* Verhindert Scrollen */
 }
 
 .game-container {
