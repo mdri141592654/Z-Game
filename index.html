@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survival-Game</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Survival Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="wrapper">
-    <!-- Stats oben -->
-    <div id="top-stats">
-      Materialien: <span id="materials">100</span>
-      Medizin: <span id="medicine">3</span>
-      Waffe: <span id="weapon">30</span> <!-- Munition -->
+    <div id="container">
+        <header>
+            <h1>Zombie Survival Game</h1>
+            <div id="resources">
+                <div>Materialien: <span id="materials">0</span></div>
+                <div>Medizin: <span id="medicine">0</span></div>
+                <div>Nahrung: <span id="food">0</span></div>
+                <div>Munition: <span id="ammo">0</span></div>
+            </div>
+        </header>
+        <main id="main-menu">
+            <button id="scavenge-btn">Plündern</button>
+            <button id="targeted-scavenge-btn">Gezieltes Plündern</button>
+            <button id="use-resources-btn">Ressourcen verwenden</button>
+            <button id="sleep-btn">Schlafen</button>
+        </main>
+        <footer>
+            <div id="health">Gesundheit: <span id="health-value">100</span>%</div>
+            <div id="energy">Energie: <span id="energy-value">100</span>%</div>
+        </footer>
     </div>
-
-    <!-- Hauptmenü -->
-    <div id="menu">
-      <button id="btn-plunder">Plündern</button>
-      <button id="btn-targeted-plunder">Gezieltes Plündern</button>
-      <button id="btn-resources">Ressourcen verwenden</button>
-      <button id="btn-sleep">Schlafen</button>
-    </div>
-
-    <!-- Submenü: Plündern -->
-    <div id="submenu-plunder" class="submenu hidden">
-      <button id="btn-back">Zurück</button>
-      <button id="btn-easy">Leicht</button>
-      <button id="btn-medium">Medium</button>
-      <button id="btn-hard">Hart</button>
-      <button id="btn-extreme">Extrem</button>
-    </div>
-
-    <!-- Stats unten -->
-    <div id="bottom-stats">
-      <div id="health">Gesundheit: <span>80%</span></div>
-      <div id="energy">Energie: <span>60%</span></div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
