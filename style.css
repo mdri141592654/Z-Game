@@ -44,12 +44,14 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     justify-content: center;
+    margin-top: 500px;
 }
 
 .menu-item {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 button {
