@@ -1,19 +1,21 @@
-const menuButtons = document.querySelectorAll("#menu button");
+// Elemente auswählen
+const menu = document.getElementById("menu");
+const submenuPlunder = document.getElementById("submenu-plunder");
+const btnPlunder = document.getElementById("btn-plunder");
+const btnBack = document.getElementById("btn-back");
 
-// Hauptmenü aktivieren
-function showMenu(menuId) {
-  document.querySelectorAll(".submenu, #menu").forEach(menu => {
-    menu.classList.remove("active");
-  });
-  document.getElementById(menuId).classList.add("active");
+// Funktion: Menü anzeigen/verstecken
+function showMenu(menuToShow, menuToHide) {
+  menuToShow.classList.remove("hidden");
+  menuToHide.classList.add("hidden");
 }
 
-// Event-Listener
-menuButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    // Beispiel-Logik, um das nächste Menü zu aktivieren
-    if (button.id === "btn-plunder") {
-      alert("Nächstes Menü erscheint hier!");
-    }
-  });
+// Event-Listener: Hauptmenü -> Submenü
+btnPlunder.addEventListener("click", () => {
+  showMenu(submenuPlunder, menu);
+});
+
+// Event-Listener: Submenü -> Hauptmenü
+btnBack.addEventListener("click", () => {
+  showMenu(menu, submenuPlunder);
 });
