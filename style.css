@@ -11,6 +11,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   user-select: none;
+  -ms-touch-action: none;
 }
 
 body {
@@ -18,12 +19,14 @@ body {
   padding: 0;
   background: none;
   font-family: Arial, sans-serif;
+  height: 100%;
 }
 
-/* Verhindert das Zoomen auf mobilen Geräten und setzt den initialen Zoom auf 100% */
+/* Verhindert das Zoomen auf mobilen Geräten */
 body, html {
   height: 100%;
   overflow: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 #game-container {
@@ -35,35 +38,40 @@ body, html {
   position: relative;
 }
 
-#resources {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  font-size: 18px;
-  color: white;
-  z-index: 10;
-}
-
-#game-menu {
-  position: absolute;
-  top: 500px;
-  left: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 50px;
-  z-index: 10;
-}
-
+/* Health and Energy Balken */
 #health-energy {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  font-size: 18px;
-  color: white;
-  z-index: 10;
+  bottom: 15px;
+  left: 15px;
+  width: calc(100% - 30px); /* Berücksichtigt den Abstand zu den Rändern */
+  display: flex;
+  justify-content: space-between;
 }
 
-#health, #energy {
-  margin: 5px 0;
+#health-bar, #energy-bar {
+  height: 25px;
+  width: 45%; /* Die Balken nehmen jeweils 45% der Breite des Containers ein */
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#health-bar {
+  background-color: green;
+}
+
+#energy-bar {
+  background-color: blue;
+}
+
+#health-bar {
+  text-align: left;
+  padding-left: 10px; /* Etwas Abstand vom linken Rand des Balkens */
+}
+
+#energy-bar {
+  text-align: right;
+  padding-right: 10px; /* Etwas Abstand vom rechten Rand des Balkens */
 }
