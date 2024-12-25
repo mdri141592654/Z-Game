@@ -55,13 +55,12 @@ body, html {
   left: 15px;
   width: calc(100% - 30px); /* Berücksichtigt den Abstand zu den Rändern */
   display: flex;
-  justify-content: space-between;
-  gap: 15px; /* Abstand zwischen den beiden Balken */
+  align-items: center;
 }
 
 #health-bar, #energy-bar {
   height: 30px; /* Höhe der Balken */
-  width: calc((50% - 22.5px)); /* Breite jedes Balkens für 15px Abstand */
+  width: calc((50% - 22.5px)); /* Breite der Balken */
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
@@ -73,10 +72,11 @@ body, html {
   background-color: green;
   text-align: left;
   padding-left: 10px; /* Etwas Abstand vom linken Rand des Balkens */
+  margin-right: 15px; /* Abstand zum nächsten Balken */
 }
 
 #energy-bar {
-  background-color: #00BFFF; /* Elektrisches Blau */
+  background-color: #008CDB; /* Etwas dunkleres elektrisches Blau */
   text-align: right;
   padding-right: 10px; /* Etwas Abstand vom rechten Rand des Balkens */
 }
