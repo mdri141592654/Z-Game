@@ -2,13 +2,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #2f2f2f;
+    background-image: url('IMG_9630.jpg'); /* Hintergrundbild hinzufügen */
+    background-size: cover; /* Bild so skalieren, dass es den gesamten Bildschirm abdeckt */
+    background-position: center; /* Bild wird zentriert */
+    background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
+    height: 100vh; /* Sicherstellen, dass der Hintergrund die gesamte Höhe abdeckt */
 }
 
 .game-container {
     width: 1168px;
     height: 2000px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Leichter transparenter Hintergrund für besseren Kontrast */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -22,7 +26,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 22px; /* Schriftgröße auf 30px geändert */
+    font-size: 22px;
     display: block;
 }
 
