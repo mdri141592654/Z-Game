@@ -5,6 +5,22 @@
   box-sizing: border-box;
 }
 
+html, body {
+  touch-action: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Verhindert das Zoomen auf mobilen Geräten und setzt den initialen Zoom auf 100% */
 body, html {
   height: 100%;
   overflow: hidden;
@@ -50,9 +66,4 @@ body, html {
 
 #health, #energy {
   margin: 5px 0;
-}
-
-/* Verhindert das Zoomen auf mobilen Geräten */
-html {
-  touch-action: none;
 }
