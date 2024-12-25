@@ -9,7 +9,6 @@
 <body>
     <div id="container">
         <header>
-            <h1>Zombie Survival Game</h1>
             <div id="resources">
                 <div>Materialien: <span id="materials">0</span></div>
                 <div>Medizin: <span id="medicine">0</span></div>
@@ -18,10 +17,18 @@
             </div>
         </header>
         <main id="main-menu">
-            <button id="scavenge-btn">Plündern</button>
-            <button id="targeted-scavenge-btn">Gezieltes Plündern</button>
-            <button id="use-resources-btn">Ressourcen verwenden</button>
-            <button id="sleep-btn">Schlafen</button>
+            <div class="menu-item">
+                <button id="scavenge-btn">Plündern</button>
+            </div>
+            <div class="menu-item">
+                <button id="targeted-scavenge-btn">Gezieltes Plündern</button>
+            </div>
+            <div class="menu-item">
+                <button id="use-resources-btn">Ressourcen verwenden</button>
+            </div>
+            <div class="menu-item">
+                <button id="sleep-btn">Schlafen</button>
+            </div>
         </main>
         <footer>
             <div id="health">Gesundheit: <span id="health-value">100</span>%</div>
