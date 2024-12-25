@@ -1,78 +1,64 @@
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #333;
-  font-family: Arial, sans-serif;
-  color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-#wrapper {
-  width: 1170px;
-  height: 2000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 20px;
-  background-color: #222;
+#container {
+    width: 1170px;
+    height: 2000px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
 }
 
-/* Stats oben */
-#top-stats {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
-/* Hauptmenü */
-#menu,
-.submenu {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  width: 100%;
-  max-width: 400px;
-  justify-items: center;
+#resources {
+    display: flex;
+    gap: 20px;
 }
 
-.hidden {
-  display: none;
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Buttons */
 button {
-  padding: 20px 40px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  transition: background-color 0.3s;
-  width: 100%;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-  background-color: #777;
+    background-color: #005fa3;
 }
 
-/* Stats unten */
-#bottom-stats {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5rem;
-  padding: 0 20px;
-}
-
-#health, #energy {
-  flex: 1;
-  text-align: center;
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
