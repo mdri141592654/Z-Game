@@ -2,22 +2,30 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <title>Zombie Survival Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="game-container">
-    <!-- Hier kommen deine Spielmenüs und Anzeigen -->
+    <!-- Ressourcenanzeige -->
     <div id="resources">
-      <!-- Ressourcenanzeige -->
+      <!-- Hier könnten weitere Ressourcenanzeigen eingefügt werden -->
     </div>
+
+    <!-- Spielmenüs -->
     <div id="game-menu">
       <!-- Dynamische Menüs -->
     </div>
+
+    <!-- Balken für Gesundheit und Energie -->
     <div id="health-energy">
-      <div id="health">Gesundheit: 100</div>
-      <div id="energy">Energie: 100</div>
+      <div id="health-bar">
+        Gesundheit: 100/100
+      </div>
+      <div id="energy-bar">
+        Energie: 100/100
+      </div>
     </div>
   </div>
   <script src="game.js"></script>
