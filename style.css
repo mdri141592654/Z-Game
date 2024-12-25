@@ -22,7 +22,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 24px; /* Schriftgröße um 20% vergrößert */
+    font-size: 30px; /* Schriftgröße auf 30px geändert */
     display: block;
 }
 
