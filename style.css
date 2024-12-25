@@ -3,15 +3,18 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-image: url('Tag.jpg'); /* Hintergrundbild mit dem Namen Tag.jpg */
-    background-size: cover; /* Bild so skalieren, dass es den gesamten Bildschirm abdeckt */
+    background-size: contain; /* Bild wird in seiner Originalgröße angezeigt */
     background-position: center; /* Bild wird zentriert */
     background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
-    height: 100vh; /* Sicherstellen, dass der Hintergrund die gesamte Höhe abdeckt */
+    height: 2000px; /* Höhe des Hintergrundbildes */
+    width: 1168px; /* Breite des Hintergrundbildes */
+    display: block;
+    overflow: hidden; /* Verhindert Scrollen */
 }
 
 .game-container {
-    width: 1168px;
-    height: 2000px;
+    width: 1168px; /* Exakte Breite des Bildes */
+    height: 2000px; /* Exakte Höhe des Bildes */
     background-color: rgba(51, 51, 51, 0.8); /* Leichter transparenter Hintergrund für besseren Kontrast */
     color: #fff;
     display: flex;
@@ -20,13 +23,14 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     box-sizing: border-box;
+    position: relative; /* Damit die Ressourcen oben links bleiben */
 }
 
 .resources {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 16px; /* Schriftgröße auf 16px geändert */
+    font-size: 16px;
     display: block;
 }
 
