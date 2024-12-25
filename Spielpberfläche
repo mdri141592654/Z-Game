@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Apokalypse - Survival Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Zombie Apokalypse</h1>
+        <div id="game-container">
+            <!-- Hier wird das Spiel angezeigt -->
+            <div id="status">
+                <p id="energie">Energie: 100</p>
+                <p id="gesundheit">Gesundheit: 100%</p>
+                <p id="schuesse">Schüsse: 14</p>
+            </div>
+
+            <div id="aktionswahl">
+                <button onclick="aktionen('pluendern')">Plündern</button>
+                <button onclick="aktionen('gepluendern')">Gezieltes Plündern</button>
+                <button onclick="aktionen('ressourcen')">Ressourcen verwenden</button>
+                <button onclick="aktionen('schlafen')">Schlafen</button>
+            </div>
+            
+            <div id="weiterwahl" class="hidden">
+                <!-- Weiteres Menü erscheint hier -->
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
