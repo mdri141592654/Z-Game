@@ -36,7 +36,7 @@ body {
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(140, 140, 140, 0.8); /* Abdunklung um 10% */
+  background: rgba(100, 100, 100, 0.8); /* Weiter abdunkeln */
   color: white;
   border: none;
   border-radius: 5px; /* Weniger rund */
@@ -45,7 +45,7 @@ body {
 }
 
 #language option {
-  background: rgba(100, 100, 100, 0.9);
+  background: rgba(80, 80, 80, 0.9);
   color: white;
 }
 
@@ -115,12 +115,12 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
-  padding: 15px; /* Abstand zum Rand */
-  width: calc(100% - 30px); /* Dynamische Breite, basierend auf Rand */
+  padding: 15px; /* Gleicher Abstand wie bei Balken */
+  width: calc(100% - 30px); /* Dynamische Breite, basierend auf Abstand */
 }
 
 .field {
-  height: 75px; /* Erhöhte Höhe (+25px) */
+  height: 75px; /* Höhe der Felder */
   display: flex;
   justify-content: center;
   align-items: center;
