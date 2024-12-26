@@ -2,33 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Zombie-Survival-Game</title>
+  <title>Zombie Survival Game</title>
 </head>
 <body>
   <div id="game-container">
-    <!-- Dropdown-Menü für Sprache -->
+    <!-- Dropdown zur Sprachauswahl -->
     <select id="language">
       <option value="de">DE</option>
       <option value="en">EN</option>
     </select>
+
     <!-- Inventar -->
     <div id="resources">
-      Nahrung: xx<br>
-      Medizin: xx<br>
-      Munition: xx<br>
-      Baumaterial: xx
+      Nahrung: 00<br>
+      Medizin: 00<br>
+      Munition: 00<br>
+      Baumaterial: 00
     </div>
+
     <!-- Tageszähler -->
     <div id="day-counter">
       08:00 am<br>
-      Tag: xx
+      Tag: 00
     </div>
-    <!-- Health und Energy Balken -->
+
+    <!-- Balken -->
     <div id="health-energy">
       <div id="health-bar">Gesundheit 100/100</div>
       <div id="energy-bar">Energie 100/100</div>
+    </div>
+
+    <!-- Zentrale Felder -->
+    <div class="center-fields">
+      <div class="field" id="scavenge">Plündern</div>
+      <div class="field" id="targeted-scavenge">Gezieltes Plündern</div>
+      <div class="field" id="use-materials">Materialien verwenden</div>
+      <div class="field" id="sleep">Schlafen</div>
     </div>
   </div>
   <script src="game.js"></script>
