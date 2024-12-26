@@ -8,6 +8,14 @@
 </head>
 <body>
   <div id="game-container">
+    <!-- Dropdown-Menü für Sprache -->
+    <div id="language-selector">
+      <label for="language">Sprache / Language:</label>
+      <select id="language">
+        <option value="de">Deutsch (DE)</option>
+        <option value="en">English (EN)</option>
+      </select>
+    </div>
     <!-- Inventar -->
     <div id="resources">
       Nahrung: xx<br>
@@ -17,8 +25,8 @@
     </div>
     <!-- Tageszähler -->
     <div id="day-counter">
-      Tag: xx<br>
-      08:00 am
+      08:00 am<br>
+      Tag: xx
     </div>
     <!-- Health und Energy Balken -->
     <div id="health-energy">
@@ -26,5 +34,6 @@
       <div id="energy-bar">Energie 100/100</div>
     </div>
   </div>
+  <script src="game.js"></script>
 </body>
 </html>
