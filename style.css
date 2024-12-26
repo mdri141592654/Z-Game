@@ -109,13 +109,11 @@ body {
 /* Zentrale Felder */
 .center-fields {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 750px;
+  left: 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
-  padding: 15px; /* Gleicher Abstand wie bei Balken */
   width: calc(100% - 45px); /* Dynamische Breite, basierend auf Abstand */
 }
 
