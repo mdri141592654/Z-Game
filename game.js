@@ -46,18 +46,3 @@ function changeLanguage(language) {
   document.getElementById('ammo').innerText = `${texts.ammo}: xx`;
   document.getElementById('wood').innerText = `${texts.wood}: xx`;
 }
-
-// Klick-Event für die Felder, um sie zu animieren
-const fields = document.querySelectorAll('.field');
-fields.forEach(field => {
-  field.addEventListener('click', () => {
-    document.querySelector('.center-fields').classList.add('clicked');
-  });
-});
-
-// Event Listener für das Dropdown-Menü
-const languageSelect = document.getElementById('language');
-languageSelect.addEventListener('change', (event) => {
-  const selectedLanguage = event.target.value;
-  changeLanguage(selectedLanguage);
-});
