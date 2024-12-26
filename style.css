@@ -127,9 +127,6 @@ body {
   word-wrap: break-word; /* Textumbruch erzwingen */
   overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
   white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
-  display: flex;
-  align-items: center;  /* Vertikale Zentrierung */
-  justify-content: center;  /* Horizontale Zentrierung */
 }
 
 .field:hover {
@@ -156,4 +153,14 @@ body {
 .center-fields .field {
   word-wrap: break-word;
   white-space: normal;
+}
+
+/* Style für den Zeittext */
+#time-text {
+  font-size: 18px;
+  color: #D46A6A;
+  text-align: right;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
