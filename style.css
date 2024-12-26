@@ -29,17 +29,24 @@ body {
   position: relative;
 }
 
-/* Dropdown-Menü oben */
-#language-selector {
+/* Dropdown-Menü oben rechts */
+#language {
   position: absolute;
   top: 15px;
-  left: 15px;
+  right: 15px;
   font-size: 14px;
+  padding: 2px 5px;
+  background: rgba(0, 0, 0, 0.7);
   color: white;
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
 }
 
-#language-selector label {
-  margin-right: 5px;
+#language option {
+  background: #333;
+  color: white;
 }
 
 /* Inventar oben links */
