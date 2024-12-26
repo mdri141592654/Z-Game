@@ -116,7 +116,6 @@ body {
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
   width: calc(100% - 30px); /* 15px Abstand links und rechts */
-  transition: transform 0.6s ease; /* Smooth Bewegung */
 }
 
 .field {
@@ -134,22 +133,4 @@ body {
 
 .field:hover {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
-}
-
-/* Animierte Felder bei Klick */
-.center-fields.clicked {
-  transform: translate(-50%, -50%) scale(0.5); /* Verkleinert die Felder */
-}
-
-.center-fields.clicked .field {
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.center-fields.clicked .field:nth-child(odd) {
-  transform: translateX(-100%); /* Linke Felder verschwinden nach links */
-}
-
-.center-fields.clicked .field:nth-child(even) {
-  transform: translateX(100%); /* Rechte Felder verschwinden nach rechts */
-  opacity: 0; /* Optional: Felder verschwinden vollständig */
 }
