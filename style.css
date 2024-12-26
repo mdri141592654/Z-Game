@@ -52,8 +52,8 @@ body {
 /* Inventar oben links */
 #resources {
   position: absolute;
-  top: 50px;
-  left: 15px;
+  top: 15px; /* Abstand von oben */
+  left: 15px; /* Abstand von links */
   font-size: 18px;
   color: white;
   line-height: 1.5;
@@ -62,8 +62,8 @@ body {
 /* Tageszähler oben rechts */
 #day-counter {
   position: absolute;
-  top: 50px;
-  right: 15px; /* Abstand zum rechten Rand */
+  top: 50px; /* Platzierung unterhalb der Spracheinstellung */
+  right: 15px;
   font-size: 18px;
   color: #D46A6A; /* Sanftes Rot */
   line-height: 1.5; /* Abstand zwischen Zeilen */
