@@ -29,10 +29,23 @@ body {
   position: relative;
 }
 
+/* Dropdown-Menü oben */
+#language-selector {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+#language-selector label {
+  margin-right: 5px;
+}
+
 /* Inventar oben links */
 #resources {
   position: absolute;
-  top: 15px;
+  top: 50px;
   left: 15px;
   font-size: 18px;
   color: white;
@@ -42,7 +55,7 @@ body {
 /* Tageszähler oben rechts */
 #day-counter {
   position: absolute;
-  top: 15px;
+  top: 50px;
   right: 15px; /* Abstand zum rechten Rand */
   font-size: 18px;
   color: #D46A6A; /* Sanftes Rot */
