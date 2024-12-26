@@ -41,6 +41,6 @@ function changeLanguage(language) {
   document.getElementById('sleep').innerText = texts.schlafen;
   document.getElementById('day-counter').innerText = `${texts.dayText}: 00`;
   
-  // Hier wird auch der Text der Uhrzeit aktualisiert
+  // Aktualisierung der Uhrzeit
   document.getElementById('time-text').innerText = texts.timeText;
 }
