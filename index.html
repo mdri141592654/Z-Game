@@ -1,48 +1,47 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zombie Survival Game</title>
   <link rel="stylesheet" href="style.css">
+  <title>Zombie Survival Game</title>
 </head>
 <body>
   <div id="game-container">
-    <!-- Dropdown für Sprache -->
-    <select id="language" style="position: absolute; top: 15px; right: 15px; background-color: #cccccc; color: white; font-size: 16px; border: none;">
+    <!-- Dropdown zur Sprachauswahl -->
+    <select id="language">
       <option value="de">DE</option>
       <option value="en">EN</option>
     </select>
-    
+
     <!-- Inventar -->
-    <div id="resources" style="position: absolute; top: 15px; left: 15px; background: rgba(0, 0, 0, 0.5); padding: 10px; color: white; font-size: 18px;">
-      <div id="material">Material: xx</div>
-      <div id="medicine">Medizin: xx</div>
-      <div id="ammo">Munition: xx</div>
-      <div id="wood">Baumaterial: xx</div>
+    <div id="resources">
+      Nahrung: 00<br>
+      Medizin: 00<br>
+      Munition: 00<br>
+      Baumaterial: 00
     </div>
-    
+
     <!-- Tageszähler -->
-    <div id="day-counter" style="position: absolute; top: 15px; right: 15px; background: rgba(0, 0, 0, 0.5); padding: 10px; color: white; font-size: 18px;">
-      <div id="day">Tag: xx</div>
-      <div id="time">08:00 am</div>
+    <div id="day-counter">
+      08:00 am<br>
+      Tag: 00
     </div>
-    
-    <!-- Gesundheits- und Energiebalken -->
-    <div id="health-energy" style="position: absolute; bottom: 15px; left: 15px; display: flex; justify-content: space-between; width: calc(100% - 30px);">
-      <div id="health-bar" style="width: 45%; background-color: green; height: 25px; color: white; display: flex; align-items: center; justify-content: center;">Gesundheit 100/100</div>
-      <div id="energy-bar" style="width: 45%; background-color: #3399ff; height: 25px; color: white; display: flex; align-items: center; justify-content: center;">Energie 100/100</div>
+
+    <!-- Balken -->
+    <div id="health-energy">
+      <div id="health-bar">Gesundheit 100/100</div>
+      <div id="energy-bar">Energie 100/100</div>
     </div>
-    
+
     <!-- Zentrale Felder -->
-    <div class="center-fields" style="position: absolute; top: 200px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; width: 60%; gap: 15px;">
-      <div class="field" id="pluender" style="background-color: #666666; color: white; padding: 20px; text-align: center; font-size: 18px; cursor: pointer;">Plündern</div>
-      <div class="field" id="gepluender" style="background-color: #666666; color: white; padding: 20px; text-align: center; font-size: 18px; cursor: pointer;">Gezieltes Plündern</div>
-      <div class="field" id="materialVerwenden" style="background-color: #666666; color: white; padding: 20px; text-align: center; font-size: 18px; cursor: pointer;">Materialien verwenden</div>
-      <div class="field" id="schlafen" style="background-color: #666666; color: white; padding: 20px; text-align: center; font-size: 18px; cursor: pointer;">Schlafen</div>
+    <div class="center-fields">
+      <div class="field" id="scavenge">Plündern</div>
+      <div class="field" id="targeted-scavenge">Gezieltes Plündern</div>
+      <div class="field" id="use-materials">Materialien verwenden</div>
+      <div class="field" id="sleep">Schlafen</div>
     </div>
   </div>
-
   <script src="game.js"></script>
 </body>
 </html>
