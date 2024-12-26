@@ -6,53 +6,44 @@
 }
 
 html, body {
-  touch-action: none;
   width: 100%;
   height: 100%;
   overflow: hidden;
   user-select: none;
-  -ms-touch-action: none;
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background: none;
   margin: 0;
   padding: 0;
-  background: none;
-  font-family: Arial, sans-serif;
-  height: 100%;
 }
 
-/* Verhindert das Zoomen auf mobilen Geräten */
-body, html {
-  height: 100%;
-  overflow: hidden;
-  -webkit-text-size-adjust: 100%;
-}
-
+/* Container für das Spiel */
 #game-container {
   width: 100%;
   height: 100%;
-  background-image: url('Tag.jpg');
+  background-image: url('Tag.jpg'); /* Hintergrundbild */
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-/* Ressourcenanzeige oben links */
+/* Inventar oben links */
 #resources {
   position: absolute;
-  top: 15px; /* Abstand nach oben */
-  left: 15px; /* Abstand nach links */
+  top: 15px; /* Abstand zum oberen Rand */
+  left: 15px; /* Abstand zum linken Rand */
   font-size: 18px; /* Schriftgröße */
   color: white;
   line-height: 1.5; /* Abstand zwischen den Zeilen */
 }
 
-/* Health and Energy Balken */
+/* Health und Energy Bereich */
 #health-energy {
   position: absolute;
   bottom: 15px; /* Abstand zum unteren Rand */
-  width: 1148px; /* Gesamtbreite der beiden Balken + Zwischenraum */
+  width: 1168px; /* Breite der beiden Balken + Zwischenraum */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -60,24 +51,26 @@ body, html {
   align-items: center;
 }
 
+/* Gemeinsame Einstellungen für die Balken */
 #health-bar, #energy-bar {
   height: 30px; /* Höhe der Balken */
   width: 561.5px; /* Exakte Länge der Balken */
+  font-size: 14px;
   color: white;
   text-align: center;
   line-height: 30px; /* Zentrierter Text */
-  font-size: 14px;
   border-radius: 5px;
 }
 
+/* Spezifische Farben für die Balken */
 #health-bar {
   background-color: green;
   text-align: left;
-  padding-left: 10px; /* Text leicht eingerückt */
+  padding-left: 10px;
 }
 
 #energy-bar {
-  background-color: #0078C8; /* Elektrisches Blau, etwas dunkler */
+  background-color: #1A73E8; /* Etwas dunkleres elektrisches Blau */
   text-align: right;
-  padding-right: 10px; /* Text leicht eingerückt */
+  padding-right: 10px;
 }
