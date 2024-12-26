@@ -32,42 +32,51 @@ body {
 /* Inventar oben links */
 #resources {
   position: absolute;
-  top: 15px; /* Abstand zum oberen Rand */
-  left: 15px; /* Abstand zum linken Rand */
-  font-size: 18px; /* Schriftgröße */
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
   color: white;
-  line-height: 1.5; /* Abstand zwischen den Zeilen */
+  line-height: 1.5;
+}
+
+/* Tageszähler oben rechts */
+#day-counter {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Abstand zum rechten Rand */
+  font-size: 18px;
+  color: #D46A6A; /* Sanftes Rot */
+  line-height: 1.5; /* Abstand zwischen Zeilen */
+  text-align: right; /* Text rechtsbündig */
 }
 
 /* Health und Energy Bereich */
 #health-energy {
   position: absolute;
-  bottom: 15px; /* Abstand zum unteren Rand */
-  left: 15px; /* Abstand zum linken Rand */
-  right: 15px; /* Abstand zum rechten Rand */
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
   display: flex;
-  justify-content: space-between; /* Gleichmäßige Verteilung der Balken */
-  gap: 15px; /* Abstand zwischen den Balken */
-  align-items: center; /* Vertikale Zentrierung */
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
 }
 
 /* Gemeinsame Einstellungen für die Balken */
 #health-bar, #energy-bar {
-  flex: 1; /* Beide Balken teilen sich den verfügbaren Platz gleichmäßig */
-  height: 30px; /* Höhe der Balken */
+  flex: 1;
+  height: 30px;
   font-size: 14px;
   color: white;
   text-align: center;
-  line-height: 30px; /* Zentrierter Text */
+  line-height: 30px;
   border-radius: 5px;
-  position: relative;
 }
 
-/* Spezifische Farben für die Balken */
 #health-bar {
   background-color: green;
 }
 
 #energy-bar {
-  background-color: #2A62D8; /* Leicht dunkleres elektrisches Blau */
+  background-color: #2A62D8;
 }
