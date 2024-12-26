@@ -1,29 +1,44 @@
-document.getElementById('language').addEventListener('change', (e) => {
-  const lang = e.target.value;
+// Sprachwechsel Funktion
+const languageSelect = document.getElementById('language');
+languageSelect.addEventListener('change', (event) => {
+  const selectedLanguage = event.target.value;
+  changeLanguage(selectedLanguage);
+});
 
-  if (lang === 'de') {
-    document.getElementById('scavenge').textContent = 'Plündern';
-    document.getElementById('targeted-scavenge').textContent = 'Gezieltes Plündern';
-    document.getElementById('use-materials').textContent = 'Materialien verwenden';
-    document.getElementById('sleep').textContent = 'Schlafen';
-    document.getElementById('day-counter').innerHTML = '08:00 am<br>Tag: 00';
-    document.getElementById('resources').innerHTML = `
-      Nahrung: 00<br>
-      Medizin: 00<br>
-      Munition: 00<br>
-      Baumaterial: 00
-    `;
-  } else if (lang === 'en') {
-    document.getElementById('scavenge').textContent = 'Scavenge';
-    document.getElementById('targeted-scavenge').textContent = 'Targeted Scavenge';
-    document.getElementById('use-materials').textContent = 'Use Materials';
-    document.getElementById('sleep').textContent = 'Sleep';
-    document.getElementById('day-counter').innerHTML = '08:00 am<br>Day: 00';
-    document.getElementById('resources').innerHTML = `
-      Food: 00<br>
-      Medicine: 00<br>
-      Ammo: 00<br>
-      Materials: 00
-    `;
-  }
+// Funktion zum Wechseln der Sprache
+function changeLanguage(language) {
+  const languageTexts = {
+    'de': {
+      'pluender': 'Plündern',
+      'gepluender': 'Gezieltes Plündern',
+      'materialVerwenden': 'Materialien verwenden',
+      'schlafen': 'Schlafen',
+      'dayText': 'Tag',
+      'timeText': '08:00 am'
+    },
+    'en': {
+      'pluender': 'Loot',
+      'gepluender': 'Targeted Loot',
+      'materialVerwenden': 'Use Materials',
+      'schlafen': 'Sleep',
+      'dayText': 'Day',
+      'timeText': '08:00 am'
+    }
+  };
+
+  const texts = languageTexts[language];
+  document.getElementById('pluender').innerText = texts.pluender;
+  document.getElementById('gepluender').innerText = texts.gepluender;
+  document.getElementById('materialVerwenden').innerText = texts.materialVerwenden;
+  document.getElementById('schlafen').innerText = texts.schlafen;
+  document.getElementById('day').innerText = `${texts.dayText}: xx`;
+  document.getElementById('time').innerText = `${texts.timeText}`;
+}
+
+// Klick-Event für die Felder, um sie zu animieren
+const fields = document.querySelectorAll('.field');
+fields.forEach(field => {
+  field.addEventListener('click', () => {
+    document.querySelector('.center-fields').classList.add('clicked');
+  });
 });
