@@ -40,7 +40,4 @@ function changeLanguage(language) {
   document.getElementById('use-materials').innerText = texts.materialVerwenden;
   document.getElementById('sleep').innerText = texts.schlafen;
   document.getElementById('day-counter').innerText = `${texts.dayText}: 00`;
-  
-  // Aktualisierung der Uhrzeit
-  document.getElementById('time-text').innerText = texts.timeText;
 }
