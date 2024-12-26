@@ -39,16 +39,10 @@ body, html {
 }
 
 /* Ressourcenanzeige oben links */
-#resources-container {
+#resources {
   position: absolute;
   top: 15px; /* Abstand nach oben */
   left: 15px; /* Abstand nach links */
-  padding: 7.5px; /* Puffer um den Text */
-  background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter schwarzer Hintergrund */
-  border-radius: 5px; /* Leichte Abrundung der Kanten */
-}
-
-#resources {
   font-size: 18px; /* Schriftgröße */
   color: white;
   line-height: 1.5; /* Abstand zwischen den Zeilen */
