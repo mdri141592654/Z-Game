@@ -35,14 +35,9 @@ function changeLanguage(language) {
   };
 
   const texts = languageTexts[language];
-  document.getElementById('pluender').innerText = texts.pluender;
-  document.getElementById('gepluender').innerText = texts.gepluender;
-  document.getElementById('materialVerwenden').innerText = texts.materialVerwenden;
-  document.getElementById('schlafen').innerText = texts.schlafen;
-  document.getElementById('day').innerText = `${texts.dayText}: xx`;
-  document.getElementById('time').innerText = `${texts.timeText}`;
-  document.getElementById('material').innerText = `${texts.material}: xx`;
-  document.getElementById('medicine').innerText = `${texts.medicine}: xx`;
-  document.getElementById('ammo').innerText = `${texts.ammo}: xx`;
-  document.getElementById('wood').innerText = `${texts.wood}: xx`;
+  document.getElementById('scavenge').innerText = texts.pluender;
+  document.getElementById('targeted-scavenge').innerText = texts.gepluender;
+  document.getElementById('use-materials').innerText = texts.materialVerwenden;
+  document.getElementById('sleep').innerText = texts.schlafen;
+  document.getElementById('day-counter').innerText = `${texts.dayText}: 00`;
 }
