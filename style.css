@@ -36,17 +36,12 @@ body {
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(70, 70, 70, 0.9); /* Noch dunkleres Grau */
+  background: rgba(100, 100, 100, 0.8); /* Dunkleres Grau, halbtransparent */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   appearance: none;
   cursor: pointer;
-}
-
-#language option {
-  background: rgba(50, 50, 50, 0.9);
-  color: white;
 }
 
 /* Inventar oben links */
@@ -95,7 +90,7 @@ body {
   color: white;
   text-align: center;
   line-height: 30px;
-  border-radius: 8px; /* Weniger rundlich */
+  border-radius: 5px;
 }
 
 #health-bar {
@@ -118,18 +113,44 @@ body {
   width: calc(100% - 30px); /* 15px Abstand links und rechts */
 }
 
+/* Allgemeine Felder */
 .field {
-  height: 75px; /* Höhe angepasst */
+  height: 75px; /* Höhe bleibt wie gewünscht */
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
-  font-size: 18px; /* Größere Schrift */
+  font-size: 16px;
   text-align: center;
-  line-height: 75px; /* Vertikale Zentrierung */
+  line-height: 1.2; /* Vertikale Zentrierung für mehrzeiligen Text */
+  padding: 10px;
   border-radius: 8px; /* Weniger rundlich */
   cursor: pointer;
-  transition: background 0.3s ease;
+  word-wrap: break-word; /* Textumbruch erzwingen */
+  overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
+  white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
 }
 
 .field:hover {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
+}
+
+.field.materialien-verwenden {
+  height: auto; /* Dynamische Höhe je nach Text */
+}
+
+/* Style für die Sprachauswahl */
+#language {
+  background: rgba(80, 80, 80, 0.9); /* 10% dunkler */
+  color: white;
+}
+
+/* Style für das Textumbruch im Material-Feld */
+.materialien-verwenden {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Text in den Feldern */
+.center-fields .field {
+  word-wrap: break-word;
+  white-space: normal;
 }
