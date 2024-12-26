@@ -113,21 +113,24 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
+  grid-template-columns: repeat(2, 1fr); /* Zwei Felder pro Zeile */
+  grid-auto-rows: 1fr; /* Höhe dynamisch */
   gap: 15px; /* Abstand zwischen den Feldern */
-  width: calc(100% - 30px); /* 15px Abstand links und rechts */
+  padding: 15px; /* Abstand vom Rand */
+  width: calc(100% - 30px); /* Dynamisch, mit Rand */
+  height: calc(100% - 30px); /* Dynamisch, mit Rand */
+  box-sizing: border-box;
 }
 
 .field {
-  width: calc(50% - 22.5px); /* Dynamisch, passt sich an */
-  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
-  font-size: 18px; /* Größere Schrift */
+  font-size: 18px;
   text-align: center;
-  line-height: 100px; /* Vertikale Zentrierung */
   border-radius: 10px;
-  cursor: pointer;
   transition: background 0.3s ease;
 }
 
