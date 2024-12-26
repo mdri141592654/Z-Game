@@ -36,7 +36,7 @@ body {
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(200, 200, 200, 0.8); /* Mittelgrau, halbtransparent */
+  background: rgba(160, 160, 160, 0.8); /* Dunkleres Grau, halbtransparent */
   color: white;
   border: none;
   border-radius: 3px;
@@ -45,34 +45,34 @@ body {
 }
 
 #language option {
-  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler für die Dropdown-Liste */
+  background: rgba(100, 100, 100, 0.9);
   color: white;
 }
 
 /* Inventar oben links */
 #resources {
   position: absolute;
-  top: 15px; /* Abstand von oben */
-  left: 15px; /* Abstand von links */
+  top: 15px;
+  left: 15px;
   font-size: 18px;
   color: white;
   line-height: 1.5;
-  padding: 7.5px; /* Abstand innerhalb des Hintergrundkastens */
-  background: rgba(0, 0, 0, 0.5); /* Schwarzer, halbtransparenter Hintergrund */
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
   border-radius: 5px;
 }
 
 /* Tageszähler oben rechts */
 #day-counter {
   position: absolute;
-  top: 50px; /* Platzierung unterhalb der Spracheinstellung */
+  top: 50px;
   right: 15px;
   font-size: 18px;
   color: #D46A6A; /* Sanftes Rot */
-  line-height: 1.5; /* Abstand zwischen Zeilen */
-  text-align: right; /* Text rechtsbündig */
-  padding: 7.5px; /* Abstand innerhalb des Hintergrundkastens */
-  background: rgba(0, 0, 0, 0.5); /* Schwarzer, halbtransparenter Hintergrund */
+  line-height: 1.5;
+  text-align: right;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
   border-radius: 5px;
 }
 
@@ -88,7 +88,6 @@ body {
   align-items: center;
 }
 
-/* Gemeinsame Einstellungen für die Balken */
 #health-bar, #energy-bar {
   flex: 1;
   height: 30px;
@@ -105,4 +104,32 @@ body {
 
 #energy-bar {
   background-color: #2A62D8;
+}
+
+/* Zentrale Felder */
+.center-fields {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
+  grid-gap: 30px; /* Abstand zwischen den Feldern */
+}
+
+.field {
+  width: 200px;
+  height: 100px;
+  background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px; /* Vertikale Zentrierung */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.field:hover {
+  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
