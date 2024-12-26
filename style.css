@@ -1,13 +1,121 @@
+/* Generelle Stileinstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container für das Spiel */
+#game-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('Tag.jpg'); /* Hintergrundbild */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Dropdown-Menü oben rechts */
+#language {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  padding: 2px 5px;
+  background: rgba(70, 70, 70, 0.9); /* Noch dunkleres Grau */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+}
+
+#language option {
+  background: rgba(50, 50, 50, 0.9);
+  color: white;
+}
+
+/* Inventar oben links */
+#resources {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
+  color: white;
+  line-height: 1.5;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  border-radius: 5px;
+}
+
+/* Tageszähler oben rechts */
+#day-counter {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  font-size: 18px;
+  color: #D46A6A; /* Sanftes Rot */
+  line-height: 1.5;
+  text-align: right;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  border-radius: 5px;
+}
+
+/* Health und Energy Bereich */
+#health-energy {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+#health-bar, #energy-bar {
+  flex: 1;
+  height: 30px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 8px; /* Weniger rundlich */
+}
+
+#health-bar {
+  background-color: green;
+}
+
+#energy-bar {
+  background-color: #2A62D8;
+}
+
 /* Zentrale Felder */
 .center-fields {
   position: absolute;
   top: 50%;
-  left: 15px; /* Gleicher Abstand wie bei den Balken */
-  right: 15px; /* Gleicher Abstand wie bei den Balken */
-  transform: translateY(-50%); /* Nur vertikal verschieben */
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
+  width: calc(100% - 30px); /* 15px Abstand links und rechts */
 }
 
 .field {
@@ -17,31 +125,11 @@
   font-size: 18px; /* Größere Schrift */
   text-align: center;
   line-height: 75px; /* Vertikale Zentrierung */
-  border-radius: 8px; /* Weniger abgerundete Ecken */
+  border-radius: 8px; /* Weniger rundlich */
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .field:hover {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
-}
-
-/* Dropdown-Menü (Sprachauswahl) */
-#language {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 14px;
-  padding: 2px 5px;
-  background: rgba(50, 50, 50, 0.9); /* Weiter abgedunkelt */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  appearance: none;
-  cursor: pointer;
-}
-
-#language option {
-  background: rgba(100, 100, 100, 0.9);
-  color: white;
 }
