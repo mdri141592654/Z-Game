@@ -45,7 +45,6 @@ body {
   bottom: 15px; /* Abstand zum unteren Rand */
   width: calc(561.5px * 2 + 15 + 15 + 15); /* Gesamtbreite der beiden Balken + Zwischenräume */
   left: 15px; /* Abstand zum linken Rand */
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
