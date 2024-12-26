@@ -1,13 +1,31 @@
-// Hier kommt die JavaScript-Logik für das Spiel
-document.addEventListener("DOMContentLoaded", function () {
-  let health = 100;
-  let energy = 100;
-
-  function updateHealthEnergy() {
-    document.getElementById("health-bar").textContent = `Gesundheit: ${health}/100`;
-    document.getElementById("energy-bar").textContent = `Energie: ${energy}/100`;
+// Spracheinstellungen
+const translations = {
+  de: {
+    resources: "Nahrung: xx<br>Medizin: xx<br>Munition: xx<br>Baumaterial: xx",
+    dayCounter: "08:00 Uhr<br>Tag: xx",
+    health: "Gesundheit 100/100",
+    energy: "Energie 100/100"
+  },
+  en: {
+    resources: "Food: xx<br>Medicine: xx<br>Ammunition: xx<br>Building Materials: xx",
+    dayCounter: "08:00 am<br>Day: xx",
+    health: "Health 100/100",
+    energy: "Energy 100/100"
   }
+};
 
-  // Initiale Anzeige
-  updateHealthEnergy();
+// Elemente auswählen
+const languageSelector = document.getElementById("language");
+const resourcesDiv = document.getElementById("resources");
+const dayCounterDiv = document.getElementById("day-counter");
+const healthBar = document.getElementById("health-bar");
+const energyBar = document.getElementById("energy-bar");
+
+// Sprache ändern
+languageSelector.addEventListener("change", (e) => {
+  const lang = e.target.value;
+  resourcesDiv.innerHTML = translations[lang].resources;
+  dayCounterDiv.innerHTML = translations[lang].dayCounter;
+  healthBar.textContent = translations[lang].health;
+  energyBar.textContent = translations[lang].energy;
 });
