@@ -14,7 +14,11 @@ function changeLanguage(language) {
       'materialVerwenden': 'Materialien verwenden',
       'schlafen': 'Schlafen',
       'dayText': 'Tag',
-      'timeText': '08:00 am'
+      'timeText': '08:00 am',
+      'material': 'Material',
+      'medicine': 'Medizin',
+      'ammo': 'Munition',
+      'wood': 'Baumaterial'
     },
     'en': {
       'pluender': 'Loot',
@@ -22,7 +26,11 @@ function changeLanguage(language) {
       'materialVerwenden': 'Use Materials',
       'schlafen': 'Sleep',
       'dayText': 'Day',
-      'timeText': '08:00 am'
+      'timeText': '08:00 am',
+      'material': 'Material',
+      'medicine': 'Medicine',
+      'ammo': 'Ammunition',
+      'wood': 'Wood'
     }
   };
 
@@ -33,6 +41,10 @@ function changeLanguage(language) {
   document.getElementById('schlafen').innerText = texts.schlafen;
   document.getElementById('day').innerText = `${texts.dayText}: xx`;
   document.getElementById('time').innerText = `${texts.timeText}`;
+  document.getElementById('material').innerText = `${texts.material}: xx`;
+  document.getElementById('medicine').innerText = `${texts.medicine}: xx`;
+  document.getElementById('ammo').innerText = `${texts.ammo}: xx`;
+  document.getElementById('wood').innerText = `${texts.wood}: xx`;
 }
 
 // Klick-Event für die Felder, um sie zu animieren
@@ -41,4 +53,11 @@ fields.forEach(field => {
   field.addEventListener('click', () => {
     document.querySelector('.center-fields').classList.add('clicked');
   });
+});
+
+// Event Listener für das Dropdown-Menü
+const languageSelect = document.getElementById('language');
+languageSelect.addEventListener('change', (event) => {
+  const selectedLanguage = event.target.value;
+  changeLanguage(selectedLanguage);
 });
