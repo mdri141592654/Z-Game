@@ -114,7 +114,8 @@ body {
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
-  gap: 15px; /* Abstand zwischen den Feldern und zum Rand */
+  gap: 15px; /* Abstand zwischen den Feldern */
+  width: calc(100% - 30px); /* 15px Abstand links und rechts */
 }
 
 .field {
