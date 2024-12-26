@@ -36,7 +36,7 @@ body {
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(200, 200, 200, 0.8); /* Mittelgrau, halbtransparent */
   color: white;
   border: none;
   border-radius: 3px;
@@ -45,7 +45,7 @@ body {
 }
 
 #language option {
-  background: #333;
+  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler für die Dropdown-Liste */
   color: white;
 }
 
@@ -57,6 +57,9 @@ body {
   font-size: 18px;
   color: white;
   line-height: 1.5;
+  padding: 7.5px; /* Abstand innerhalb des Hintergrundkastens */
+  background: rgba(0, 0, 0, 0.5); /* Schwarzer, halbtransparenter Hintergrund */
+  border-radius: 5px;
 }
 
 /* Tageszähler oben rechts */
@@ -68,6 +71,9 @@ body {
   color: #D46A6A; /* Sanftes Rot */
   line-height: 1.5; /* Abstand zwischen Zeilen */
   text-align: right; /* Text rechtsbündig */
+  padding: 7.5px; /* Abstand innerhalb des Hintergrundkastens */
+  background: rgba(0, 0, 0, 0.5); /* Schwarzer, halbtransparenter Hintergrund */
+  border-radius: 5px;
 }
 
 /* Health und Energy Bereich */
