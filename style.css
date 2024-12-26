@@ -114,15 +114,15 @@ body {
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
-  grid-gap: 30px; /* Abstand zwischen den Feldern */
+  gap: 15px; /* Abstand zwischen den Feldern und zum Rand */
 }
 
 .field {
-  width: 200px;
+  width: calc(50% - 22.5px); /* Dynamisch, passt sich an */
   height: 100px;
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
-  font-size: 16px;
+  font-size: 18px; /* Größere Schrift */
   text-align: center;
   line-height: 100px; /* Vertikale Zentrierung */
   border-radius: 10px;
