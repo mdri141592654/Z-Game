@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       menu1: ["Plündern", "Gezieltes Plündern", "Materialien verwenden", "Schlafen"],
       menu11: ["Zurück", "Leicht", "Medium", "Schwer", "Hart", "Extrem"],
       menu111: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu112: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu112: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"]
     },
     en: {
       resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       energyBar: "Energy 100/100",
       menu1: ["Scavenge", "Targeted Scavenge", "Use Materials", "Sleep"],
       menu11: ["Back", "Easy", "Medium", "Hard", "Very Hard", "Extreme"],
-      menu111: ["Back", "Scavenge without weapon", "Take 5 bullets", "Take 10 bullets", "Take 15 bullets", "Take 20 bullets"],
-      menu112: ["Back", "Scavenge without weapon", "Take 5 bullets", "Take 10 bullets", "Take 15 bullets", "Take 20 bullets"],
+      menu111: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
+      menu112: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"]
     },
   };
 
@@ -75,20 +75,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Wechsel zu Menü 1.1.1 bei Klick auf "Leicht"
   menu11.addEventListener("click", (e) => {
     if (e.target.id === "easy") {
       menu11.style.display = "none";
       menu111.style.display = "grid";
-    } else if (e.target.id === "medium") {
+    }
+  });
+
+  // Wechsel zu Menü 1.1.2 bei Klick auf "Medium"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "medium") {
       menu11.style.display = "none";
       menu112.style.display = "grid";
     }
   });
 
+  // Zurück-Button in Menü 1.1.1
+  menu111.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu111.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.2
+  menu112.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu112.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
   backButton.addEventListener("click", () => {
-    menu111.style.display = "none";
-    menu112.style.display = "none";
-    menu11.style.display = "grid";
+    menu11.style.display = "none";
+    menu1.style.display = "grid";
   });
 
   // Standard auf Deutsch setzen
