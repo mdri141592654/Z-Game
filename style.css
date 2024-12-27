@@ -121,3 +121,9 @@ body {
 .field:hover {
   background: rgba(100, 100, 100, 0.9);
 }
+
+#easy { background: #62C370; }
+#medium { background: #B8C360; }
+#hard { background: #C39560; }
+#very-hard { background: #C36060; }
+#extreme { background: #6C2020; }
