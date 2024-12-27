@@ -136,21 +136,3 @@ body {
 .field.materialien-verwenden {
   height: auto; /* Dynamische Höhe je nach Text */
 }
-
-/* Style für die Sprachauswahl */
-#language {
-  background: rgba(80, 80, 80, 0.9); /* 10% dunkler */
-  color: white;
-}
-
-/* Style für das Textumbruch im Material-Feld */
-.materialien-verwenden {
-  white-space: normal;
-  word-wrap: break-word;
-}
-
-/* Text in den Feldern */
-.center-fields .field {
-  word-wrap: break-word;
-  white-space: normal;
-}
