@@ -14,37 +14,41 @@
       <option value="en">EN</option>
     </select>
 
-    <!-- Tagesanzeige und Statusbalken -->
-    <div id="status-bar">
-      <div id="day-status">Tag 1</div>
-      <div id="health-status">Gesundheit: 100%</div>
-      <div id="energy-status">Energie: 100%</div>
+    <!-- Inventar -->
+    <div id="resources">
+      Nahrung: 00<br>
+      Medizin: 00<br>
+      Munition: 00<br>
+      Baumaterial: 00
     </div>
 
-    <!-- Menü 1 -->
-    <div id="menu1" class="center-fields">
+    <!-- Tageszähler -->
+    <div id="day-counter">
+      Tag: 00
+    </div>
+
+    <!-- Balken -->
+    <div id="health-energy">
+      <div id="health-bar">Gesundheit 100/100</div>
+      <div id="energy-bar">Energie 100/100</div>
+    </div>
+
+    <!-- Erstes Menü -->
+    <div class="menu" id="first-menu">
       <div class="field" id="scavenge">Plündern</div>
       <div class="field" id="targeted-scavenge">Gezieltes Plündern</div>
-      <div class="field" id="use-materials">Materialien verwenden</div>
+      <div class="field materialien-verwenden" id="use-materials">Materialien verwenden</div>
       <div class="field" id="sleep">Schlafen</div>
     </div>
 
-    <!-- Menü 1.1 (versteckt) -->
-    <div id="menu1_1" class="center-fields" style="display: none;">
+    <!-- Zweites Menü -->
+    <div class="menu" id="second-menu" style="display: none;">
       <div class="field" id="back">Zurück</div>
       <div class="field" id="easy">Leicht</div>
       <div class="field" id="medium">Medium</div>
       <div class="field" id="hard">Schwer</div>
+      <div class="field" id="very-hard">Hart</div>
       <div class="field" id="extreme">Extrem</div>
-    </div>
-
-    <!-- Menü 1.2 (versteckt) -->
-    <div id="menu1_2" class="center-fields" style="display: none;">
-      <div class="field" id="back2">Zurück</div>
-      <div class="field" id="easy2">Leicht</div>
-      <div class="field" id="medium2">Medium</div>
-      <div class="field" id="hard2">Schwer</div>
-      <div class="field" id="extreme2">Extrem</div>
     </div>
   </div>
   <script src="game.js"></script>
