@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const energyBar = document.getElementById("energy-bar");
   const menu1 = document.getElementById("menu-1");
   const menu11 = document.getElementById("menu-1.1");
-  const menu111 = document.getElementById("menu-1.1.1");  // Neues Menü 1.1.1
+  const menu111 = document.getElementById("menu-1.1.1");
+  const menu112 = document.getElementById("menu-1.1.2");
   const backButton = document.getElementById("back");
-  const backButton111 = document.getElementById("back111"); // Zurück-Button für Menü 1.1.1
 
   const translations = {
     de: {
@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
       energyBar: "Energie 100/100",
       menu1: ["Plündern", "Gezieltes Plündern", "Materialien verwenden", "Schlafen"],
       menu11: ["Zurück", "Leicht", "Medium", "Schwer", "Hart", "Extrem"],
-      menu111: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"]
+      menu111: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu112: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
     },
     en: {
       resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
@@ -27,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       energyBar: "Energy 100/100",
       menu1: ["Scavenge", "Targeted Scavenge", "Use Materials", "Sleep"],
       menu11: ["Back", "Easy", "Medium", "Hard", "Very Hard", "Extreme"],
-      menu111: ["Back", "Go without weapon", "Take 5 shots", "Take 10 shots", "Take 15 shots", "Take 20 shots"]
+      menu111: ["Back", "Scavenge without weapon", "Take 5 bullets", "Take 10 bullets", "Take 15 bullets", "Take 20 bullets"],
+      menu112: ["Back", "Scavenge without weapon", "Take 5 bullets", "Take 10 bullets", "Take 15 bullets", "Take 20 bullets"],
     },
   };
 
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu1Fields = menu1.getElementsByClassName("field");
     const menu11Fields = menu11.getElementsByClassName("field");
     const menu111Fields = menu111.getElementsByClassName("field");
+    const menu112Fields = menu112.getElementsByClassName("field");
 
     Array.from(menu1Fields).forEach((field, index) => {
       field.textContent = translations[lang].menu1[index];
@@ -51,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Array.from(menu111Fields).forEach((field, index) => {
       field.textContent = translations[lang].menu111[index];
+    });
+
+    Array.from(menu112Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu112[index];
     });
   };
 
@@ -72,16 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.id === "easy") {
       menu11.style.display = "none";
       menu111.style.display = "grid";
+    } else if (e.target.id === "medium") {
+      menu11.style.display = "none";
+      menu112.style.display = "grid";
     }
   });
 
   backButton.addEventListener("click", () => {
-    menu11.style.display = "none";
-    menu1.style.display = "grid";
-  });
-
-  backButton111.addEventListener("click", () => {
     menu111.style.display = "none";
+    menu112.style.display = "none";
     menu11.style.display = "grid";
   });
 
