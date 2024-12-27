@@ -18,7 +18,12 @@ function changeLanguage(language) {
       'medium': 'Medium',
       'schwer': 'Schwer',
       'hart': 'Hart',
-      'extrem': 'Extrem'
+      'extrem': 'Extrem',
+      'withoutWeapon': 'Ohne Waffe losziehen',
+      'ammo5': '5 Schuss mitnehmen',
+      'ammo10': '10 Schuss mitnehmen',
+      'ammo15': '15 Schuss mitnehmen',
+      'ammo20': '20 Schuss mitnehmen'
     },
     'en': {
       'pluender': 'Loot',
@@ -30,7 +35,12 @@ function changeLanguage(language) {
       'medium': 'Medium',
       'schwer': 'Hard',
       'hart': 'Very Hard',
-      'extrem': 'Extreme'
+      'extrem': 'Extreme',
+      'withoutWeapon': 'Go without weapon',
+      'ammo5': 'Take 5 shots',
+      'ammo10': 'Take 10 shots',
+      'ammo15': 'Take 15 shots',
+      'ammo20': 'Take 20 shots'
     }
   };
 
@@ -45,21 +55,6 @@ function changeLanguage(language) {
   document.getElementById('hard').innerText = texts.schwer;
   document.getElementById('very-hard').innerText = texts.hart;
   document.getElementById('extreme').innerText = texts.extrem;
-}
-
-// Funktion zum Anzeigen eines Menüs
-function showMenu(menuId) {
-  const menus = document.querySelectorAll('.menu');
-  menus.forEach(menu => menu.style.display = 'none');
-  document.getElementById(menuId).style.display = 'grid';
-}
-
-// Event Listener für das erste Menü
-document.getElementById('scavenge').addEventListener('click', () => {
-  showMenu('second-menu');
-});
-
-// Event Listener für das Zurück-Feld im zweiten Menü
-document.getElementById('back').addEventListener('click', () => {
-  showMenu('first-menu');
-});
+  document.getElementById('without-weapon').innerText = texts.withoutWeapon;
+  document.getElementById('ammo-5').innerText = texts.ammo5;
+  document.getElementById('ammo-10').innerText = texts.ammo10;
