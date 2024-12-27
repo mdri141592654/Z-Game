@@ -160,7 +160,7 @@ body {
 
 /* Farben für Menü 1.1.1 */
 #back-1.1 {
-  background: rgba(70, 110, 150, 0.9); /* Wie Farbe "zurück" in Menü 1.1 */
+  background: rgba(70, 110, 150, 0.9); /* Wie Farbe "Zurück" in Menü 1.1 */
 }
 
 #no-weapon {
@@ -180,5 +180,5 @@ body {
 }
 
 #20-shots {
-  background: rgba(85, 170, 85, 0.8); /* Gleiche Farbe wie „Leicht“ in Menü 1.1  */
+  background: rgba(85, 170, 85, 0.8); /* Gleiche Farbe wie „Leicht“ in Menü 1.1 */
 }
