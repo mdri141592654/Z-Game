@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Zombie Survival Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Survival Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <!-- Dropdown zur Sprachauswahl -->
-    <select id="language">
-      <option value="de">DE</option>
-      <option value="en">EN</option>
-    </select>
-
-    <!-- Inventar -->
-    <div id="resources">
-      Nahrung: 00<br>
-      Medizin: 00<br>
-      Munition: 00<br>
-      Baumaterial: 00
-    </div>
-
-    <!-- Tageszähler -->
-    <div id="day-counter">
-      Tag: 00
-    </div>
-
-    <!-- Balken -->
-    <div id="health-energy">
-      <div id="health-bar">Gesundheit 100/100</div>
-      <div id="energy-bar">Energie 100/100</div>
-    </div>
-
-    <!-- Erstes Menü -->
     <div class="menu" id="first-menu">
-      <div class="field" id="scavenge">Plündern</div>
-      <div class="field" id="targeted-scavenge">Gezieltes Plündern</div>
-      <div class="field materialien-verwenden" id="use-materials">Materialien verwenden</div>
-      <div class="field" id="sleep">Schlafen</div>
+        <div class="field" id="plunder">Plündern</div>
+        <div class="field" id="target-plunder">Gezieltes Plündern</div>
+        <div class="field" id="use-resources">Ressourcen verwenden</div>
+        <div class="field" id="sleep">Schlafen</div>
     </div>
 
-    <!-- Zweites Menü -->
     <div class="menu" id="second-menu" style="display: none;">
-      <div class="field" id="back">Zurück</div>
-      <div class="field" id="easy">Leicht</div>
-      <div class="field" id="medium">Medium</div>
-      <div class="field" id="hard">Schwer</div>
-      <div class="field" id="very-hard">Hart</div>
-      <div class="field" id="extreme">Extrem</div>
+        <div class="field" id="easy">Leicht</div>
+        <div class="field" id="medium">Medium</div>
+        <div class="field" id="hard">Schwer</div>
+        <div class="field" id="extreme">Extrem</div>
+        <div class="field" id="back-from-2">Zurück</div>
     </div>
-  </div>
-  <script src="game.js"></script>
+
+    <div class="menu" id="third-menu" style="display: none;">
+        <div class="field" id="back-from-3">Zurück</div>
+        <div class="field" id="no-weapon">Ohne Waffe losziehen</div>
+        <div class="field" id="5-shots">5 Schuss mitnehmen</div>
+        <div class="field" id="10-shots">10 Schuss mitnehmen</div>
+        <div class="field" id="15-shots">15 Schuss mitnehmen</div>
+        <div class="field" id="20-shots">20 Schuss mitnehmen</div>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
