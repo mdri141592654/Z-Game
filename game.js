@@ -10,32 +10,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Menü 1 → Menü 1.1
   fieldScavenge.addEventListener("click", () => {
-    menu1.classList.add("hidden");
-    menu1_1.classList.remove("hidden");
+    hideMenu(menu1);
+    showMenu(menu1_1);
   });
 
   // Menü 1 → Menü 1.2
   fieldTargetedScavenge.addEventListener("click", () => {
-    menu1.classList.add("hidden");
-    menu1_2.classList.remove("hidden");
+    hideMenu(menu1);
+    showMenu(menu1_2);
   });
 
   // Menü 1.1 → Menü 1
   back1_1.addEventListener("click", () => {
-    menu1_1.classList.add("hidden");
-    menu1.classList.remove("hidden");
+    hideMenu(menu1_1);
+    showMenu(menu1);
   });
 
   // Menü 1.2 → Menü 1
   back1_2.addEventListener("click", () => {
-    menu1_2.classList.add("hidden");
-    menu1.classList.remove("hidden");
+    hideMenu(menu1_2);
+    showMenu(menu1);
   });
 
-  // Sprachumschaltung (Beispiel, ggf. anpassen)
+  // Sprachumschaltung
   const languageSelect = document.getElementById("language");
   languageSelect.addEventListener("change", () => {
     const selectedLanguage = languageSelect.value;
-    alert(`Sprache geändert zu: ${selectedLanguage}`); // Temporär
+    console.log(`Sprache geändert zu: ${selectedLanguage}`);
+    // Weitere Anpassungen für Sprachwechsel könnten hier erfolgen
   });
+
+  // Funktion: Menü anzeigen
+  function showMenu(menu) {
+    menu.classList.remove("hidden");
+  }
+
+  // Funktion: Menü ausblenden
+  function hideMenu(menu) {
+    menu.classList.add("hidden");
+  }
 });
