@@ -157,3 +157,28 @@ body {
 #extreme {
   background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
 }
+
+/* Farben für Menü 1.1.1 */
+#back-1.1 {
+  background: rgba(70, 110, 150, 0.9); /* Gleicher Blau-Ton wie in Menü 1.1 */
+}
+
+#no-weapon {
+  background: rgba(220, 120, 100, 0.8); /* Gleiche Farbe wie „Extrem“ in Menü 1.1 */
+}
+
+#5-shots {
+  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+}
+
+#10-shots {
+  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+}
+
+#15-shots {
+  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+}
+
+#20-shots {
+  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+}
