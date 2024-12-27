@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,43 +8,38 @@
 </head>
 <body>
   <div id="game-container">
-    <div id="resources">Materialien: 0<br>Medizin: 0<br>Nahrung: 0<br>Munition: 0</div>
-    <div id="day-counter">Tag: 1</div>
-    <div id="health-energy">
-      <div id="health-bar">Gesundheit: 100%</div>
-      <div id="energy-bar">Energie: 100%</div>
-    </div>
-    <!-- Menü 1 (mit den 4 Feldern) -->
-    <div id="menu-1" class="menu">
-      <div class="field" id="field-scavenge">Plündern</div>
-      <div class="field" id="field-targeted-scavenge">Gezieltes Plündern</div>
-      <div class="field" id="field-resources">Ressourcen verwenden</div>
-      <div class="field" id="field-sleep">Schlafen</div>
-    </div>
-    <!-- Menü 1.1 (mit 6 Feldern) -->
-    <div id="menu-1-1" class="menu hidden">
-      <div class="field" id="back-1-1">Zurück</div>
-      <div class="field" id="easy-1-1">Leicht</div>
-      <div class="field" id="medium-1-1">Medium</div>
-      <div class="field" id="hard-1-1">Schwer</div>
-      <div class="field" id="very-hard-1-1">Hart</div>
-      <div class="field" id="extreme-1-1">Extrem</div>
-    </div>
-    <!-- Menü 1.2 (mit 6 Feldern) -->
-    <div id="menu-1-2" class="menu hidden">
-      <div class="field" id="back-1-2">Zurück</div>
-      <div class="field" id="easy-1-2">Leicht</div>
-      <div class="field" id="medium-1-2">Medium</div>
-      <div class="field" id="hard-1-2">Schwer</div>
-      <div class="field" id="very-hard-1-2">Hart</div>
-      <div class="field" id="extreme-1-2">Extrem</div>
-    </div>
-    <!-- Sprachauswahl -->
+    <!-- Dropdown zur Sprachauswahl -->
     <select id="language">
-      <option value="en">EN</option>
       <option value="de">DE</option>
+      <option value="en">EN</option>
     </select>
+
+    <!-- Menü 1 -->
+    <div id="menu1" class="center-fields">
+      <div class="field" id="scavenge">Plündern</div>
+      <div class="field" id="targeted-scavenge">Gezieltes Plündern</div>
+      <div class="field" id="use-materials">Materialien verwenden</div>
+      <div class="field" id="sleep">Schlafen</div>
+    </div>
+
+    <!-- Menü 1.1 (versteckt) -->
+    <div id="menu1_1" class="center-fields" style="display: none;">
+      <div class="field" id="back">Zurück</div>
+      <div class="field" id="easy">Leicht</div>
+      <div class="field" id="medium">Medium</div>
+      <div class="field" id="hard">Schwer</div>
+      <div class="field" id="extreme">Extrem</div>
+    </div>
+
+    <!-- Menü 1.2 (versteckt) -->
+    <div id="menu1_2" class="center-fields" style="display: none;">
+      <div class="field" id="back2">Zurück</div>
+      <div class="field" id="easy2">Leicht</div>
+      <div class="field" id="medium2">Medium</div>
+      <div class="field" id="hard2">Schwer</div>
+      <div class="field" id="extreme2">Extrem</div>
+    </div>
   </div>
-  <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
