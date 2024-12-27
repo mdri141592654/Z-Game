@@ -157,15 +157,3 @@ body {
 #extreme {
   background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
 }
-
-/* Stile für Inaktive Felder */
-.inactive {
-  background: rgba(100, 100, 100, 0.5) !important; /* Halbtransparenter grauer Hintergrund */
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.active {
-  background: rgba(0, 255, 0, 0.8); /* Beispiel für aktives Feld, z.B. grün */
-  cursor: pointer;
-}
