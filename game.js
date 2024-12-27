@@ -1,90 +1,69 @@
-// Sprachwechsel Funktion
-const languageSelect = document.getElementById('language');
-languageSelect.addEventListener('change', (event) => {
-  const selectedLanguage = event.target.value;
-  changeLanguage(selectedLanguage);
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const languageSelector = document.getElementById("language");
+  const resources = document.getElementById("resources");
+  const dayCounter = document.getElementById("day-counter");
+  const healthBar = document.getElementById("health-bar");
+  const energyBar = document.getElementById("energy-bar");
+  const menu1 = document.getElementById("menu-1");
+  const menu11 = document.getElementById("menu-1.1");
+  const backButton = document.getElementById("back");
 
-// Funktion zum Wechseln der Sprache
-function changeLanguage(language) {
-  const languageTexts = {
-    'de': {
-      'pluender': 'Plündern',
-      'gepluender': 'Gezieltes Plündern',
-      'materialVerwenden': 'Materialien verwenden',
-      'schlafen': 'Schlafen',
-      'zurueck': 'Zurück',
-      'leicht': 'Leicht',
-      'medium': 'Medium',
-      'schwer': 'Schwer',
-      'hart': 'Hart',
-      'extrem': 'Extrem',
-      'noWeapon': 'Ohne Waffe losziehen',
-      '5Shots': '5 Schuss mitnehmen',
-      '10Shots': '10 Schuss mitnehmen',
-      '15Shots': '15 Schuss mitnehmen',
-      '20Shots': '20 Schuss mitnehmen'
+  const translations = {
+    de: {
+      resources: "Nahrung: 00<br>Medizin: 00<br>Mumition: 00<br>Baumaterial: 00",
+      dayCounter: "Tag: 00",
+      healthBar: "Gesundheit 100/100",
+      energyBar: "Energie 100/100",
+      menu1: ["Plündern", "Gezieltes Plündern", "Materialien verwenden", "Schlafen"],
+      menu11: ["Zurück", "Leicht", "Medium", "Schwer", "Hart", "Extrem"]
     },
-    'en': {
-      'pluender': 'Loot',
-      'gepluender': 'Targeted Loot',
-      'materialVerwenden': 'Use Materials',
-      'schlafen': 'Sleep',
-      'zurueck': 'Back',
-      'leicht': 'Easy',
-      'medium': 'Medium',
-      'schwer': 'Hard',
-      'hart': 'Very Hard',
-      'extrem': 'Extreme',
-      'noWeapon': 'Go Without Weapon',
-      '5Shots': 'Take 5 Shots',
-      '10Shots': 'Take 10 Shots',
-      '15Shots': 'Take 15 Shots',
-      '20Shots': 'Take 20 Shots'
-    }
+    en: {
+      resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
+      dayCounter: "Day: 00",
+      healthBar: "Health 100/100",
+      energyBar: "Energy 100/100",
+      menu1: ["Scavenge", "Targeted Scavenge", "Use Materials", "Sleep"],
+      menu11: ["Back", "Easy", "Medium", "Hard", "Very Hard", "Extreme"]
+    },
   };
 
-  const texts = languageTexts[language];
-  document.getElementById('scavenge').innerText = texts.pluender;
-  document.getElementById('targeted-scavenge').innerText = texts.gepluender;
-  document.getElementById('use-materials').innerText = texts.materialVerwenden;
-  document.getElementById('sleep').innerText = texts.schlafen;
-  document.getElementById('back').innerText = texts.zurueck;
-  document.getElementById('easy').innerText = texts.leicht;
-  document.getElementById('medium').innerText = texts.medium;
-  document.getElementById('hard').innerText = texts.schwer;
-  document.getElementById('very-hard').innerText = texts.hart;
-  document.getElementById('extreme').innerText = texts.extrem;
-  document.getElementById('no-weapon').innerText = texts.noWeapon;
-  document.getElementById('5-shots').innerText = texts['5Shots'];
-  document.getElementById('10-shots').innerText = texts['10Shots'];
-  document.getElementById('15-shots').innerText = texts['15Shots'];
-  document.getElementById('20-shots').innerText = texts['20Shots'];
-}
+  const updateLanguage = (lang) => {
+    resources.innerHTML = translations[lang].resources;
+    dayCounter.textContent = translations[lang].dayCounter;
+    healthBar.textContent = translations[lang].healthBar;
+    energyBar.textContent = translations[lang].energyBar;
 
-// Funktion zum Anzeigen eines Menüs
-function showMenu(menuId) {
-  const menus = document.querySelectorAll('.menu');
-  menus.forEach(menu => menu.style.display = 'none');
-  document.getElementById(menuId).style.display = 'grid';
-}
+    const menu1Fields = menu1.getElementsByClassName("field");
+    const menu11Fields = menu11.getElementsByClassName("field");
 
-// Event Listener für das erste Menü
-document.getElementById('scavenge').addEventListener('click', () => {
-  showMenu('menu-1.1');
-});
+    Array.from(menu1Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu1[index];
+    });
 
-// Event Listener für das Zurück-Feld im zweiten Menü
-document.getElementById('back').addEventListener('click', () => {
-  showMenu('menu-1');
-});
+    Array.from(menu11Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu11[index];
+    });
+  };
 
-// Event Listener für das "Leicht" Feld im Menü 1.1
-document.getElementById('easy').addEventListener('click', () => {
-  showMenu('menu-1.1.1');
-});
+  // Sprachwechsel-Event
+  languageSelector.addEventListener("change", (e) => {
+    const selectedLanguage = e.target.value;
+    updateLanguage(selectedLanguage);
+  });
 
-// Event Listener für das Zurück-Feld im dritten Menü
-document.getElementById('back-1.1').addEventListener('click', () => {
-  showMenu('menu-1.1');
+  // Menünavigation
+  menu1.addEventListener("click", (e) => {
+    if (e.target.id === "scavenge") {
+      menu1.style.display = "none";
+      menu11.style.display = "grid";
+    }
+  });
+
+  backButton.addEventListener("click", () => {
+    menu11.style.display = "none";
+    menu1.style.display = "grid";
+  });
+
+  // Standard auf Deutsch setzen
+  updateLanguage("de");
 });
