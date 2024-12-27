@@ -39,3 +39,11 @@ function changeLanguage(language) {
   document.getElementById('sleep').innerText = texts.schlafen;
   document.getElementById('day-counter').innerText = `${texts.dayText}: 00`;
 }
+
+// Funktion zum Verstecken der mittleren Felder
+const centerFields = document.querySelectorAll('.center-fields .field');
+centerFields.forEach(field => {
+  field.addEventListener('click', () => {
+    document.querySelector('.center-fields').style.display = 'none';
+  });
+});
