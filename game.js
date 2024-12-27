@@ -7,8 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu1 = document.getElementById("menu-1");
   const menu11 = document.getElementById("menu-1.1");
   const menu12 = document.getElementById("menu-1.2");
+  const menu111 = document.getElementById("menu-1.1.1");
+  const menu112 = document.getElementById("menu-1.1.2");
+  const menu113 = document.getElementById("menu-1.1.3");
+  const menu114 = document.getElementById("menu-1.1.4");
+  const menu115 = document.getElementById("menu-1.1.5");
   const backButton = document.getElementById("back");
   const backButton1_2 = document.getElementById("back-1.2");
+  const backButton1_1_1 = document.getElementById("back-1.1.1");
+  const backButton1_1_2 = document.getElementById("back-1.1.2");
+  const backButton1_1_3 = document.getElementById("back-1.1.3");
+  const backButton1_1_4 = document.getElementById("back-1.1.4");
+  const backButton1_1_5 = document.getElementById("back-1.1.5");
 
   const translations = {
     de: {
@@ -76,7 +86,48 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.id === "back") {
       menu11.style.display = "none";
       menu1.style.display = "grid";
+    } else if (e.target.id === "easy") {
+      menu11.style.display = "none";
+      menu111.style.display = "grid";
+    } else if (e.target.id === "medium") {
+      menu11.style.display = "none";
+      menu112.style.display = "grid";
+    } else if (e.target.id === "hard") {
+      menu11.style.display = "none";
+      menu113.style.display = "grid";
+    } else if (e.target.id === "very-hard") {
+      menu11.style.display = "none";
+      menu114.style.display = "grid";
+    } else if (e.target.id === "extreme") {
+      menu11.style.display = "none";
+      menu115.style.display = "grid";
     }
+  });
+
+  // Menünavigation für Menü 1.1.1 bis 1.1.5
+  backButton1_1_1.addEventListener("click", () => {
+    menu111.style.display = "none";
+    menu11.style.display = "grid";
+  });
+
+  backButton1_1_2.addEventListener("click", () => {
+    menu112.style.display = "none";
+    menu11.style.display = "grid";
+  });
+
+  backButton1_1_3.addEventListener("click", () => {
+    menu113.style.display = "none";
+    menu11.style.display = "grid";
+  });
+
+  backButton1_1_4.addEventListener("click", () => {
+    menu114.style.display = "none";
+    menu11.style.display = "grid";
+  });
+
+  backButton1_1_5.addEventListener("click", () => {
+    menu115.style.display = "none";
+    menu11.style.display = "grid";
   });
 
   // Menünavigation für Menü 1.2
