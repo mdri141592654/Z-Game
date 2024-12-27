@@ -44,24 +44,65 @@ body {
   cursor: pointer;
 }
 
-/* Statusanzeige (Tag, Gesundheit, Energie) */
-#status-bar {
+/* Inventar oben links */
+#resources {
   position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 16px;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
   color: white;
-  text-align: center;
-  z-index: 10; /* Über den Menüs */
+  line-height: 1.5;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  border-radius: 5px;
 }
 
-#status-bar div {
-  margin-bottom: 5px;
+/* Tageszähler oben rechts */
+#day-counter {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  font-size: 18px;
+  color: #D46A6A; /* Sanftes Rot */
+  line-height: 1.5;
+  text-align: right;
+  padding: 7.5px;
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  border-radius: 5px;
+}
+
+/* Health und Energy Bereich */
+#health-energy {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+#health-bar, #energy-bar {
+  flex: 1;
+  height: 30px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+#health-bar {
+  background-color: green;
+}
+
+#energy-bar {
+  background-color: #2A62D8;
 }
 
 /* Zentrale Felder */
-.center-fields {
+.menu {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,18 +111,17 @@ body {
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
   width: calc(100% - 30px); /* 15px Abstand links und rechts */
-  z-index: 5; /* Unter der Statusleiste */
 }
 
-/* Allgemeine Felder */
 .field {
   height: 75px; /* Höhe bleibt wie gewünscht */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
   font-size: 16px;
-  text-align: center;
-  line-height: 1.2; /* Vertikale Zentrierung für mehrzeiligen Text */
-  padding: 10px;
   border-radius: 8px; /* Weniger rundlich */
   cursor: pointer;
   word-wrap: break-word; /* Textumbruch erzwingen */
@@ -93,21 +133,27 @@ body {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
 
-/* Zurück-Button */
-#back, #back2 {
-  background: rgba(0, 0, 128, 0.8); /* Blau, halbtransparent */
+/* Farben für Menü 1.2 */
+#back {
+  background: rgba(70, 110, 150, 0.9); /* Satteres Grau-Blau für "Zurück" */
 }
 
-/* Farbverlauf für Schwierigkeitsstufen */
-#easy, #easy2 {
-  background: linear-gradient(to right, #808080, #90EE90); /* Grau zu Grün */
+#easy {
+  background: rgba(85, 170, 85, 0.8); /* Dunkleres Grau-Grün für "Leicht" */
 }
-#medium, #medium2 {
-  background: linear-gradient(to right, #808080, #FFFF00); /* Grau zu Gelb */
+
+#medium {
+  background: rgba(130, 190, 90, 0.8); /* Übergang von Grau-Grün */
 }
-#hard, #hard2 {
-  background: linear-gradient(to right, #808080, #FF8C00); /* Grau zu Orange */
+
+#hard {
+  background: rgba(190, 180, 130, 0.8); /* Mittelgrau mit grünlichem Einschlag */
 }
-#extreme, #extreme2 {
-  background: linear-gradient(to right, #808080, #FF0000); /* Grau zu Rot */
+
+#very-hard {
+  background: rgba(210, 150, 120, 0.8); /* Hellgrau-Rot */
+}
+
+#extreme {
+  background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
 }
