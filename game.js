@@ -1,77 +1,190 @@
-// Sicherstellen, dass alle bisherigen Elemente beibehalten werden
 
-// Menü 1 - Startmenü
-const menu1 = document.createElement('div');
-menu1.id = 'menu1';
-menu1.style.display = 'flex';
-menu1.style.flexWrap = 'wrap';
-menu1.style.width = '500px';
-menu1.style.height = '200px';
+document.addEventListener("DOMContentLoaded", () => {
+  const languageSelector = document.getElementById("language");
+  const resources = document.getElementById("resources");
+  const dayCounter = document.getElementById("day-counter");
+  const healthBar = document.getElementById("health-bar");
+  const energyBar = document.getElementById("energy-bar");
+  const menu1 = document.getElementById("menu-1");
+  const menu11 = document.getElementById("menu-1.1");
+  const menu111 = document.getElementById("menu-1.1.1");
+  const menu112 = document.getElementById("menu-1.1.2");
+  const menu113 = document.getElementById("menu-1.1.3");
+  const menu114 = document.getElementById("menu-1.1.4");
+  const menu115 = document.getElementById("menu-1.1.5");
+  const backButton = document.getElementById("back");
 
-// Flächen für Menü 1
-const area1 = document.createElement('div');
-area1.style.width = '45%';
-area1.style.height = '45%';
-area1.style.margin = '2%';
-area1.innerText = 'Plündern';
-area1.onclick = () => showMenu('menu1.1');
-menu1.appendChild(area1);
+  const translations = {
+    de: {
+      resources: "Nahrung: 00<br>Medizin: 00<br>Mumition: 00<br>Baumaterial: 00",
+      dayCounter: "Tag: 00",
+      healthBar: "Gesundheit 100/100",
+      energyBar: "Energie 100/100",
+      menu1: ["Plündern", "Gezieltes Plündern", "Materialien verwenden", "Schlafen"],
+      menu11: ["Zurück", "Leicht", "Medium", "Schwer", "Hart", "Extrem"],
+      menu111: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu112: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu113: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu114: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu115: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"]
+    },
+    en: {
+      resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
+      dayCounter: "Day: 00",
+      healthBar: "Health 100/100",
+      energyBar: "Energy 100/100",
+      menu1: ["Scavenge", "Targeted Scavenge", "Use Materials", "Sleep"],
+      menu11: ["Back", "Easy", "Medium", "Hard", "Very Hard", "Extreme"],
+      menu111: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
+      menu112: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
+      menu113: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
+      menu114: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
+      menu115: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"]
+    },
+  };
 
-const area2 = document.createElement('div');
-area2.style.width = '45%';
-area2.style.height = '45%';
-area2.style.margin = '2%';
-area2.innerText = 'Gezieltes Plündern';
-area2.onclick = () => showMenu('menu1.2');
-menu1.appendChild(area2);
+  const updateLanguage = (lang) => {
+    resources.innerHTML = translations[lang].resources;
+    dayCounter.textContent = translations[lang].dayCounter;
+    healthBar.textContent = translations[lang].healthBar;
+    energyBar.textContent = translations[lang].energyBar;
 
-// Menü 1.1 - Untermenü für Plündern
-const menu1_1 = document.createElement('div');
-menu1_1.id = 'menu1.1';
-menu1_1.style.display = 'none';  // Standardmäßig versteckt
-menu1_1.style.flexWrap = 'wrap';
-menu1_1.style.width = '500px';
-menu1_1.style.height = '200px';
+    const menu1Fields = menu1.getElementsByClassName("field");
+    const menu11Fields = menu11.getElementsByClassName("field");
+    const menu111Fields = menu111.getElementsByClassName("field");
+    const menu112Fields = menu112.getElementsByClassName("field");
+    const menu113Fields = menu113.getElementsByClassName("field");
+    const menu114Fields = menu114.getElementsByClassName("field");
+    const menu115Fields = menu115.getElementsByClassName("field");
 
-// Flächen für Menü 1.1
-for (let i = 0; i < 6; i++) {
-    const area = document.createElement('div');
-    area.style.width = '30%';
-    area.style.height = '30%';
-    area.style.margin = '2%';
-    area.innerText = `Option ${i + 1}`;
-    menu1_1.appendChild(area);
-}
-
-// Menü 1.2 - Untermenü für Gezieltes Plündern
-const menu1_2 = document.createElement('div');
-menu1_2.id = 'menu1.2';
-menu1_2.style.display = 'none';  // Standardmäßig versteckt
-menu1_2.style.flexWrap = 'wrap';
-menu1_2.style.width = '500px';
-menu1_2.style.height = '200px';
-
-// Flächen für Menü 1.2 (gleich wie Menü 1.1)
-for (let i = 0; i < 6; i++) {
-    const area = document.createElement('div');
-    area.style.width = '30%';
-    area.style.height = '30%';
-    area.style.margin = '2%';
-    area.innerText = `Gezielte Option ${i + 1}`;
-    menu1_2.appendChild(area);
-}
-
-// Funktion, um ein Menü anzuzeigen
-function showMenu(menuId) {
-    document.querySelectorAll('div[id^="menu"]').forEach(menu => {
-        menu.style.display = 'none';
+    Array.from(menu1Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu1[index];
     });
-    document.getElementById(menuId).style.display = 'flex';
-}
 
-// Startmenü zum Body hinzufügen
-document.body.appendChild(menu1);
+    Array.from(menu11Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu11[index];
+    });
 
-// Menü 1.1 und Menü 1.2 ebenfalls zum Body hinzufügen, aber standardmäßig versteckt
-document.body.appendChild(menu1_1);
-document.body.appendChild(menu1_2);
+    Array.from(menu111Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu111[index];
+    });
+
+    Array.from(menu112Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu112[index];
+    });
+
+    Array.from(menu113Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu113[index];
+    });
+
+    Array.from(menu114Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu114[index];
+    });
+
+    Array.from(menu115Fields).forEach((field, index) => {
+      field.textContent = translations[lang].menu115[index];
+    });
+  };
+
+  // Sprachwechsel-Event
+  languageSelector.addEventListener("change", (e) => {
+    const selectedLanguage = e.target.value;
+    updateLanguage(selectedLanguage);
+  });
+
+  // Menünavigation
+  menu1.addEventListener("click", (e) => {
+    if (e.target.id === "scavenge") {
+      menu1.style.display = "none";
+      menu11.style.display = "grid";
+    }
+  });
+
+  // Wechsel zu Menü 1.1.1 bei Klick auf "Leicht"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "easy") {
+      menu11.style.display = "none";
+      menu111.style.display = "grid";
+    }
+  });
+
+  // Wechsel zu Menü 1.1.2 bei Klick auf "Medium"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "medium") {
+      menu11.style.display = "none";
+      menu112.style.display = "grid";
+    }
+  });
+
+  // Wechsel zu Menü 1.1.3 bei Klick auf "Schwer"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "hard") {
+      menu11.style.display = "none";
+      menu113.style.display = "grid";
+    }
+  });
+
+  // Wechsel zu Menü 1.1.4 bei Klick auf "Hart"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "very-hard") {
+      menu11.style.display = "none";
+      menu114.style.display = "grid";
+    }
+  });
+
+  // Wechsel zu Menü 1.1.5 bei Klick auf "Extrem"
+  menu11.addEventListener("click", (e) => {
+    if (e.target.id === "extreme") {
+      menu11.style.display = "none";
+      menu115.style.display = "grid";
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.1
+  menu111.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu111.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.2
+  menu112.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu112.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.3
+  menu113.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu113.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.4
+  menu114.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu114.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  // Zurück-Button in Menü 1.1.5
+  menu115.addEventListener("click", (e) => {
+    if (e.target.id === "back") {
+      menu115.style.display = "none";
+      menu11.style.display = "grid"; // Zurück ins Menü 1.1
+    }
+  });
+
+  backButton.addEventListener("click", () => {
+    menu11.style.display = "none";
+    menu1.style.display = "grid";
+  });
+
+  // Standard auf Deutsch setzen
+  updateLanguage("de");
+});
