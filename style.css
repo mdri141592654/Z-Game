@@ -135,24 +135,25 @@ body {
 
 /* Farben für Menü 1.2 */
 #back {
-  background: rgba(128, 160, 192, 0.8); /* Grau-blau */
+  background: rgba(112, 128, 144, 0.8); /* Grau-Blau für "Zurück" */
 }
 
 #easy {
-  background: rgba(144, 238, 144, 0.8); /* Hellgrau-grün */
+  background: rgba(144, 238, 144, 0.8); /* Helles Grau-Grün */
 }
 
 #medium {
-  background: rgba(200, 190, 140, 0.8); /* Dezentes Beige */
+  background: rgba(170, 210, 140, 0.8); /* Etwas dunkleres Grau-Grün */
 }
 
 #hard {
-  background: ***`.
+  background: rgba(190, 180, 130, 0.8); /* Mittel-Grau mit grünlichem Einschlag */
+}
 
-Hier ist der angepasste Code:
+#very-hard {
+  background: rgba(210, 150, 120, 0.8); /* Hellgrau-Rot */
+}
 
-```css
-#hard {
-  background: rgba(255, 69, 69, 0.8); /* Dezentes Rot */
-  border: 2px;
-  //Gleiche Gradiationen]]  
+#extreme {
+  background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
+}
