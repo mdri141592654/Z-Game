@@ -15,24 +15,28 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* Container für das Spiel */
 #game-container {
   width: 100%;
   height: 100%;
-  background-image: url('Tag.jpg');
+  background-image: url('Tag.jpg'); /* Hintergrundbild */
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
+/* Dropdown-Menü oben rechts */
 #language {
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(100, 100, 100, 0.8);
+  background: rgba(100, 100, 100, 0.8); /* Dunkleres Grau, halbtransparent */
   color: white;
   border: none;
   border-radius: 3px;
@@ -40,6 +44,7 @@ body {
   cursor: pointer;
 }
 
+/* Inventar oben links */
 #resources {
   position: absolute;
   top: 15px;
@@ -48,22 +53,25 @@ body {
   color: white;
   line-height: 1.5;
   padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
   border-radius: 5px;
 }
 
+/* Tageszähler oben rechts */
 #day-counter {
   position: absolute;
   top: 50px;
   right: 15px;
   font-size: 18px;
-  color: #D46A6A;
+  color: #D46A6A; /* Sanftes Rot */
   line-height: 1.5;
+  text-align: right;
   padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
   border-radius: 5px;
 }
 
+/* Health und Energy Bereich */
 #health-energy {
   position: absolute;
   bottom: 15px;
@@ -93,37 +101,36 @@ body {
   background-color: #2A62D8;
 }
 
+/* Menü 1 */
 .menu {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  width: calc(100% - 30px);
+  grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
+  gap: 15px; /* Abstand zwischen den Feldern */
+  width: calc(100% - 30px); /* 15px Abstand links und rechts */
 }
 
 .field {
-  height: 75px;
+  height: 75px; /* Höhe bleibt wie gewünscht */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(128, 128, 128, 0.8);
+  background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 8px; /* Weniger rundlich */
   cursor: pointer;
-  white-space: normal;
+  word-wrap: break-word; /* Textumbruch erzwingen */
+  overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
+  white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
 }
 
 .field:hover {
-  background: rgba(100, 100, 100, 0.9);
+  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
 
-#easy { background: #62C370; }
-#medium { background: #B8C360; }
-#hard { background: #C39560; }
-#very-hard { background: #C36060; }
-#extreme { background: #6C2020; }
+/* Farben für
