@@ -19,11 +19,11 @@ function changeLanguage(language) {
       'schwer': 'Schwer',
       'hart': 'Hart',
       'extrem': 'Extrem',
-      'withoutWeapon': 'Ohne Waffe losziehen',
-      'ammo5': '5 Schuss mitnehmen',
-      'ammo10': '10 Schuss mitnehmen',
-      'ammo15': '15 Schuss mitnehmen',
-      'ammo20': '20 Schuss mitnehmen'
+      'noWeapon': 'Ohne Waffe losziehen',
+      '5Shots': '5 Schuss mitnehmen',
+      '10Shots': '10 Schuss mitnehmen',
+      '15Shots': '15 Schuss mitnehmen',
+      '20Shots': '20 Schuss mitnehmen'
     },
     'en': {
       'pluender': 'Loot',
@@ -36,11 +36,11 @@ function changeLanguage(language) {
       'schwer': 'Hard',
       'hart': 'Very Hard',
       'extrem': 'Extreme',
-      'withoutWeapon': 'Go without weapon',
-      'ammo5': 'Take 5 shots',
-      'ammo10': 'Take 10 shots',
-      'ammo15': 'Take 15 shots',
-      'ammo20': 'Take 20 shots'
+      'noWeapon': 'Go Without Weapon',
+      '5Shots': 'Take 5 Shots',
+      '10Shots': 'Take 10 Shots',
+      '15Shots': 'Take 15 Shots',
+      '20Shots': 'Take 20 Shots'
     }
   };
 
@@ -55,6 +55,36 @@ function changeLanguage(language) {
   document.getElementById('hard').innerText = texts.schwer;
   document.getElementById('very-hard').innerText = texts.hart;
   document.getElementById('extreme').innerText = texts.extrem;
-  document.getElementById('without-weapon').innerText = texts.withoutWeapon;
-  document.getElementById('ammo-5').innerText = texts.ammo5;
-  document.getElementById('ammo-10').innerText = texts.ammo10;
+  document.getElementById('no-weapon').innerText = texts.noWeapon;
+  document.getElementById('5-shots').innerText = texts['5Shots'];
+  document.getElementById('10-shots').innerText = texts['10Shots'];
+  document.getElementById('15-shots').innerText = texts['15Shots'];
+  document.getElementById('20-shots').innerText = texts['20Shots'];
+}
+
+// Funktion zum Anzeigen eines Menüs
+function showMenu(menuId) {
+  const menus = document.querySelectorAll('.menu');
+  menus.forEach(menu => menu.style.display = 'none');
+  document.getElementById(menuId).style.display = 'grid';
+}
+
+// Event Listener für das erste Menü
+document.getElementById('scavenge').addEventListener('click', () => {
+  showMenu('menu-1.1');
+});
+
+// Event Listener für das Zurück-Feld im zweiten Menü
+document.getElementById('back').addEventListener('click', () => {
+  showMenu('menu-1');
+});
+
+// Event Listener für das "Leicht" Feld im Menü 1.1
+document.getElementById('easy').addEventListener('click', () => {
+  showMenu('menu-1.1.1');
+});
+
+// Event Listener für das Zurück-Feld im dritten Menü
+document.getElementById('back-1.1').addEventListener('click', () => {
+  showMenu('menu-1.1');
+});
