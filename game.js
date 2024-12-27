@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const translations = {
     de: {
-      resources: "Nahrung: 00<br>Medizin: 00<br>Mumition: 00<br>Baumaterial: 00",
+      resources: "Nahrung: 00<br>Medizin: 00<br>Munition: 00<br>Baumaterial: 00",
       dayCounter: "Tag: 00",
       healthBar: "Gesundheit 100/100",
       energyBar: "Energie 100/100",
@@ -60,38 +60,31 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLanguage(selectedLanguage);
   });
 
-  // Menünavigation
+  // Menünavigation für Menü 1
   menu1.addEventListener("click", (e) => {
-    if (e.target.id === "targeted-scavenge") {
+    if (e.target.id === "scavenge") {
+      menu1.style.display = "none";
+      menu11.style.display = "grid";
+    } else if (e.target.id === "targeted-scavenge") {
       menu1.style.display = "none";
       menu12.style.display = "grid";
     }
   });
 
+  // Menünavigation für Menü 1.1
   menu11.addEventListener("click", (e) => {
-    if (e.target.id === "easy") {
+    if (e.target.id === "back") {
       menu11.style.display = "none";
-      menu111.style.display = "grid";
-    } else if (e.target.id === "medium") {
-      menu11.style.display = "none";
-      menu112.style.display = "grid";
-    } else if (e.target.id === "hard") {
-      menu11.style.display = "none";
-      menu113.style.display = "grid";
-    } else if (e.target.id === "extreme") {
-      menu11.style.display = "none";
-      menu114.style.display = "grid";
+      menu1.style.display = "grid";
     }
   });
 
-  backButton.addEventListener("click", () => {
-    menu11.style.display = "none";
-    menu1.style.display = "grid";
-  });
-
-  backButton1_2.addEventListener("click", () => {
-    menu12.style.display = "none";
-    menu1.style.display = "grid";
+  // Menünavigation für Menü 1.2
+  menu12.addEventListener("click", (e) => {
+    if (e.target.id === "back-1.2") {
+      menu12.style.display = "none";
+      menu1.style.display = "grid";
+    }
   });
 
   // Standard auf Deutsch setzen
