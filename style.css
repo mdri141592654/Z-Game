@@ -44,6 +44,22 @@ body {
   cursor: pointer;
 }
 
+/* Statusanzeige (Tag, Gesundheit, Energie) */
+#status-bar {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  z-index: 10; /* Über den Menüs */
+}
+
+#status-bar div {
+  margin-bottom: 5px;
+}
+
 /* Zentrale Felder */
 .center-fields {
   position: absolute;
@@ -54,6 +70,7 @@ body {
   grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
   gap: 15px; /* Abstand zwischen den Feldern */
   width: calc(100% - 30px); /* 15px Abstand links und rechts */
+  z-index: 5; /* Unter der Statusleiste */
 }
 
 /* Allgemeine Felder */
@@ -76,14 +93,21 @@ body {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
 
-/* Style für das Textumbruch im Material-Feld */
-.materialien-verwenden {
-  white-space: normal;
-  word-wrap: break-word;
+/* Zurück-Button */
+#back, #back2 {
+  background: rgba(0, 0, 128, 0.8); /* Blau, halbtransparent */
 }
 
-/* Text in den Feldern */
-.center-fields .field {
-  word-wrap: break-word;
-  white-space: normal;
+/* Farbverlauf für Schwierigkeitsstufen */
+#easy, #easy2 {
+  background: linear-gradient(to right, #808080, #90EE90); /* Grau zu Grün */
+}
+#medium, #medium2 {
+  background: linear-gradient(to right, #808080, #FFFF00); /* Grau zu Gelb */
+}
+#hard, #hard2 {
+  background: linear-gradient(to right, #808080, #FF8C00); /* Grau zu Orange */
+}
+#extreme, #extreme2 {
+  background: linear-gradient(to right, #808080, #FF0000); /* Grau zu Rot */
 }
