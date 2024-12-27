@@ -135,19 +135,19 @@ body {
 
 /* Farben für Menü 1.2 */
 #back {
-  background: rgba(112, 128, 144, 0.8); /* Grau-Blau für "Zurück" */
+  background: rgba(70, 110, 150, 0.9); /* Satteres Grau-Blau für "Zurück" */
 }
 
 #easy {
-  background: rgba(144, 238, 144, 0.8); /* Helles Grau-Grün */
+  background: rgba(85, 170, 85, 0.8); /* Dunkleres Grau-Grün für "Leicht" */
 }
 
 #medium {
-  background: rgba(170, 210, 140, 0.8); /* Etwas dunkleres Grau-Grün */
+  background: rgba(130, 190, 90, 0.8); /* Übergang von Grau-Grün */
 }
 
 #hard {
-  background: rgba(190, 180, 130, 0.8); /* Mittel-Grau mit grünlichem Einschlag */
+  background: rgba(190, 180, 130, 0.8); /* Mittelgrau mit grünlichem Einschlag */
 }
 
 #very-hard {
