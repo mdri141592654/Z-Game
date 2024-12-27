@@ -133,4 +133,31 @@ body {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
 
-/* Farben für
+/* Menü 1.1 */
+#menu-1.1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: calc(100% - 30px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.field {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(128, 128, 128, 0.8);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.field:hover {
+  background: rgba(100, 100, 100, 0.9);
+}
