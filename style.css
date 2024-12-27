@@ -115,12 +115,13 @@ body {
 
 .field {
   height: 75px; /* Höhe bleibt wie gewünscht */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
   color: white;
   font-size: 16px;
-  text-align: center;
-  line-height: 1.2; /* Vertikale Zentrierung für mehrzeiligen Text */
-  padding: 10px;
   border-radius: 8px; /* Weniger rundlich */
   cursor: pointer;
   word-wrap: break-word; /* Textumbruch erzwingen */
@@ -130,4 +131,29 @@ body {
 
 .field:hover {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
+}
+
+/* Farben für Menü 1.2 */
+#back {
+  background: rgba(70, 130, 180, 0.8); /* Grau-blau */
+}
+
+#easy {
+  background: rgba(144, 238, 144, 0.8); /* Grau-grün */
+}
+
+#medium {
+  background: rgba(173, 216, 230, 0.8); /* Grau-bläulich */
+}
+
+#hard {
+  background: rgba(255, 165, 0, 0.8); /* Grau-orange */
+}
+
+#very-hard {
+  background: rgba(255, 69, 0, 0.8); /* Grau-rot */
+}
+
+#extreme {
+  background: rgba(128, 0, 0, 0.8); /* Dunkles Grau-rot */
 }
