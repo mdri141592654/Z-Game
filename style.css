@@ -134,7 +134,7 @@ body {
 }
 
 /* Farben für Menü 1.1 */
-#back-1.1 {
+#back {
   background: rgba(70, 110, 150, 0.9); /* Satteres Grau-Blau für "Zurück" */
 }
 
@@ -159,7 +159,7 @@ body {
 }
 
 /* Farben für Menü 1.1.1 */
-#back-1.1.1 {
+#back {
   background: rgba(70, 110, 150, 0.9); /* Wie Farbe "Zurück" in Menü 1.1 */
 }
 
