@@ -1,87 +1,77 @@
-// Language settings
-const translations = {
-  en: {
-    "menu-1": "Main Menu",
-    "menu-1.1": "Scavenge",
-    "menu-1.1.1": "Go to Area 1",
-    "menu-1.1.2": "Go to Area 2",
-    "menu-1.1.3": "Go to Area 3",
-    "menu-2": "Inventory",
-    "menu-3": "Settings",
-    "back": "Back"
-  },
-  de: {
-    "menu-1": "Hauptmenü",
-    "menu-1.1": "Plündern",
-    "menu-1.1.1": "Gehe zu Gebiet 1",
-    "menu-1.1.2": "Gehe zu Gebiet 2",
-    "menu-1.1.3": "Gehe zu Gebiet 3",
-    "menu-2": "Inventar",
-    "menu-3": "Einstellungen",
-    "back": "Zurück"
-  }
-};
+// Sicherstellen, dass alle bisherigen Elemente beibehalten werden
 
-const languageSelector = document.getElementById('language');
-const gameMenus = document.querySelectorAll('.menu');
+// Menü 1 - Startmenü
+const menu1 = document.createElement('div');
+menu1.id = 'menu1';
+menu1.style.display = 'flex';
+menu1.style.flexWrap = 'wrap';
+menu1.style.width = '500px';
+menu1.style.height = '200px';
 
-let currentLanguage = 'en';  // Default language
+// Flächen für Menü 1
+const area1 = document.createElement('div');
+area1.style.width = '45%';
+area1.style.height = '45%';
+area1.style.margin = '2%';
+area1.innerText = 'Plündern';
+area1.onclick = () => showMenu('menu1.1');
+menu1.appendChild(area1);
 
-// Update language based on selection
-languageSelector.addEventListener('change', (event) => {
-  currentLanguage = event.target.value;
-  updateMenuText();
-});
+const area2 = document.createElement('div');
+area2.style.width = '45%';
+area2.style.height = '45%';
+area2.style.margin = '2%';
+area2.innerText = 'Gezieltes Plündern';
+area2.onclick = () => showMenu('menu1.2');
+menu1.appendChild(area2);
 
-// Update the text for all menus based on selected language
-function updateMenuText() {
-  gameMenus.forEach(menu => {
-    const menuId = menu.id;
-    if (translations[currentLanguage][menuId]) {
-      menu.innerText = translations[currentLanguage][menuId];
-    }
-    const buttons = menu.querySelectorAll('button');
-    buttons.forEach(button => {
-      const buttonId = button.id;
-      if (translations[currentLanguage][buttonId]) {
-        button.innerText = translations[currentLanguage][buttonId];
-      }
-    });
-  });
+// Menü 1.1 - Untermenü für Plündern
+const menu1_1 = document.createElement('div');
+menu1_1.id = 'menu1.1';
+menu1_1.style.display = 'none';  // Standardmäßig versteckt
+menu1_1.style.flexWrap = 'wrap';
+menu1_1.style.width = '500px';
+menu1_1.style.height = '200px';
+
+// Flächen für Menü 1.1
+for (let i = 0; i < 6; i++) {
+    const area = document.createElement('div');
+    area.style.width = '30%';
+    area.style.height = '30%';
+    area.style.margin = '2%';
+    area.innerText = `Option ${i + 1}`;
+    menu1_1.appendChild(area);
 }
 
-// Navigate function for all "back" buttons
-function addBackButtonListener(menuId) {
-  const backButton = document.getElementById(`back-${menuId}`);
-  if (backButton) {
-    backButton.addEventListener('click', () => {
-      // Logic to go back to the previous menu
-      const currentMenu = document.getElementById(menuId);
-      const parentMenu = currentMenu.closest('.menu-group');
-      if (parentMenu) {
-        currentMenu.style.display = 'none';
-        parentMenu.style.display = 'block';
-      }
-    });
-  }
+// Menü 1.2 - Untermenü für Gezieltes Plündern
+const menu1_2 = document.createElement('div');
+menu1_2.id = 'menu1.2';
+menu1_2.style.display = 'none';  // Standardmäßig versteckt
+menu1_2.style.flexWrap = 'wrap';
+menu1_2.style.width = '500px';
+menu1_2.style.height = '200px';
+
+// Flächen für Menü 1.2 (gleich wie Menü 1.1)
+for (let i = 0; i < 6; i++) {
+    const area = document.createElement('div');
+    area.style.width = '30%';
+    area.style.height = '30%';
+    area.style.margin = '2%';
+    area.innerText = `Gezielte Option ${i + 1}`;
+    menu1_2.appendChild(area);
 }
 
-// Initialize back button listeners for all menus
-document.querySelectorAll('.menu').forEach(menu => {
-  const menuId = menu.id;
-  addBackButtonListener(menuId);
-});
-
-// Example of how to show a menu (to be expanded for more dynamic use)
+// Funktion, um ein Menü anzuzeigen
 function showMenu(menuId) {
-  const menu = document.getElementById(menuId);
-  if (menu) {
-    menu.style.display = 'block';
-  }
+    document.querySelectorAll('div[id^="menu"]').forEach(menu => {
+        menu.style.display = 'none';
+    });
+    document.getElementById(menuId).style.display = 'flex';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initially, show the main menu
-  showMenu('menu-1');
-  updateMenuText(); // Apply translations when the page loads
-});
+// Startmenü zum Body hinzufügen
+document.body.appendChild(menu1);
+
+// Menü 1.1 und Menü 1.2 ebenfalls zum Body hinzufügen, aber standardmäßig versteckt
+document.body.appendChild(menu1_1);
+document.body.appendChild(menu1_2);
