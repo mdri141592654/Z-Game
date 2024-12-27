@@ -180,5 +180,5 @@ body {
 }
 
 #20-shots {
-  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+  background: rgba(85, 170, 85, 0.8); /* Gleiche Farbe wie „Leicht“ in Menü 1.1 */
 }
