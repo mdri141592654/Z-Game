@@ -13,22 +13,24 @@ function changeLanguage(language) {
       'gepluender': 'Gezieltes Plündern',
       'materialVerwenden': 'Materialien verwenden',
       'schlafen': 'Schlafen',
-      'dayText': 'Tag',
-      'material': 'Material',
-      'medicine': 'Medizin',
-      'ammo': 'Munition',
-      'wood': 'Baumaterial'
+      'zurueck': 'Zurück',
+      'leicht': 'Leicht',
+      'medium': 'Medium',
+      'schwer': 'Schwer',
+      'hart': 'Hart',
+      'extrem': 'Extrem'
     },
     'en': {
       'pluender': 'Loot',
       'gepluender': 'Targeted Loot',
       'materialVerwenden': 'Use Materials',
       'schlafen': 'Sleep',
-      'dayText': 'Day',
-      'material': 'Material',
-      'medicine': 'Medicine',
-      'ammo': 'Ammunition',
-      'wood': 'Wood'
+      'zurueck': 'Back',
+      'leicht': 'Easy',
+      'medium': 'Medium',
+      'schwer': 'Hard',
+      'hart': 'Very Hard',
+      'extrem': 'Extreme'
     }
   };
 
@@ -37,13 +39,27 @@ function changeLanguage(language) {
   document.getElementById('targeted-scavenge').innerText = texts.gepluender;
   document.getElementById('use-materials').innerText = texts.materialVerwenden;
   document.getElementById('sleep').innerText = texts.schlafen;
-  document.getElementById('day-counter').innerText = `${texts.dayText}: 00`;
+  document.getElementById('back').innerText = texts.zurueck;
+  document.getElementById('easy').innerText = texts.leicht;
+  document.getElementById('medium').innerText = texts.medium;
+  document.getElementById('hard').innerText = texts.schwer;
+  document.getElementById('very-hard').innerText = texts.hart;
+  document.getElementById('extreme').innerText = texts.extrem;
 }
 
-// Funktion zum Verstecken der mittleren Felder
-const centerFields = document.querySelectorAll('.center-fields .field');
-centerFields.forEach(field => {
-  field.addEventListener('click', () => {
-    document.querySelector('.center-fields').style.display = 'none';
-  });
+// Funktion zum Anzeigen eines Menüs
+function showMenu(menuId) {
+  const menus = document.querySelectorAll('.menu');
+  menus.forEach(menu => menu.style.display = 'none');
+  document.getElementById(menuId).style.display = 'grid';
+}
+
+// Event Listener für das erste Menü
+document.getElementById('scavenge').addEventListener('click', () => {
+  showMenu('second-menu');
+});
+
+// Event Listener für das Zurück-Feld im zweiten Menü
+document.getElementById('back').addEventListener('click', () => {
+  showMenu('first-menu');
 });
