@@ -64,80 +64,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Sprachwechsel-Event
-  languageSelector.addEventListener("change", (e) => {
-    const selectedLanguage = e.target.value;
+  languageSelector.addEventListener("change", () => {
+    const selectedLanguage = languageSelector.value;
     updateLanguage(selectedLanguage);
   });
 
-  // Menünavigation für Menü 1
-  menu1.addEventListener("click", (e) => {
-    if (e.target.id === "scavenge") {
-      menu1.style.display = "none";
-      menu11.style.display = "grid";
-    } else if (e.target.id === "targeted-scavenge") {
-      menu1.style.display = "none";
-      menu12.style.display = "grid";
-    }
+  backButton.addEventListener("click", () => {
+    menu1.style.display = "block";
+    menu11.style.display = "none";
+    menu12.style.display = "none";
   });
 
-  // Menünavigation für Menü 1.1
-  menu11.addEventListener("click", (e) => {
-    if (e.target.id === "back") {
-      menu11.style.display = "none";
-      menu1.style.display = "grid";
-    } else if (e.target.id === "easy") {
-      menu11.style.display = "none";
-      menu111.style.display = "grid";
-    } else if (e.target.id === "medium") {
-      menu11.style.display = "none";
-      menu112.style.display = "grid";
-    } else if (e.target.id === "hard") {
-      menu11.style.display = "none";
-      menu113.style.display = "grid";
-    } else if (e.target.id === "very-hard") {
-      menu11.style.display = "none";
-      menu114.style.display = "grid";
-    } else if (e.target.id === "extreme") {
-      menu11.style.display = "none";
-      menu115.style.display = "grid";
-    }
+  backButton1_2.addEventListener("click", () => {
+    menu1.style.display = "block";
+    menu12.style.display = "none";
   });
 
-  // Menünavigation für Menü 1.1.1 bis 1.1.5
   backButton1_1_1.addEventListener("click", () => {
+    menu11.style.display = "block";
     menu111.style.display = "none";
-    menu11.style.display = "grid";
   });
 
   backButton1_1_2.addEventListener("click", () => {
+    menu11.style.display = "block";
     menu112.style.display = "none";
-    menu11.style.display = "grid";
   });
 
   backButton1_1_3.addEventListener("click", () => {
+    menu11.style.display = "block";
     menu113.style.display = "none";
-    menu11.style.display = "grid";
   });
 
   backButton1_1_4.addEventListener("click", () => {
+    menu11.style.display = "block";
     menu114.style.display = "none";
-    menu11.style.display = "grid";
   });
 
   backButton1_1_5.addEventListener("click", () => {
+    menu11.style.display = "block";
     menu115.style.display = "none";
-    menu11.style.display = "grid";
   });
 
-  // Menünavigation für Menü 1.2
-  menu12.addEventListener("click", (e) => {
-    if (e.target.id === "back-1.2") {
-      menu12.style.display = "none";
-      menu1.style.display = "grid";
-    }
-  });
-
-  // Standard auf Deutsch setzen
+  // Initial language update
   updateLanguage("de");
 });
