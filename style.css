@@ -102,7 +102,7 @@ body {
 }
 
 /* Zentrale Felder */
-.center-fields {
+.menu {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,7 +113,6 @@ body {
   width: calc(100% - 30px); /* 15px Abstand links und rechts */
 }
 
-/* Allgemeine Felder */
 .field {
   height: 75px; /* Höhe bleibt wie gewünscht */
   background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
@@ -131,8 +130,4 @@ body {
 
 .field:hover {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
-}
-
-.field.materialien-verwenden {
-  height: auto; /* Dynamische Höhe je nach Text */
 }
