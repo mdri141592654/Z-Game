@@ -1,134 +1,161 @@
-/* Generelle Stileinstellungen */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  user-select: none;
-}
-
+/* Allgemeine Gestaltung */
 body {
   font-family: Arial, sans-serif;
-  background: none;
+  background-color: #f0f0f0;
+  padding: 20px;
   margin: 0;
-  padding: 0;
 }
 
-/* Container für das Spiel */
 #game-container {
-  width: 100%;
-  height: 100%;
-  background-image: url('Tag.jpg'); /* Hintergrundbild */
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown-Menü oben rechts */
+/* Dropdown für die Sprachwahl */
 #language {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  margin-bottom: 20px;
+  padding: 8px;
   font-size: 14px;
-  padding: 2px 5px;
-  background: rgba(100, 100, 100, 0.8); /* Dunkleres Grau, halbtransparent */
-  color: white;
-  border: none;
-  border-radius: 3px;
-  appearance: none;
-  cursor: pointer;
-}
-
-/* Inventar oben links */
-#resources {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 18px;
-  color: white;
-  line-height: 1.5;
-  padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  width: 100%;
   border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
 }
 
-/* Tageszähler oben rechts */
-#day-counter {
-  position: absolute;
-  top: 50px;
-  right: 15px;
-  font-size: 18px;
-  color: #D46A6A; /* Sanftes Rot */
-  line-height: 1.5;
-  text-align: right;
-  padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
-  border-radius: 5px;
-}
-
-/* Health und Energy Bereich */
+/* Balken für Gesundheit und Energie */
 #health-energy {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
 #health-bar, #energy-bar {
-  flex: 1;
-  height: 30px;
-  font-size: 14px;
-  color: white;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 5px;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 #health-bar {
-  background-color: green;
+  width: 100%;
+  height: 20px;
+  background-color: #f44336; /* Rot für Gesundheit */
 }
 
 #energy-bar {
-  background-color: #2A62D8;
+  width: 100%;
+  height: 20px;
+  background-color: #2196F3; /* Blau für Energie */
 }
 
-/* Menü 1 */
+#health-bar span, #energy-bar span {
+  display: block;
+  height: 100%;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Ressourcen-Anzeige */
+#resources {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Tageszähler */
+#day-counter {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Menüs */
 .menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
-  gap: 15px; /* Abstand zwischen den Feldern */
-  width: calc(100% - 30px); /* 15px Abstand links und rechts */
+  display: none;
+  margin-top: 20px;
 }
 
 .field {
-  height: 75px; /* Höhe bleibt wie gewünscht */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
+  background-color: #007bff;
   color: white;
-  font-size: 16px;
-  border-radius: 8px; /* Weniger rundlich */
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
   cursor: pointer;
-  word-wrap: break-word; /* Textumbruch erzwingen */
-  overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
-  white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .field:hover {
-  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
+  background-color: #0056b3;
+}
+
+/* Styling für den Zurück-Button */
+#back, .back-buttons {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#back:hover, .back-buttons:hover {
+  background-color: #d32f2f;
+}
+
+/* Styling für die verschiedenen Untermenüs */
+#menu-1, #menu-1.1, #menu-1.2 {
+  display: block;
+}
+
+#menu-1.1 .field, #menu-1.2 .field {
+  background-color: #4caf50;
+}
+
+#menu-1.1 .field:hover, #menu-1.2 .field:hover {
+  background-color: #388e3c;
+}
+
+/* Weitere Menüs für spezifische Optionen (1.1.1 - 1.1.5) */
+#menu-1.1.1, #menu-1.1.2, #menu-1.1.3, #menu-1.1.4, #menu-1.1.5 {
+  display: none;
+}
+
+#menu-1.1 .field, #menu-1.2 .field {
+  background-color: #4caf50;
+  font-size: 16px;
+}
+
+#menu-1.1 .field:hover, #menu-1.2 .field:hover {
+  background-color: #388e3c;
+}
+
+#menu-1.1 .back-buttons {
+  background-color: #f44336;
+}
+
+#menu-1.1 .back-buttons:hover {
+  background-color: #d32f2f;
+}
+
+/* Weitere Anpassungen */
+.field {
+  transition: background-color 0.3s;
+}
+
+#menu-1, #menu-1.1, #menu-1.2 {
+  display: none;
+}
+
+#menu-1 .field {
+  font-size: 16px;
+}
+
+#resources, #day-counter, #health-bar, #energy-bar {
+  font-size: 14px;
 }
