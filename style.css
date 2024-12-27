@@ -15,28 +15,24 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background: none;
-  margin: 0;
-  padding: 0;
 }
 
-/* Container für das Spiel */
 #game-container {
   width: 100%;
   height: 100%;
-  background-image: url('Tag.jpg'); /* Hintergrundbild */
+  background-image: url('Tag.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-/* Dropdown-Menü oben rechts */
 #language {
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 14px;
   padding: 2px 5px;
-  background: rgba(100, 100, 100, 0.8); /* Dunkleres Grau, halbtransparent */
+  background: rgba(100, 100, 100, 0.8);
   color: white;
   border: none;
   border-radius: 3px;
@@ -44,7 +40,6 @@ body {
   cursor: pointer;
 }
 
-/* Inventar oben links */
 #resources {
   position: absolute;
   top: 15px;
@@ -53,25 +48,22 @@ body {
   color: white;
   line-height: 1.5;
   padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
-/* Tageszähler oben rechts */
 #day-counter {
   position: absolute;
   top: 50px;
   right: 15px;
   font-size: 18px;
-  color: #D46A6A; /* Sanftes Rot */
+  color: #D46A6A;
   line-height: 1.5;
-  text-align: right;
   padding: 7.5px;
-  background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
-/* Health und Energy Bereich */
 #health-energy {
   position: absolute;
   bottom: 15px;
@@ -101,59 +93,31 @@ body {
   background-color: #2A62D8;
 }
 
-/* Menü 1 */
 .menu {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Zwei Felder pro Zeile */
-  gap: 15px; /* Abstand zwischen den Feldern */
-  width: calc(100% - 30px); /* 15px Abstand links und rechts */
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: calc(100% - 30px);
 }
 
 .field {
-  height: 75px; /* Höhe bleibt wie gewünscht */
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
+  background: rgba(128, 128, 128, 0.8);
   color: white;
   font-size: 16px;
-  border-radius: 8px; /* Weniger rundlich */
+  border-radius: 8px;
   cursor: pointer;
-  word-wrap: break-word; /* Textumbruch erzwingen */
-  overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
-  white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
+  white-space: normal;
 }
 
 .field:hover {
-  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
-}
-
-/* Farben für Menü 1.1 */
-#back {
-  background: rgba(70, 110, 150, 0.9); /* Satteres Grau-Blau für "Zurück" */
-}
-
-#easy {
-  background: rgba(85, 170, 85, 0.8); /* Dunkleres Grau-Grün für "Leicht" */
-}
-
-#medium {
-  background: rgba(130, 190, 90, 0.8); /* Übergang von Grau-Grün */
-}
-
-#hard {
-  background: rgba(190, 180, 130, 0.8); /* Mittelgrau mit grünlichem Einschlag */
-}
-
-#very-hard {
-  background: rgba(210, 150, 120, 0.8); /* Hellgrau-Rot */
-}
-
-#extreme {
-  background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
+  background: rgba(100, 100, 100, 0.9);
 }
