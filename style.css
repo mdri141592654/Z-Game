@@ -158,31 +158,6 @@ body {
   background: rgba(220, 120, 100, 0.8); /* Grau-Rot */
 }
 
-/* Farben für Menü 1.1.1 */
-#back-1.1 {
-  background: rgba(70, 110, 150, 0.9); /* Wie Farbe "Zurück" in Menü 1.1 */
-}
-
-#no-weapon {
-  background: rgba(220, 120, 100, 0.8); /* Wie Farbe "extrem" in Menü 1.1 */
-}
-
-#5-shots {
-  background: rgba(210, 150, 120, 0.8); /* Wie Farbe "very hard" in Menü 1.1 */
-}
-
-#10-shots {
-  background: rgba(190, 180, 130, 0.8); /* Wie Farbe "hard" in Menü 1.1 */
-}
-
-#15-shots {
-  background: rgba(130, 190, 90, 0.8); /* Wie Farbe "medium" in Menü 1.1 */
-}
-
-#20-shots {
-  background: rgba(85, 170, 85, 0.8); /* Gleiche Farbe wie „Leicht“ in Menü 1.1 */
-}
-
 /* Stile für Inaktive Felder */
 .inactive {
   background: rgba(100, 100, 100, 0.5) !important; /* Halbtransparenter grauer Hintergrund */
@@ -193,31 +168,4 @@ body {
 .active {
   background: rgba(0, 255, 0, 0.8); /* Beispiel für aktives Feld, z.B. grün */
   cursor: pointer;
-}
-
-/* Menü 1.1.1 - Unterschiedliche Farben */
-#back-1.1,
-#no-weapon,
-#5-shots,
-#10-shots,
-#15-shots,
-#20-shots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  color: white;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-/* Hover-Status für Menü 1.1.1 Felder */
-#back-1.1:hover,
-#no-weapon:hover,
-#5-shots:hover,
-#10-shots:hover,
-#15-shots:hover,
-#20-shots:hover {
-  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
