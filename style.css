@@ -101,7 +101,7 @@ body {
   background-color: #2A62D8;
 }
 
-/* Zentrale Felder */
+/* Menü 1 */
 .menu {
   position: absolute;
   top: 50%;
@@ -133,7 +133,7 @@ body {
   background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
 }
 
-/* Farben für Menü 1.2 */
+/* Farben für Menü 1.1 */
 #back {
   background: rgba(70, 110, 150, 0.9); /* Satteres Grau-Blau für "Zurück" */
 }
@@ -160,23 +160,23 @@ body {
 
 /* Farben für Menü 1.1.1 */
 #back-1.1 {
-  background: rgba(70, 110, 150, 0.9); /* Gleicher Blau-Ton wie in Menü 1.1 */
+  background: rgba(70, 110, 150, 0.9); /* wie Farbe "zurück" 1.1 */
 }
 
 #no-weapon {
-  background: rgba(220, 120, 100, 0.8); /* Gleiche Farbe wie „Extrem“ in Menü 1.1 */
+  background: rgba(220, 120, 100, 0.8); /* wie Farbe "extrem" 1.1 */
 }
 
 #5-shots {
-  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+  background: rgba(210, 150, 120, 0. /* wie Farbe "very hard" 1.1 */
 }
 
 #10-shots {
-  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+  background: rgba(190, 180, 130, 0.8); /* wie Farbe "hard" 1.1 */
 }
 
 #15-shots {
-  background: linear-gradient(to left, red, green); /* Farbverlauf von Rot nach Grün */
+  background: rgba(130, 190, 90, 0.8); /* wie Farbe "medium" 1.1 */
 }
 
 #20-shots {
