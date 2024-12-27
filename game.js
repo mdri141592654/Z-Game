@@ -45,25 +45,4 @@ function changeLanguage(language) {
 }
 
 // Event-Listener für das Menü 1
-document.getElementById('scavenge').addEventListener('click', () => {
-  document.getElementById('menu1').style.display = 'none';
-  document.getElementById('menu1_1').style.display = 'grid';
-});
-
-// Event-Listener für das "Zurück"-Feld in Menü 1.1
-document.getElementById('back').addEventListener('click', () => {
-  document.getElementById('menu1_1').style.display = 'none';
-  document.getElementById('menu1').style.display = 'grid';
-});
-
-// Event-Listener für das Menü 1.2
-document.getElementById('targeted-scavenge').addEventListener('click', () => {
-  document.getElementById('menu1').style.display = 'none';
-  document.getElementById('menu1_2').style.display = 'grid';
-});
-
-// Event-Listener für das "Zurück"-Feld in Menü 1.2
-document.getElementById('back2').addEventListener('click', () => {
-  document.getElementById('menu1_2').style.display = 'none';
-  document.getElementById('menu1').style.display = 'grid';
-});
+document.getElementById('scavenge').addEventListener('click
