@@ -17,7 +17,8 @@ function changeLanguage(language) {
       'leicht': 'Leicht',
       'medium': 'Medium',
       'schwer': 'Schwer',
-      'extrem': 'Extrem',
+      'hart': 'Hart',
+      'extrem': 'Extrem'
     },
     'en': {
       'pluender': 'Loot',
@@ -28,7 +29,8 @@ function changeLanguage(language) {
       'leicht': 'Easy',
       'medium': 'Medium',
       'schwer': 'Hard',
-      'extrem': 'Extreme',
+      'hart': 'Very Hard',
+      'extrem': 'Extreme'
     }
   };
 
@@ -41,8 +43,23 @@ function changeLanguage(language) {
   document.getElementById('easy').innerText = texts.leicht;
   document.getElementById('medium').innerText = texts.medium;
   document.getElementById('hard').innerText = texts.schwer;
+  document.getElementById('very-hard').innerText = texts.hart;
   document.getElementById('extreme').innerText = texts.extrem;
 }
 
-// Event-Listener für das Menü 1
-document.getElementById('scavenge').addEventListener('click
+// Funktion zum Anzeigen eines Menüs
+function showMenu(menuId) {
+  const menus = document.querySelectorAll('.menu');
+  menus.forEach(menu => menu.style.display = 'none');
+  document.getElementById(menuId).style.display = 'grid';
+}
+
+// Event Listener für das erste Menü
+document.getElementById('scavenge').addEventListener('click', () => {
+  showMenu('second-menu');
+});
+
+// Event Listener für das Zurück-Feld im zweiten Menü
+document.getElementById('back').addEventListener('click', () => {
+  showMenu('first-menu');
+});
