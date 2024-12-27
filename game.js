@@ -1,52 +1,69 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menu1 = document.getElementById("menu-1");
-  const menu1_1 = document.getElementById("menu-1-1");
-  const menu1_2 = document.getElementById("menu-1-2");
+// Sprachwechsel Funktion
+const languageSelect = document.getElementById('language');
+languageSelect.addEventListener('change', (event) => {
+  const selectedLanguage = event.target.value;
+  changeLanguage(selectedLanguage);
+});
 
-  const fieldScavenge = document.getElementById("field-scavenge");
-  const fieldTargetedScavenge = document.getElementById("field-targeted-scavenge");
-  const back1_1 = document.getElementById("back-1-1");
-  const back1_2 = document.getElementById("back-1-2");
+// Funktion zum Wechseln der Sprache
+function changeLanguage(language) {
+  const languageTexts = {
+    'de': {
+      'pluender': 'Plündern',
+      'gepluender': 'Gezieltes Plündern',
+      'materialVerwenden': 'Materialien verwenden',
+      'schlafen': 'Schlafen',
+      'zurueck': 'Zurück',
+      'leicht': 'Leicht',
+      'medium': 'Medium',
+      'schwer': 'Schwer',
+      'extrem': 'Extrem',
+    },
+    'en': {
+      'pluender': 'Loot',
+      'gepluender': 'Targeted Loot',
+      'materialVerwenden': 'Use Materials',
+      'schlafen': 'Sleep',
+      'zurueck': 'Back',
+      'leicht': 'Easy',
+      'medium': 'Medium',
+      'schwer': 'Hard',
+      'extrem': 'Extreme',
+    }
+  };
 
-  // Menü 1 → Menü 1.1
-  fieldScavenge.addEventListener("click", () => {
-    hideMenu(menu1);
-    showMenu(menu1_1);
-  });
+  const texts = languageTexts[language];
+  document.getElementById('scavenge').innerText = texts.pluender;
+  document.getElementById('targeted-scavenge').innerText = texts.gepluender;
+  document.getElementById('use-materials').innerText = texts.materialVerwenden;
+  document.getElementById('sleep').innerText = texts.schlafen;
+  document.getElementById('back').innerText = texts.zurueck;
+  document.getElementById('easy').innerText = texts.leicht;
+  document.getElementById('medium').innerText = texts.medium;
+  document.getElementById('hard').innerText = texts.schwer;
+  document.getElementById('extreme').innerText = texts.extrem;
+}
 
-  // Menü 1 → Menü 1.2
-  fieldTargetedScavenge.addEventListener("click", () => {
-    hideMenu(menu1);
-    showMenu(menu1_2);
-  });
+// Event-Listener für das Menü 1
+document.getElementById('scavenge').addEventListener('click', () => {
+  document.getElementById('menu1').style.display = 'none';
+  document.getElementById('menu1_1').style.display = 'grid';
+});
 
-  // Menü 1.1 → Menü 1
-  back1_1.addEventListener("click", () => {
-    hideMenu(menu1_1);
-    showMenu(menu1);
-  });
+// Event-Listener für das "Zurück"-Feld in Menü 1.1
+document.getElementById('back').addEventListener('click', () => {
+  document.getElementById('menu1_1').style.display = 'none';
+  document.getElementById('menu1').style.display = 'grid';
+});
 
-  // Menü 1.2 → Menü 1
-  back1_2.addEventListener("click", () => {
-    hideMenu(menu1_2);
-    showMenu(menu1);
-  });
+// Event-Listener für das Menü 1.2
+document.getElementById('targeted-scavenge').addEventListener('click', () => {
+  document.getElementById('menu1').style.display = 'none';
+  document.getElementById('menu1_2').style.display = 'grid';
+});
 
-  // Sprachumschaltung
-  const languageSelect = document.getElementById("language");
-  languageSelect.addEventListener("change", () => {
-    const selectedLanguage = languageSelect.value;
-    console.log(`Sprache geändert zu: ${selectedLanguage}`);
-    // Weitere Anpassungen für Sprachwechsel könnten hier erfolgen
-  });
-
-  // Funktion: Menü anzeigen
-  function showMenu(menu) {
-    menu.classList.remove("hidden");
-  }
-
-  // Funktion: Menü ausblenden
-  function hideMenu(menu) {
-    menu.classList.add("hidden");
-  }
+// Event-Listener für das "Zurück"-Feld in Menü 1.2
+document.getElementById('back2').addEventListener('click', () => {
+  document.getElementById('menu1_2').style.display = 'none';
+  document.getElementById('menu1').style.display = 'grid';
 });
