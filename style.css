@@ -87,6 +87,11 @@ body, html {
     background: rgba(70, 70, 70, 1);
 }
 
+/* Menü 14 - Anpassung */
+#menu-14 .menu-button {
+    width: 380px; /* Doppelt so breit wie normal */
+}
+
 /* Statusbalken */
 #status-bars {
     position: fixed;
