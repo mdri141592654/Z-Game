@@ -124,22 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Wechsel zu Menü 1.1.4 bei Klick auf "Hart"
-  menu11.addEventListener("click", (e) => {
-    if (e.target.id === "very-hard") {
-      menu11.style.display = "none";
-      menu114.style.display = "grid";
-    }
-  });
-
-  // Wechsel zu Menü 1.1.5 bei Klick auf "Extrem"
-  menu11.addEventListener("click", (e) => {
-    if (e.target.id === "extreme") {
-      menu11.style.display = "none";
-      menu115.style.display = "grid";
-    }
-  });
-
   // Zurück-Button in Menü 1.1.1
   menu111.addEventListener("click", (e) => {
     if (e.target.id === "back") {
@@ -168,14 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
   menu114.addEventListener("click", (e) => {
     if (e.target.id === "back") {
       menu114.style.display = "none";
-      menu11.style.display = "grid"; // Zurück ins Menü 1.1
-    }
-  });
-
-  // Zurück-Button in Menü 1.1.5
-  menu115.addEventListener("click", (e) => {
-    if (e.target.id === "back") {
-      menu115.style.display = "none";
       menu11.style.display = "grid"; // Zurück ins Menü 1.1
     }
   });
