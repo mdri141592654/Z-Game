@@ -1,10 +1,12 @@
-let days = 0;
+// Funktion zum Wechseln zwischen Menüs
+function openMenu(menuId) {
+    const menus = document.querySelectorAll('.menu');
+    menus.forEach(menu => menu.classList.add('hidden'));
 
-// Funktion für den Zähler
-function updateDays() {
-    days++;
-    document.getElementById('days').innerText = days;
+    const activeMenu = document.getElementById(menuId);
+    if (activeMenu) {
+        activeMenu.classList.remove('hidden');
+    }
 }
 
-// Beispiel für automatisches Hochzählen
-setInterval(updateDays, 1000);
+// Der Tageszähler bleibt vorerst inaktiv
