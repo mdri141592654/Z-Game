@@ -1,91 +1,110 @@
-* {
+/* Allgemeines Styling */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('Tag.jpg');
-    background-size: cover;
-    background-position: center;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Hintergrundbild */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    width: 100%;
+    background: url('Tag.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Inventar */
+#inventory {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+/* Tage Zähler */
+#day-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
-.inventory p,
-.days p {
-    margin: 0;
-    padding: 5px;
-}
-
-.menu {
+/* Menü */
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-    width: 50%;
-    padding: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 120px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-button {
-    padding: 20px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
+.menu-button {
+    width: 120px;
+    height: 60px;
     font-size: 16px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: #777;
+.menu-button:hover {
+    background: rgba(255, 255, 255, 1);
 }
 
-.status-bars {
+/* Statusbalken */
+#status-bars {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
+    gap: 10px;
+    width: calc(100% - 40px);
     justify-content: space-between;
-    width: 80%;
-    margin-top: 20px;
 }
 
-.status-bar {
-    width: 48%;
-    text-align: center;
+.bar {
+    flex: 1;
+    height: 20px;
+    position: relative;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
 }
 
-.status-bar .health-label,
-.status-bar .energy-label {
-    font-size: 14px;
-    margin-bottom: 5px;
+#health-bar {
+    background: linear-gradient(to right, green 100%, transparent 0%);
 }
 
-.health-bar,
-.energy-bar {
-    width: 100%;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 15px;
+#energy-bar {
+    background: linear-gradient(to right, blue 100%, transparent 0%);
 }
 
-.health-bar {
-    background-color: #e74c3c;
-}
-
-.energy-bar {
-    background-color: #2ecc71;
+.bar span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
 }
