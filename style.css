@@ -1,4 +1,3 @@
-<style>
 /* Allgemeines Styling */
 body, html {
     margin: 0;
@@ -16,6 +15,18 @@ body, html {
     width: 100vw;
     height: 100vh;
     background: url('Tag.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Ladehintergrund */
+#loading-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('IMG_9645.jpeg') no-repeat center center/cover;
     z-index: -1;
 }
 
@@ -94,64 +105,31 @@ body, html {
 }
 
 .back-button:hover {
-    background-color: rgba(119, 190, 215, 0.8); /* Hover-Effekt bleibt dunkler und transparent */
+    background-color: rgba(119, 190, 215, 0.8);
 }
 
-/* Styling für das obere Feld in Menü 14 */
-.menu-button.display-only {
-    background-color: #808080; /* Grau ohne Transparenz */
-    color: black;
-    text-align: center;
-    font-size: 18px; /* Gleiche Schriftgröße wie die unteren Felder */
-}
-
-/* Statusbalken */
-#status-bars {
-    position: fixed;
-    bottom: 10px;
+/* Ladebalken */
+#loading-bar-container {
+    display: none;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    width: calc(100% - 40px);
-    justify-content: space-between;
-}
-
-.bar {
-    flex: 1;
-    height: 20px;
-    position: relative;
-    border: 2px solid white;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 100px;
+    background-color: #808080;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 100px;
+    color: black;
+    font-size: 18px;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.7);
     overflow: hidden;
 }
 
-#health-bar {
-    background: linear-gradient(to right, green 100%, transparent 0%);
+#loading-bar {
+    height: 100%;
+    background-color: green;
+    width: 0;
+    transition: width 2s linear;
 }
-
-#energy-bar {
-    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 100%, transparent 0%);
-}
-
-.bar span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    color: white;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: center;
-}
-
-/* Styling für nicht-interaktive Anzeige-Felder */
-.menu-button.display-only {
-    cursor: default;
-    background-color: #d3d3d3;
-    color: black;
-    text-align: center;
-    font-size: 18px;
-}
-</style>
