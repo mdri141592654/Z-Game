@@ -129,6 +129,11 @@ body, html {
 }
 
 /* Menü 14 - Anpassung */
+#menu-14 {
+    grid-template-columns: 180px 180px; /* Normale Breite für die unteren Felder */
+    grid-gap: 20px;
+}
+
 #menu-14 .menu-button {
     width: 180px; /* Normale Breite für die unteren Felder */
 }
@@ -141,7 +146,6 @@ body, html {
 
 /* Anordnung und Styling */
 #menu-14 {
-    grid-template-columns: repeat(2, 180px); /* 2 Spalten für die unteren Felder */
+    grid-template-columns: 180px 180px; /* 2 Spalten für die unteren Felder */
     grid-gap: 20px;
-    justify-items: center;
 }
