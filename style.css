@@ -154,4 +154,27 @@ body, html {
     text-align: center;
     font-size: 18px;
 }
+
+/* Menü 141 - Schlafbalken */
+#sleep-bar {
+    background: grey;
+    height: 20px;
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#sleep-bar span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: green;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 12px;
+}
 </style>
