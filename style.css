@@ -1,11 +1,20 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-image: url('Tag.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
 }
 
 .header {
@@ -13,8 +22,7 @@ body {
     justify-content: space-between;
     width: 100%;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .inventory p,
@@ -27,18 +35,21 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px;
     width: 50%;
     padding: 20px;
+    margin-top: 20px;
 }
 
 button {
-    padding: 15px;
+    padding: 20px;
     background-color: #555;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -46,29 +57,29 @@ button:hover {
 }
 
 .status-bars {
-    width: 100%;
-    padding: 10px 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
 }
 
 .status-bar {
-    width: 45%;
+    width: 48%;
     text-align: center;
 }
 
-.status-bar span {
-    display: block;
+.status-bar .health-label,
+.status-bar .energy-label {
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
 .health-bar,
 .energy-bar {
     width: 100%;
-    height: 20px;
+    height: 30px;
     background-color: #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .health-bar {
