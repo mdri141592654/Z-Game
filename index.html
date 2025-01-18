@@ -23,22 +23,28 @@
         <h2>Tage: <span id="days">0</span></h2>
     </div>
 
-    <!-- Menü -->
-    <div id="menu">
-        <button class="menu-button">Plündern</button>
+    <!-- Menü 1 -->
+    <div id="menu-1" class="menu">
+        <button class="menu-button" onclick="openMenu('menu-11')">Plündern</button>
         <button class="menu-button">Gezieltes plündern</button>
         <button class="menu-button">Materialien verwenden</button>
         <button class="menu-button">Schlafen</button>
     </div>
 
-    <!-- Statusbalken -->
-    <div id="status-bars">
-        <div class="bar" id="health-bar">
-            <span>Gesundheit 100/100</span>
-        </div>
-        <div class="bar" id="energy-bar">
-            <span>Energie 100/100</span>
-        </div>
+    <!-- Menü 11 -->
+    <div id="menu-11" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button" onclick="openMenu('menu-111')">Leicht</button>
+        <button class="menu-button">Medium</button>
+        <button class="menu-button">Hart</button>
+    </div>
+
+    <!-- Menü 111 -->
+    <div id="menu-111" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-11')">Zurück</button>
+        <button class="menu-button">Ohne Waffe losziehen</button>
+        <button class="menu-button">10 Schuss mitnehmen</button>
+        <button class="menu-button">20 Schuss mitnehmen</button>
     </div>
 
     <script src="game.js"></script>
