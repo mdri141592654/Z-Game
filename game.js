@@ -9,4 +9,7 @@ function openMenu(menuId) {
     }
 }
 
-// Der Tageszähler bleibt vorerst inaktiv
+// Beim Start nur Menü 1 anzeigen
+document.addEventListener('DOMContentLoaded', () => {
+    openMenu('menu-1');
+});
