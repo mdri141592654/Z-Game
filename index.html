@@ -7,34 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="inventory">
-            <p><strong>Inventar:</strong></p>
-            <p id="food">Nahrung: 10</p>
-            <p id="medicine">Medizin: 5</p>
-            <p id="ammo">Munition: 20</p>
-            <p id="materials">Baumaterial: 15</p>
-        </div>
-        <div class="days">
-            <p><strong>Verstrichene Tage: </strong><span id="dayCounter">0</span></p>
-        </div>
+    <div id="background"></div>
+
+    <!-- Inventar -->
+    <div id="inventory">
+        <h2>Inventar</h2>
+        <p>Nahrung: 0</p>
+        <p>Medizin: 0</p>
+        <p>Munition: 0</p>
+        <p>Baumaterial: 0</p>
     </div>
 
-    <div class="menu">
-        <button id="action1">Aktion 1</button>
-        <button id="action2">Aktion 2</button>
-        <button id="action3">Aktion 3</button>
-        <button id="action4">Aktion 4</button>
+    <!-- Tage Zähler -->
+    <div id="day-counter">
+        <h2>Tage: <span id="days">0</span></h2>
     </div>
 
-    <div class="status-bars">
-        <div class="status-bar">
-            <div class="health-label">Gesundheit</div>
-            <div class="health-bar"></div>
+    <!-- Menü -->
+    <div id="menu">
+        <button class="menu-button">Plündern</button>
+        <button class="menu-button">Gezieltes plündern</button>
+        <button class="menu-button">Materialien verwenden</button>
+        <button class="menu-button">Schlafen</button>
+    </div>
+
+    <!-- Statusbalken -->
+    <div id="status-bars">
+        <div class="bar" id="health-bar">
+            <span>Gesundheit 100/100</span>
         </div>
-        <div class="status-bar">
-            <div class="energy-label">Energie</div>
-            <div class="energy-bar"></div>
+        <div class="bar" id="energy-bar">
+            <span>Energie 100/100</span>
         </div>
     </div>
 
