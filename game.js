@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
       healthBar: "Gesundheit 100/100",
       energyBar: "Energie 100/100",
       menu1: ["Plündern", "Gezieltes Plündern", "Materialien verwenden", "Schlafen"],
-      menu11: ["Zurück", "Leicht", "Medium", "Schwer", "Hart", "Extrem"],
-      menu111: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu112: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu113: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu114: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu115: ["Zurück", "Ohne Waffe losziehen", "5 Schuss mitnehmen", "10 Schuss mitnehmen", "15 Schuss mitnehmen", "20 Schuss mitnehmen"]
+      menu11: ["Zurück", "Leicht", "Medium", "Schwer"],
+      menu111: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu112: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu113: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu114: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
+      menu115: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"]
     },
     en: {
       resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
@@ -34,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       healthBar: "Health 100/100",
       energyBar: "Energy 100/100",
       menu1: ["Scavenge", "Targeted Scavenge", "Use Materials", "Sleep"],
-      menu11: ["Back", "Easy", "Medium", "Hard", "Very Hard", "Extreme"],
-      menu111: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
-      menu112: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
-      menu113: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
-      menu114: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"],
-      menu115: ["Back", "Go Without Weapon", "Take 5 Bullets", "Take 10 Bullets", "Take 15 Bullets", "Take 20 Bullets"]
+      menu11: ["Back", "Easy", "Medium", "Hard"],
+      menu111: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
+      menu112: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
+      menu113: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
+      menu114: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
+      menu115: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"]
     },
   };
 
