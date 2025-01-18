@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menu111: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
       menu112: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
       menu113: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu114: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"],
-      menu115: ["Zurück", "Ohne Waffe losziehen", "10 Schuss mitnehmen", "20 Schuss mitnehmen"]
     },
     en: {
       resources: "Food: 00<br>Medicine: 00<br>Ammo: 00<br>Materials: 00",
@@ -38,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menu111: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
       menu112: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
       menu113: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
-      menu114: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"],
-      menu115: ["Back", "Go Without Weapon", "Take 10 Bullets", "Take 20 Bullets"]
     },
   };
 
@@ -54,8 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu111Fields = menu111.getElementsByClassName("field");
     const menu112Fields = menu112.getElementsByClassName("field");
     const menu113Fields = menu113.getElementsByClassName("field");
-    const menu114Fields = menu114.getElementsByClassName("field");
-    const menu115Fields = menu115.getElementsByClassName("field");
 
     Array.from(menu1Fields).forEach((field, index) => {
       field.textContent = translations[lang].menu1[index];
@@ -75,14 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Array.from(menu113Fields).forEach((field, index) => {
       field.textContent = translations[lang].menu113[index];
-    });
-
-    Array.from(menu114Fields).forEach((field, index) => {
-      field.textContent = translations[lang].menu114[index];
-    });
-
-    Array.from(menu115Fields).forEach((field, index) => {
-      field.textContent = translations[lang].menu115[index];
     });
   };
 
