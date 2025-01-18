@@ -88,6 +88,15 @@ body, html {
     background: rgba(70, 70, 70, 1);
 }
 
+/* Spezielle Anpassungen für "Zurück" Tasten */
+.back-button {
+    background-color: #a1c4e7;
+}
+
+.back-button:hover {
+    background-color: #89b4d2;
+}
+
 /* Statusbalken */
 #status-bars {
     position: fixed;
@@ -127,5 +136,14 @@ body, html {
     font-size: 12px;
     line-height: 20px;
     text-align: center;
+}
+
+/* Styling für nicht-interaktive Anzeige-Felder */
+.menu-button.display-only {
+    cursor: default;
+    background-color: #d3d3d3;
+    color: black;
+    text-align: center;
+    font-size: 18px;
 }
 </style>
