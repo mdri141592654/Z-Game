@@ -114,21 +114,21 @@ body {
 }
 
 .field {
-  height: 75px; /* Höhe bleibt wie gewünscht */
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(128, 128, 128, 0.8); /* Grau, halbtransparent */
+  background: rgba(128, 128, 128, 0.8);
   color: white;
   font-size: 16px;
-  border-radius: 8px; /* Weniger rundlich */
+  border-radius: 8px;
   cursor: pointer;
-  word-wrap: break-word; /* Textumbruch erzwingen */
-  overflow-wrap: break-word; /* Kompatibilität für verschiedene Browser */
-  white-space: normal; /* Ermöglicht Umbruch auf mehrere Zeilen */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .field:hover {
-  background: rgba(100, 100, 100, 0.9); /* Etwas dunkler beim Hover */
+  background: rgba(100, 100, 100, 0.9);
 }
