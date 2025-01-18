@@ -154,32 +154,28 @@ body, html {
     font-size: 18px;
 }
 
-/* Menü 141 - Schlafbalken */
+/* Styling für Menü 141 */
 #menu-141 {
-    display: none;
-    padding: 20px;
-    text-align: center;
-}
-
-#sleep-bar {
-    background: grey;
-    height: 20px;
-    width: 100%;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-#sleep-bar span {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#menu-141 .menu-button {
+    background-color: #808080;
+    width: 360px; /* Entsprechend dem Display-only Button in Menü 14 */
+    color: black;
     text-align: center;
-    line-height: 20px;
-    color: white;
-    font-size: 12px;
+    font-size: 18px;
+    cursor: default;
+}
+
+#menu-141 .menu-button.loading {
+    background: linear-gradient(to right, green 0%, transparent 0%);
+    transition: background 3s;
 }
