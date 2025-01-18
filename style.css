@@ -65,10 +65,11 @@ body, html {
     grid-gap: 20px;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
 }
 
-.menu.hidden {
-    display: none;
+.menu:not(.hidden) {
+    visibility: visible;
 }
 
 .menu-button {
