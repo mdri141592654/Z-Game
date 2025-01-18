@@ -26,13 +26,21 @@
     <!-- Menü 1 -->
     <div id="menu-1" class="menu">
         <button class="menu-button" onclick="openMenu('menu-11')">Plündern</button>
-        <button class="menu-button">Gezieltes plündern</button>
+        <button class="menu-button" onclick="openMenu('menu-12')">Gezieltes plündern</button>
         <button class="menu-button">Materialien verwenden</button>
         <button class="menu-button">Schlafen</button>
     </div>
 
     <!-- Menü 11 -->
     <div id="menu-11" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button" onclick="openMenu('menu-111')">Leicht</button>
+        <button class="menu-button" onclick="openMenu('menu-112')">Medium</button>
+        <button class="menu-button" onclick="openMenu('menu-113')">Hart</button>
+    </div>
+
+    <!-- Menü 12 -->
+    <div id="menu-12" class="menu hidden">
         <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
         <button class="menu-button" onclick="openMenu('menu-111')">Leicht</button>
         <button class="menu-button" onclick="openMenu('menu-112')">Medium</button>
