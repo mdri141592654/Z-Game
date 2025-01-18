@@ -8,19 +8,14 @@ function openMenu(menuId) {
         activeMenu.classList.remove('hidden');
     }
 
-    // Wenn das "Jetzt schlafen" Button gedrückt wird, Menü 141 anzeigen
+    // Wenn das "Jetzt schlafen" Button gedrückt wird, Menü 141 anzeigen und Ladebalken starten
     if (menuId === 'menu-141') {
-        const sleepButton = document.querySelector('#menu-14 .menu-button');
-        sleepButton.disabled = true; // Button wird deaktiviert, wenn der Schlafvorgang läuft
-        const loadingBar = document.querySelector('#menu-141 .menu-button');
-        loadingBar.style.background = 'linear-gradient(to right, green 0%, transparent 0%)';
-        setTimeout(() => {
-            loadingBar.style.background = 'linear-gradient(to right, green 100%, transparent 0%)';
-        }, 100);
+        const loadingBar = document.getElementById('sleeping-bar');
+        loadingBar.style.width = '100%';
     }
 }
 
-// Menü 141 nach dem Schlafen wieder verbergen
+// Menü 141 nach dem Schlafen wieder verbergen und Menü 1 wieder anzeigen
 document.querySelector("#menu-141 .menu-button").addEventListener("transitionend", () => {
     document.getElementById("menu-141").classList.add("hidden");
     openMenu("menu-1");
