@@ -1,3 +1,4 @@
+<style>
 /* Allgemeines Styling */
 body, html {
     margin: 0;
@@ -127,25 +128,4 @@ body, html {
     line-height: 20px;
     text-align: center;
 }
-
-/* Menü 14 - Anpassung */
-#menu-14 {
-    grid-template-columns: 180px 180px; /* Normale Breite für die unteren Felder */
-    grid-gap: 20px;
-}
-
-#menu-14 .menu-button {
-    width: 180px; /* Normale Breite für die unteren Felder */
-}
-
-#menu-14 .menu-button:nth-child(1) {
-    grid-column: span 2; /* Oberes Feld nimmt die gesamte Breite */
-    text-align: center; /* Text mittig ausrichten */
-    font-size: 16px; /* Schriftgröße anpassen, damit sie der Größe der unteren Felder entspricht */
-}
-
-/* Anordnung und Styling */
-#menu-14 {
-    grid-template-columns: 180px 180px; /* 2 Spalten für die unteren Felder */
-    grid-gap: 20px;
-}
+</style>
