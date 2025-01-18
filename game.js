@@ -13,3 +13,34 @@ function openMenu(menuId) {
 document.addEventListener('DOMContentLoaded', () => {
     openMenu('menu-1');
 });
+
+// Funktion zum Schlafen
+function sleep() {
+    openMenu('menu-141'); // Menü 141 öffnen
+    let sleepBar = document.getElementById('sleep-bar');
+    let sleepText = sleepBar.querySelector('span');
+    
+    let width = 0;
+    let interval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                openMenu('menu-1'); // Zurück zu Menü 1
+                increaseDayCounter(); // Zähler erhöhen
+            }, 500);
+        } else {
+            width++;
+            sleepBar.style.width = width + '%';
+            sleepText.innerText = 'Schlafen... ' + width + '%';
+        }
+    }, 30); // Ladebalken dauert 3 Sekunden (100% / 30ms)
+}
+
+// Funktion zum Erhöhen des Tageszählers
+function increaseDayCounter() {
+    let dayCount = document.getElementById('days');
+    dayCount.innerText = parseInt(dayCount.innerText) + 1;
+}
+
+// Eventlistener für den „Jetzt schlafen“-Button im Menü 14
+document.querySelector('#menu-14 .menu-button:last-child').addEventListener('click', sleep);
