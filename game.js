@@ -9,4 +9,19 @@ function openMenu(menuId) {
     }
 
     // Wenn das "Jetzt schlafen" Button gedrückt wird, Menü 141 anzeigen
-    if (menuId === '
+    if (menuId === 'menu-141') {
+        const sleepButton = document.querySelector('#menu-14 .menu-button');
+        sleepButton.disabled = true; // Button wird deaktiviert, wenn der Schlafvorgang läuft
+        const loadingBar = document.querySelector('#menu-141 .menu-button');
+        loadingBar.style.background = 'linear-gradient(to right, green 0%, transparent 0%)';
+        setTimeout(() => {
+            loadingBar.style.background = 'linear-gradient(to right, green 100%, transparent 0%)';
+        }, 100);
+    }
+}
+
+// Menü 141 nach dem Schlafen wieder verbergen
+document.querySelector("#menu-141 .menu-button").addEventListener("transitionend", () => {
+    document.getElementById("menu-141").classList.add("hidden");
+    openMenu("menu-1");
+});
