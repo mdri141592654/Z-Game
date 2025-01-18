@@ -1,101 +1,129 @@
-body {
-    font-family: Arial, sans-serif;
+/* Allgemeines Styling */
+body, html {
     margin: 0;
     padding: 0;
-    background-image: url('Tag.jpg');
-    background-size: cover;
-    background-position: center;
+    font-family: Arial, sans-serif;
+    background: #000;
+    overflow: hidden;
 }
 
+/* Hintergrundbild */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('Tag.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Inventar */
+#inventory {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#inventory h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+#inventory p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/* Tage Zähler */
+#day-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Menü */
 .menu {
-    display: grid;
-    justify-items: center;
-    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
 }
 
-.menu.hidden {
-    display: none;
+.menu:not(.hidden) {
+    visibility: visible;
 }
 
 .menu-button {
-    width: 100%;
-    padding: 20px;
-    background-color: #333;
+    width: 180px;
+    height: 100px;
+    font-size: 18px;
+    background: rgba(50, 50, 50, 0.9);
     color: white;
-    border: none;
-    margin: 10px;
-    font-size: 1.2em;
-    cursor: pointer;
-    text-align: center;
+    border: 2px solid black;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .menu-button:hover {
-    background-color: #555;
+    background: rgba(70, 70, 70, 1);
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.full-width {
-    width: 100%;
-}
-
-#inventory, #day-counter {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-}
-
-#day-counter {
-    top: 50px;
-}
-
+/* Statusbalken */
 #status-bars {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
-    left: 10px;
-    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
+    gap: 10px;
+    width: calc(100% - 40px);
     justify-content: space-between;
 }
 
 .bar {
-    width: 48%;
+    flex: 1;
     height: 20px;
-    background-color: #ccc;
-    border-radius: 5px;
     position: relative;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
 }
 
 #health-bar {
-    background-color: green;
+    background: linear-gradient(to right, green 100%, transparent 0%);
 }
 
 #energy-bar {
-    background-color: blue;
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 100%, transparent 0%);
 }
 
 .bar span {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     color: white;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
 }
