@@ -28,7 +28,7 @@
         <button class="menu-button" onclick="openMenu('menu-11')">Plündern</button>
         <button class="menu-button" onclick="openMenu('menu-12')">Gezieltes plündern</button>
         <button class="menu-button" onclick="openMenu('menu-13')">Materialien verwenden</button>
-        <button class="menu-button">Schlafen</button>
+        <button class="menu-button" onclick="openMenu('menu-14')">Schlafen</button>
     </div>
 
     <!-- Menü 11 -->
@@ -77,6 +77,15 @@
         <button class="menu-button">Ohne Waffe losziehen</button>
         <button class="menu-button">10 Schuss mitnehmen</button>
         <button class="menu-button">20 Schuss mitnehmen</button>
+    </div>
+
+    <!-- Menü 14 -->
+    <div id="menu-14" class="menu hidden">
+        <button class="menu-button full-width" onclick="openMenu('menu-1')">Schlafen?</button>
+        <div class="row">
+            <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+            <button class="menu-button">Ok</button>
+        </div>
     </div>
 
     <!-- Statusbalken -->
