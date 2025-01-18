@@ -154,6 +154,22 @@ body, html {
     font-size: 18px;
 }
 
+/* Menü 141 Ladebalken */
+#menu-141 .loading-bar {
+    position: relative;
+    background-color: #d3d3d3;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#menu-141 .loading-bar #sleeping-bar {
+    height: 100%;
+    background-color: green;
+    width: 0;
+    transition: width 3s ease-in-out;
+}
+
 /* Styling für Menü 141 */
 #menu-141 {
     position: absolute;
