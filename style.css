@@ -90,11 +90,19 @@ body, html {
 
 /* Spezielle Anpassungen für "Zurück" Tasten */
 .back-button {
-    background-color: #a1c4e7;
+    background-color: rgba(135, 206, 235, 0.8); /* Leicht dunkler und transparent */
 }
 
 .back-button:hover {
-    background-color: #89b4d2;
+    background-color: rgba(119, 190, 215, 0.8); /* Hover-Effekt bleibt dunkler und transparent */
+}
+
+/* Styling für das obere Feld in Menü 14 */
+.menu-button.display-only {
+    background-color: #808080; /* Grau ohne Transparenz */
+    color: black;
+    text-align: center;
+    font-size: 18px; /* Gleiche Schriftgröße wie die unteren Felder */
 }
 
 /* Statusbalken */
