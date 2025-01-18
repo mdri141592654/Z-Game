@@ -3,102 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menüsystem</title>
+    <title>Zombie Apokalypse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Hintergrundbild -->
     <div id="background"></div>
-
-    <!-- Menü 1 -->
-    <div id="menu-1" class="menu">
-        <button class="menu-button" onclick="goToMenu(14)">Menü 14</button>
-        <button class="menu-button" onclick="goToMenu(141)">Jetzt schlafen</button>
-    </div>
-
-    <!-- Menü 14 -->
-    <div id="menu-14" class="menu">
-        <button class="menu-button" onclick="goBack()">Zurück</button>
-        <button class="menu-button display-only">Energie</button>
-        <button class="menu-button display-only">Gesundheit</button>
-        <button class="menu-button" onclick="goToMenu(141)">Jetzt schlafen</button>
-    </div>
-
-    <!-- Menü 141 - Schlaf Fortschritt -->
-    <div id="menu-141">
-        <div id="sleep-bar">
-            <span id="sleep-progress">Schlafen…</span>
-        </div>
-    </div>
-
-    <!-- Statusbalken für Energie und Gesundheit -->
-    <div id="status-bars">
-        <div id="health-bar" class="bar">
-            <span>Gesundheit</span>
-        </div>
-        <div id="energy-bar" class="bar">
-            <span>Energie</span>
-        </div>
-    </div>
 
     <!-- Inventar -->
     <div id="inventory">
         <h2>Inventar</h2>
-        <p>Items: 0</p>
+        <p>Nahrung: 0</p>
+        <p>Medizin: 0</p>
+        <p>Munition: 0</p>
+        <p>Baumaterial: 0</p>
     </div>
 
-    <!-- Tages Zähler -->
+    <!-- Tage Zähler -->
     <div id="day-counter">
-        <h2>Tag: 1</h2>
+        <h2>Tage: <span id="days">0</span></h2>
     </div>
 
-    <script>
-        let currentMenu = 1;
-        let dayCount = 1;
-        let sleepProgress = 0;
-        
-        // Funktion um zum nächsten Menü zu springen
-        function goToMenu(menuNumber) {
-            document.getElementById(`menu-${currentMenu}`).classList.add("hidden");
-            currentMenu = menuNumber;
-            document.getElementById(`menu-${currentMenu}`).classList.remove("hidden");
+    <!-- Menü 1 -->
+    <div id="menu-1" class="menu">
+        <button class="menu-button" onclick="openMenu('menu-11')">Plündern</button>
+        <button class="menu-button" onclick="openMenu('menu-12')">Gezieltes plündern</button>
+        <button class="menu-button" onclick="openMenu('menu-13')">Materialien verwenden</button>
+        <button class="menu-button" onclick="openMenu('menu-14')">Schlafen</button>
+    </div>
 
-            // Schlafen Logik in Menü 141
-            if (menuNumber === 141) {
-                startSleepProgress();
-            }
-        }
+    <!-- Menü 11 -->
+    <div id="menu-11" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button" onclick="openMenu('menu-111')">Leicht</button>
+        <button class="menu-button" onclick="openMenu('menu-112')">Medium</button>
+        <button class="menu-button" onclick="openMenu('menu-113')">Hart</button>
+    </div>
 
-        // Zurück-Funktion
-        function goBack() {
-            document.getElementById(`menu-${currentMenu}`).classList.add("hidden");
-            currentMenu = 1;
-            document.getElementById(`menu-${currentMenu}`).classList.remove("hidden");
-        }
+    <!-- Menü 12 -->
+    <div id="menu-12" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button" onclick="openMenu('menu-111')">Leicht</button>
+        <button class="menu-button" onclick="openMenu('menu-112')">Medium</button>
+        <button class="menu-button" onclick="openMenu('menu-113')">Hart</button>
+    </div>
 
-        // Funktion für den Schlafbalken in Menü 141
-        function startSleepProgress() {
-            const sleepBar = document.getElementById("sleep-bar");
-            const sleepProgressSpan = document.getElementById("sleep-progress");
+    <!-- Menü 13 -->
+    <div id="menu-13" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button">Essen</button>
+        <button class="menu-button">Medizin nehmen</button>
+        <button class="menu-button">Base verstärken</button>
+    </div>
 
-            let progressInterval = setInterval(function() {
-                sleepProgress += 1;
-                sleepBar.style.width = sleepProgress + "%";
-                sleepProgressSpan.textContent = "Schlafen… " + sleepProgress + "%";
+    <!-- Menü 111 -->
+    <div id="menu-111" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-11')">Zurück</button>
+        <button class="menu-button">Ohne Waffe losziehen</button>
+        <button class="menu-button">10 Schuss mitnehmen</button>
+        <button class="menu-button">20 Schuss mitnehmen</button>
+    </div>
 
-                if (sleepProgress >= 100) {
-                    clearInterval(progressInterval);
-                    goBack(); // Zurück zu Menü 1 nach 3 Sekunden
-                    dayCount++; // Tag erhöhen
-                    document.getElementById("day-counter").innerHTML = `<h2>Tag: ${dayCount}</h2>`;
-                }
-            }, 30); // 3 Sekunden für den Balken
-        }
+    <!-- Menü 112 -->
+    <div id="menu-112" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-11')">Zurück</button>
+        <button class="menu-button">Ohne Waffe losziehen</button>
+        <button class="menu-button">10 Schuss mitnehmen</button>
+        <button class="menu-button">20 Schuss mitnehmen</button>
+    </div>
 
-        // Start Menü anzeigen
-        goToMenu(1);
-    </script>
+    <!-- Menü 113 -->
+    <div id="menu-113" class="menu hidden">
+        <button class="menu-button" onclick="openMenu('menu-11')">Zurück</button>
+        <button class="menu-button">Ohne Waffe losziehen</button>
+        <button class="menu-button">10 Schuss mitnehmen</button>
+        <button class="menu-button">20 Schuss mitnehmen</button>
+    </div>
 
+    <!-- Menü 14 -->
+    <div id="menu-14" class="menu hidden">
+        <div class="menu-button display-only" style="grid-column: span 2; width: calc(360px + 20px); background-color: #d3d3d3; color: black; text-align: center; font-size: 18px;">Schlafen?</div>
+        <button class="menu-button back-button" onclick="openMenu('menu-1')">Zurück</button>
+        <button class="menu-button" onclick="openMenu('menu-141')">Jetzt schlafen</button>
+    </div>
+
+    <!-- Menü 141 -->
+    <div id="menu-141" class="menu hidden">
+        <div class="menu-button loading">Schlafen...</div>
+    </div>
+
+    <!-- Statusbalken -->
+    <div id="status-bars">
+        <div id="health-bar" class="bar">
+            <span>Gesundheit 100/100</span>
+        </div>
+        <div id="energy-bar" class="bar">
+            <span>Energie 100/100</span>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
