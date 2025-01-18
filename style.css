@@ -87,11 +87,6 @@ body, html {
     background: rgba(70, 70, 70, 1);
 }
 
-/* Menü 14 - Anpassung */
-#menu-14 .menu-button {
-    width: 380px; /* Doppelt so breit wie normal */
-}
-
 /* Statusbalken */
 #status-bars {
     position: fixed;
@@ -131,4 +126,26 @@ body, html {
     font-size: 12px;
     line-height: 20px;
     text-align: center;
+}
+
+/* Menü 14 - Anpassung */
+#menu-14 .menu-button {
+    width: 180px; /* Normale Breite für die unteren Felder */
+}
+
+#menu-14 .menu-button:nth-child(1) {
+    grid-column: span 2; /* Oberes Feld nimmt die gesamte Breite */
+    text-align: center; /* Text mittig ausrichten */
+}
+
+/* Text mittig platzieren */
+#menu-14 .menu-button:nth-child(1) {
+    font-size: 24px;
+}
+
+/* Anordnung und Styling */
+#menu-14 {
+    grid-template-columns: repeat(2, 180px); /* 2 Spalten für die unteren Felder */
+    grid-gap: 20px;
+    justify-items: center;
 }
