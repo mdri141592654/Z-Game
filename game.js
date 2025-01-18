@@ -148,13 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Zurück-Button in Menü 1.1.4
-  menu114.addEventListener("click", (e) => {
-    if (e.target.id === "back") {
-      menu114.style.display = "none";
-      menu11.style.display = "grid"; // Zurück ins Menü 1.1
-    }
-  });
 
   backButton.addEventListener("click", () => {
     menu11.style.display = "none";
