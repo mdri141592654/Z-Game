@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu111 = document.getElementById("menu-1.1.1");
   const menu112 = document.getElementById("menu-1.1.2");
   const menu113 = document.getElementById("menu-1.1.3");
-  const menu114 = document.getElementById("menu-1.1.4");
-  const menu115 = document.getElementById("menu-1.1.5");
   const backButton = document.getElementById("back");
 
   const translations = {
