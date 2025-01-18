@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="background"></div>
+    <div id="loading-background" class="hidden"></div>
 
     <!-- Inventar -->
     <div id="inventory">
@@ -81,9 +82,9 @@
 
     <!-- Menü 14 -->
     <div id="menu-14" class="menu hidden">
-        <div class="menu-button display-only" style="grid-column: span 2; width: calc(360px + 20px); background-color: #d3d3d3; color: black; text-align: center; font-size: 18px;">Schlafen?</div>
+        <div class="menu-button display-only" style="grid-column: span 2;">Schlafen?</div>
         <button class="menu-button back-button" onclick="openMenu('menu-1')">Zurück</button>
-        <button class="menu-button" onclick="openMenu('menu-1')">Jetzt schlafen</button>
+        <button class="menu-button" onclick="startSleeping()">Jetzt schlafen</button>
     </div>
 
     <!-- Statusbalken -->
@@ -96,7 +97,12 @@
         </div>
     </div>
 
+    <!-- Ladebalken -->
+    <div id="loading-bar-container" class="hidden">
+        <div id="loading-bar"></div>
+        <span>Schlafen...</span>
+    </div>
+
     <script src="game.js"></script>
 </body>
 </html>
-
