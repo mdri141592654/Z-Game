@@ -154,20 +154,16 @@ body, html {
     font-size: 18px;
 }
 
-/* Ladebalken Styling */
-.loading-bar {
-    width: 360px; 
-    height: 20px; 
-    background-color: #d3d3d3; 
-    border-radius: 5px; 
-    margin-top: 10px; 
-    overflow: hidden;
-    position: relative;
-}
-
-#sleeping-bar {
-    height: 100%; 
-    background-color: green; 
-    width: 0%; /* Startwert */
-    transition: width 3s ease; /* Übergangseffekt */
+/* Ladebalken mit Text */
+.loading-bar-with-text {
+    width: 0%; /* Start bei 0% */
+    height: 40px; /* Höhe des Ladebalkens */
+    line-height: 40px; /* Vertikale Zentrierung des Textes */
+    text-align: center; /* Text zentriert */
+    background-color: green; /* Farbe des Ladebalkens */
+    color: white; /* Textfarbe */
+    border-radius: 5px; /* Abgerundete Ecken */
+    overflow: hidden; /* Kein Überlauf */
+    font-size: 18px; /* Schriftgröße */
+    transition: width 3s ease; /* Animation der Breite */
 }
