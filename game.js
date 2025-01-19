@@ -16,7 +16,8 @@ function openMenu(menuId) {
         }, 100);
 
         // Hintergrundbild auf IMG_9645.jpeg ändern
-        document.body.style.backgroundImage = "url('IMG_9645.jpeg')";
+        const background = document.getElementById('background');
+        background.style.backgroundImage = "url('IMG_9645.jpeg')";
 
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
@@ -28,7 +29,8 @@ function openMenu(menuId) {
 
     // Wenn auf Menü 1 gewechselt wird, Hintergrundbild auf Tag.jpg setzen
     if (menuId === 'menu-1') {
-        document.body.style.backgroundImage = "url('Tag.jpg')";
+        const background = document.getElementById('background');
+        background.style.backgroundImage = "url('Tag.jpg')";
     }
 }
 
