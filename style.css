@@ -154,45 +154,20 @@ body, html {
     font-size: 18px;
 }
 
-/* Menü 141 Ladebalken */
-#menu-141 .loading-bar {
-    position: relative;
-    background-color: #d3d3d3;
-    margin-top: 10px;
-    border-radius: 5px;
+/* Ladebalken Styling */
+.loading-bar {
+    width: 360px; 
+    height: 20px; 
+    background-color: #d3d3d3; 
+    border-radius: 5px; 
+    margin-top: 10px; 
     overflow: hidden;
-    width: 360px; /* Stellt sicher, dass der Balken die richtige Breite hat */
+    position: relative;
 }
 
-#menu-141 .loading-bar #sleeping-bar {
-    height: 100%;
-    background-color: green;
-    width: 0; /* Startwert 0%, damit der Balken anfangs unsichtbar ist */
-    transition: width 3s ease-in-out;
-}
-
-/* Styling für Menü 141 */
-#menu-141 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-}
-
-#menu-141 .menu-button {
-    background-color: #808080;
-    width: 360px; /* Entsprechend dem Display-only Button in Menü 14 */
-    color: black;
-    text-align: center;
-    font-size: 18px;
-    cursor: default;
-}
-
-#menu-141 .menu-button.loading {
-    background: linear-gradient(to right, green 0%, transparent 0%);
-    transition: background 3s;
+#sleeping-bar {
+    height: 100%; 
+    background-color: green; 
+    width: 0%; /* Startwert */
+    transition: width 3s ease; /* Übergangseffekt */
 }
