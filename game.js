@@ -15,12 +15,20 @@ function openMenu(menuId) {
             loadingBar.style.width = '100%'; // Starte die Animation
         }, 100);
 
+        // Hintergrundbild auf IMG_9645.jpeg ändern
+        document.body.style.backgroundImage = "url('IMG_9645.jpeg')";
+
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
             increaseDayCounter(); // Tageszähler erhöhen
             loadingBar.style.width = '0%'; // Ladebalken zurücksetzen für das nächste Mal
             openMenu('menu-1');
         }, 3000);
+    }
+
+    // Wenn auf Menü 1 gewechselt wird, Hintergrundbild auf Tag.jpg setzen
+    if (menuId === 'menu-1') {
+        document.body.style.backgroundImage = "url('Tag.jpg')";
     }
 }
 
@@ -29,17 +37,4 @@ function increaseDayCounter() {
     const dayCounter = document.getElementById('days');
     let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
     dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
-}
-
-// Beim Öffnen von Menü 141
-document.getElementById("menu-141").addEventListener("transitionend", function() {
-    if (!this.classList.contains("hidden")) {
-        document.getElementById("background").style.backgroundImage = "url('IMG_9645.jpeg')";
-    }
-});
-
-// Beim Schließen von Menü 141
-function closeMenu141() {
-    document.getElementById("menu-141").classList.add("hidden");
-    document.getElementById("background").style.backgroundImage = "url('Tag.jpg')";
 }
