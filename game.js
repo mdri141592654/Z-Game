@@ -15,9 +15,17 @@ function openMenu(menuId) {
             loadingBar.style.width = '100%'; // Starte die Animation
         }, 100);
 
-        // Nach 3 Sekunden zum Hauptmenü zurückkehren
+        // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
+            increaseDayCounter(); // Tageszähler erhöhen
             openMenu('menu-1');
         }, 3000);
     }
+}
+
+// Funktion zum Erhöhen des Tageszählers
+function increaseDayCounter() {
+    const dayCounter = document.getElementById('days');
+    let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
+    dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
 }
