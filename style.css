@@ -150,7 +150,7 @@ body, html {
 /* Ladebalken Styling */
 .loading-bar {
     width: 380px; /* Hier kannst du die Breite nach Bedarf ändern */
-    height: 100px;
+    height: 30px;
     background-color: rgba(130, 130, 130, 0.9);
     border-radius: 5px;
     margin-top: 10px;
