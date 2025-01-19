@@ -156,7 +156,7 @@ body, html {
 
 /* Ladebalken mit Text */
 .#menu-141 .menu-button {
-    width: 400px; /* Breite des gesamten Ladebalkens */
+    width: 380px; /* Breite des gesamten Ladebalkens */
     height: 50px; /* Höhe des Balkens */
     background: rgba(50, 50, 50, 0.9);
     color: white;
