@@ -19,11 +19,11 @@ function openMenu(menuId) {
         // Zuerst das Bild ausblenden
         background.classList.add('fade-out');
 
-        // Nach 1 Sekunde (Übergangszeit), das Bild ändern und zurückblenden
+        // Nach x Sekunde (Übergangszeit), das Bild ändern und zurückblenden
         setTimeout(() => {
             background.style.backgroundImage = "url('IMG_9645.jpeg')";
             background.classList.remove('fade-out'); // Bild wieder einblenden
-        }, 1000); // 1000ms warten, um den Übergang zu beenden
+        },300); // xms warten, um den Übergang zu beenden
 
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
