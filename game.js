@@ -9,18 +9,6 @@ function openMenu(menuId) {
 
     const background = document.getElementById('background');
 
-    // inventar bei start
-function setInitialInventory() {
-    const initialMunition = 15; // Start-Menge Munition
-    const initialFood = 10; 
-    const initialMedicine = 5;
-    const initialMateial =10;
-
-    // Setze die Werte in den HTML-Elementen
-    document.getElementById('munition-count').textContent = initialMunition;
-    document.getElementById('gegenstand1-count').textContent = initialGegenstand1;
-    document.getElementById('gegenstand2-count').textContent = initialGegenstand2;
-}
 
 // Aufruf der Funktion beim Spielstart
 setInitialInventory();
@@ -82,4 +70,18 @@ function increaseDayCounter() {
     const dayCounter = document.getElementById('days');
     let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
     dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
+}
+
+
+    // inventar bei start
+function setInitialInventory() {
+    const initialMunition = 15; // Start-Menge Munition
+    const initialFood = 10; 
+    const initialMedicine = 5;
+    const initialMateial =10;
+
+    // Setze die Werte in den HTML-Elementen
+    document.getElementById('munition-count').textContent = initialMunition;
+    document.getElementById('gegenstand1-count').textContent = initialGegenstand1;
+    document.getElementById('gegenstand2-count').textContent = initialGegenstand2;
 }
