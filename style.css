@@ -156,18 +156,28 @@ body, html {
 
 /* Ladebalken Styling */
 .loading-bar {
-    width: 380px; 
-    height: 100px; 
-    background-color: #d3d3d3; 
-    border-radius: 5px; 
-    margin-top: 10px; 
+    width: 380px; /* Hier kannst du die Breite nach Bedarf ändern */
+    height: 100px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    margin-top: 10px;
     overflow: hidden;
     position: relative;
 }
 
 #sleeping-bar {
-    height: 100%; 
-    background-color: green; 
+    height: 100%;
+    background-color: green;
     width: 0%; /* Startwert */
     transition: width 3s ease; /* Übergangseffekt */
+}
+
+.loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
