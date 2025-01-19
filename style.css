@@ -89,9 +89,12 @@ body, html {
 
 /* Styling für das obere Feld in Menü 14 */
 .menu-button.display-only {
-    background-color: rgba(130, 130, 130, 0.9);
+    background-color: #808080;
     color: black;
-    font-size: 18px; /* Gleiche Schriftgröße wie die unteren Felder */
+    text-align: center;
+    font-size: 18px;
+    line-height: 100px; /* Gleiche Höhe wie das Element */
+    height: 100px; /* Höhe des Elements */
 }
 
 /* Statusbalken */
