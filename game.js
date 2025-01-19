@@ -15,9 +15,16 @@ function openMenu(menuId) {
             loadingBar.style.width = '100%'; // Starte die Animation
         }, 100);
 
-        // Hintergrundbild auf IMG_9645.jpeg ändern
         const background = document.getElementById('background');
-        background.style.backgroundImage = "url('IMG_9645.jpeg')";
+
+        // Zuerst das Bild ausblenden
+        background.classList.add('fade-out');
+
+        // Nach 1 Sekunde (Übergangszeit), das Bild ändern und zurückblenden
+        setTimeout(() => {
+            background.style.backgroundImage = "url('IMG_9645.jpeg')";
+            background.classList.remove('fade-out'); // Bild wieder einblenden
+        }, 1000); // 1000ms warten, um den Übergang zu beenden
 
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
@@ -30,7 +37,15 @@ function openMenu(menuId) {
     // Wenn auf Menü 1 gewechselt wird, Hintergrundbild auf Tag.jpg setzen
     if (menuId === 'menu-1') {
         const background = document.getElementById('background');
-        background.style.backgroundImage = "url('Tag.jpg')";
+
+        // Zuerst das Bild ausblenden
+        background.classList.add('fade-out');
+
+        // Nach 1 Sekunde (Übergangszeit), das Bild ändern und zurückblenden
+        setTimeout(() => {
+            background.style.backgroundImage = "url('Tag.jpg')";
+            background.classList.remove('fade-out'); // Bild wieder einblenden
+        }, 1000); // 1000ms warten, um den Übergang zu beenden
     }
 }
 
