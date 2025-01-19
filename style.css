@@ -154,25 +154,20 @@ body, html {
     font-size: 18px;
 }
 
-/* Ladebalken mit Text */
-.#menu-141 .menu-button {
-    width: 380px; /* Breite des gesamten Ladebalkens */
-    height: 50px; /* Höhe des Balkens */
-    background: rgba(50, 50, 50, 0.9);
-    color: white;
-    text-align: center;
-    font-size: 18px;
+/* Ladebalken Styling */
+.loading-bar {
+    width: 360px; 
+    height: 20px; 
+    background-color: #d3d3d3; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    overflow: hidden;
     position: relative;
-    overflow: hidden; /* Verhindert Überlauf bei Animationen */
-    border-radius: 10px; /* Abgerundete Ecken */
 }
 
-#menu-141 .menu-button #sleeping-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* Passt sich an die Höhe des übergeordneten Elements an */
+#sleeping-bar {
+    height: 100%; 
+    background-color: green; 
     width: 0%; /* Startwert */
-    background: green; /* Farbe des Ladebalkens */
-    transition: width 3s ease-in-out; /* Animation */
+    transition: width 3s ease; /* Übergangseffekt */
 }
