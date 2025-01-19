@@ -7,8 +7,9 @@ function openMenu(menuId) {
         activeMenu.classList.remove('hidden'); // Das gewünschte Menü anzeigen
     }
 
-    // Ladebalken im Menü 141 starten
-        // Überblenden nur bei Zurückgehen aus Menü 141
+    const background = document.getElementById('background');
+
+    // Überblenden nur bei Zurückgehen aus Menü 141
     if (menuId === 'menu-141') {
         const loadingBar = document.getElementById('sleeping-bar');
         loadingBar.style.width = '0%'; // Ladebalken zurücksetzen
@@ -23,7 +24,7 @@ function openMenu(menuId) {
         setTimeout(() => {
             background.style.backgroundImage = "url('IMG_9645.jpeg')";
             background.classList.remove('fade-out'); // Bild wieder einblenden
-        },500); // xms warten, um den Übergang zu beenden
+        }, 500); // xms warten, um den Übergang zu beenden
 
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
@@ -35,16 +36,8 @@ function openMenu(menuId) {
         // Für alle anderen Menü-Wechsel (außer Menü 141), Hintergrund ohne Überblenden wechseln
         background.style.backgroundImage = "url('Tag.jpg')";
     }
-}
 
-// Funktion zum Erhöhen des Tageszählers
-function increaseDayCounter() {
-    const dayCounter = document.getElementById('days');
-    let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
-    dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
-}
-
-// Munition aus dem Inventar auslesen
+    // Munition aus dem Inventar auslesen
     const munition = parseInt(document.getElementById('inventory').querySelector('p:nth-child(3)').textContent.split(': ')[1]);
 
     // Menü 111, 112 und 113: Überprüfen, ob genug Munition vorhanden ist und Buttons entsprechend anpassen
@@ -66,4 +59,11 @@ function increaseDayCounter() {
             }
         }
     });
+}
+
+// Funktion zum Erhöhen des Tageszählers
+function increaseDayCounter() {
+    const dayCounter = document.getElementById('days');
+    let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
+    dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
 }
