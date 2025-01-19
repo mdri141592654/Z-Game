@@ -23,7 +23,7 @@ function openMenu(menuId) {
         setTimeout(() => {
             background.style.backgroundImage = "url('IMG_9645.jpeg')";
             background.classList.remove('fade-out'); // Bild wieder einblenden
-        },400); // xms warten, um den Übergang zu beenden
+        },500); // xms warten, um den Übergang zu beenden
 
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
