@@ -123,8 +123,8 @@ body, html {
     background: linear-gradient(to right, green 100%, transparent 0%);
 }
 
-#energy-bar {
-    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 100%, transparent 0%);
+#hunger-bar {
+    background: linear-gradient(to right, rgba(240, 190, 90, 0.8) 100%, transparent 0%);
 }
 
 .bar span {
