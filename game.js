@@ -18,6 +18,7 @@ function openMenu(menuId) {
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
             increaseDayCounter(); // Tageszähler erhöhen
+            loadingBar.style.width = '0%'; // Ladebalken zurücksetzen für das nächste Mal
             openMenu('menu-1');
         }, 3000);
     }
