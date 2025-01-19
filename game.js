@@ -43,3 +43,27 @@ function increaseDayCounter() {
     let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
     dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
 }
+
+// Munition aus dem Inventar auslesen
+    const munition = parseInt(document.getElementById('inventory').querySelector('p:nth-child(3)').textContent.split(': ')[1]);
+
+    // Menü 111, 112 und 113: Überprüfen, ob genug Munition vorhanden ist und Buttons entsprechend anpassen
+    const munitionButtons = document.querySelectorAll('#menu-111 .menu-button, #menu-112 .menu-button, #menu-113 .menu-button');
+
+    munitionButtons.forEach(button => {
+        if (button.textContent.includes('10 Schuss') || button.textContent.includes('20 Schuss')) {
+            const schussanzahl = parseInt(button.textContent.split(' ')[0]);
+
+            // Wenn nicht genug Munition vorhanden ist, Button durchstreichen und deaktivieren
+            if (munition < schussanzahl) {
+                button.style.textDecoration = 'line-through';
+                button.disabled = true;
+                button.style.cursor = 'not-allowed'; // Optional: Cursor ändern, um Unklickbarkeit anzuzeigen
+            } else {
+                button.style.textDecoration = 'none';
+                button.disabled = false;
+                button.style.cursor = 'pointer';
+            }
+        }
+    });
+}
