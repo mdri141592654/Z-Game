@@ -30,3 +30,16 @@ function increaseDayCounter() {
     let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
     dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
 }
+
+// Beim Öffnen von Menü 141
+document.getElementById("menu-141").addEventListener("transitionend", function() {
+    if (!this.classList.contains("hidden")) {
+        document.getElementById("background").style.backgroundImage = "url('IMG_9645.jpeg')";
+    }
+});
+
+// Beim Schließen von Menü 141
+function closeMenu141() {
+    document.getElementById("menu-141").classList.add("hidden");
+    document.getElementById("background").style.backgroundImage = "url('Tag.jpg')";
+}
