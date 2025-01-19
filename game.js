@@ -8,14 +8,13 @@ function openMenu(menuId) {
     }
 
     // Ladebalken im Menü 141 starten
+        // Überblenden nur bei Zurückgehen aus Menü 141
     if (menuId === 'menu-141') {
         const loadingBar = document.getElementById('sleeping-bar');
         loadingBar.style.width = '0%'; // Ladebalken zurücksetzen
         setTimeout(() => {
             loadingBar.style.width = '100%'; // Starte die Animation
         }, 100);
-
-        const background = document.getElementById('background');
 
         // Zuerst das Bild ausblenden
         background.classList.add('fade-out');
@@ -32,20 +31,9 @@ function openMenu(menuId) {
             loadingBar.style.width = '0%'; // Ladebalken zurücksetzen für das nächste Mal
             openMenu('menu-1');
         }, 3000);
-    }
-
-    // Wenn auf Menü 1 gewechselt wird, Hintergrundbild auf Tag.jpg setzen
-    if (menuId === 'menu-1') {
-        const background = document.getElementById('background');
-
-        // Zuerst das Bild ausblenden
-        background.classList.add('fade-out');
-
-        // Nach 1 Sekunde (Übergangszeit), das Bild ändern und zurückblenden
-        setTimeout(() => {
-            background.style.backgroundImage = "url('Tag.jpg')";
-            background.classList.remove('fade-out'); // Bild wieder einblenden
-        }, 1000); // 1000ms warten, um den Übergang zu beenden
+    } else if (menuId === 'menu-1') {
+        // Für alle anderen Menü-Wechsel (außer Menü 141), Hintergrund ohne Überblenden wechseln
+        background.style.backgroundImage = "url('Tag.jpg')";
     }
 }
 
