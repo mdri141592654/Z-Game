@@ -96,34 +96,46 @@ body, html {
 }
 
 /* Statusbalken */
-#bars-container {
-    position: relative;
-    width: 100%;
-    height: 120px; /* Passt den Container so an, dass genug Platz für die Balken ist */
+#status-bars {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    width: calc(100% - 40px);
+    justify-content: space-between;
 }
 
 .bar {
-    width: 100%;
-    height: 30px;  /* Erhöhe die Höhe, damit die Balken sichtbar sind */
-    margin-bottom: 10px; /* Abstand zwischen den Balken */
+    flex: 1;
+    height: 20px;
+    position: relative;
+    border: 2px solid white;
     border-radius: 5px;
-}
-
-#base-bar {
-    background-color: brown;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
 }
 
 #health-bar {
-    background-color: green;
+    background: linear-gradient(to right, green 100%, transparent 0%);
 }
 
 #hunger-bar {
-    background-color: yellow;
+    background: linear-gradient(to right, rgba(240, 190, 90, 0.8) 100%, transparent 0%);
 }
 
-#energy-bar {
-    background-color: blue;
+.bar span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
 }
+
 /* Styling für nicht-interaktive Anzeige-Felder */
 .menu-button.display-only {
     cursor: default;
@@ -178,4 +190,3 @@ body, html {
 #background.fade-out {
     opacity: 0; /* Bild wird unsichtbar */
 }
-
