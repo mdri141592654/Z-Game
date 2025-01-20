@@ -67,3 +67,23 @@ function increaseDayCounter() {
     let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
     dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
 }
+
+// Grundstock für Inventar beim Spielstart setzen
+document.addEventListener('DOMContentLoaded', () => {
+    const inventoryItems = {
+        Nahrung: 21,
+        Medizin: 9,
+        Munition: 16,
+        Baumaterial: 8
+    };
+
+    const inventory = document.getElementById('inventory');
+    const inventoryParagraphs = inventory.querySelectorAll('p');
+
+    inventoryParagraphs.forEach(paragraph => {
+        const itemName = paragraph.textContent.split(': ')[0];
+        if (inventoryItems[itemName] !== undefined) {
+            paragraph.textContent = `${itemName}: ${inventoryItems[itemName]}`;
+        }
+    });
+});
