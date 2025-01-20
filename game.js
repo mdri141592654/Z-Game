@@ -9,18 +9,6 @@ function openMenu(menuId) {
 
     const background = document.getElementById('background');
 
-  // Munition aus dem Inventar korrekt auslesen und Buttons anpassen
-function openMenu(menuId) {
-    const menus = document.querySelectorAll('.menu');
-    menus.forEach(menu => menu.classList.add('hidden')); // Alle Menüs ausblenden
-
-    const activeMenu = document.getElementById(menuId);
-    if (activeMenu) {
-        activeMenu.classList.remove('hidden'); // Das gewünschte Menü anzeigen
-    }
-
-    const background = document.getElementById('background');
-
     // Überblenden nur bei Zurückgehen aus Menü 141
     if (menuId === 'menu-141') {
         const loadingBar = document.getElementById('sleeping-bar');
@@ -49,9 +37,8 @@ function openMenu(menuId) {
         background.style.backgroundImage = "url('Tag.jpg')";
     }
 
-    // Munition aus dem Inventar korrekt auslesen
-    const inventoryMunitionText = document.getElementById('inventory').querySelector('p:nth-child(3)').textContent;
-    const munition = parseInt(inventoryMunitionText.split(': ')[1], 10);
+    // Munition aus dem Inventar auslesen
+    const munition = parseInt(document.getElementById('inventory').querySelector('p:nth-child(3)').textContent.split(': ')[1]);
 
     // Menü 111, 112 und 113: Überprüfen, ob genug Munition vorhanden ist und Buttons entsprechend anpassen
     const munitionButtons = document.querySelectorAll('#menu-111 .menu-button, #menu-112 .menu-button, #menu-113 .menu-button');
@@ -72,4 +59,60 @@ function openMenu(menuId) {
             }
         }
     });
+}
+
+// Funktion zum Erhöhen des Tageszählers
+function increaseDayCounter() {
+    const dayCounter = document.getElementById('days');
+    let currentDay = parseInt(dayCounter.textContent, 10); // Aktuellen Wert auslesen
+    dayCounter.textContent = currentDay + 1; // Tageszähler um 1 erhöhen
+}
+
+// Grundstock für Inventar beim Spielstart setzen
+document.addEventListener('DOMContentLoaded', () => {
+    const inventoryItems = {
+        Nahrung: 21,
+        Medizin: 9,
+        Munition: 16,
+        Baumaterial: 8
+    };
+
+    const inventory = document.getElementById('inventory');
+    const inventoryParagraphs = inventory.querySelectorAll('p');
+
+    inventoryParagraphs.forEach(paragraph => {
+        const itemName = paragraph.textContent.split(': ')[0];
+        if (inventoryItems[itemName] !== undefined) {
+            paragraph.textContent = `${itemName}: ${inventoryItems[itemName]}`;
+        }
+    });
+});
+
+// Funktion zum Anpassen des Inventars
+function updateInventory(item, amount) {
+    const inventory = document.getElementById('inventory');
+    const paragraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith(item));
+
+    if (paragraph) {
+        const currentAmount = parseInt(paragraph.textContent.split(': ')[1], 10);
+        const newAmount = currentAmount + amount;
+        paragraph.textContent = `${item}: ${Math.max(newAmount, 0)}`; // Keine negativen Werte zulassen
+    }
+}
+
+// Funktion für Verbrauchsaktionen
+function consumeMunition(amount) {
+    const inventory = document.getElementById('inventory');
+    const paragraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith('Munition'));
+
+    if (paragraph) {
+        const currentAmount = parseInt(paragraph.textContent.split(': ')[1], 10);
+
+        if (currentAmount >= amount) {
+            updateInventory('Munition', -amount); // Munition verringern
+            return true; // Aktion erfolgreich
+        } else {
+            return false; // Nicht genug Munition
+        }
+    }
 }
