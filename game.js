@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inventoryItems = {
         Nahrung: 21,
         Medizin: 9,
-        Munition: 16,
+        Munition: 9,
         Baumaterial: 8
     };
 
