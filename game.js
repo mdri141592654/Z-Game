@@ -105,7 +105,7 @@ function updateInventory(item, amount) {
     }
 }
 
-// Funktion für Verbrauchsaktionen
+// Funktion für Verbrauchsaktionen 
 function consumeMunition(amount) {
     const inventory = document.getElementById('inventory');
     const paragraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith('Munition'));
