@@ -117,12 +117,21 @@ body, html {
     overflow: hidden;
 }
 
+
+#base-bar {
+    background-color: brown;
+}
+
 #health-bar {
-    background: linear-gradient(to right, green 100%, transparent 0%);
+    background-color: green;
 }
 
 #hunger-bar {
-    background: linear-gradient(to right, rgba(240, 190, 90, 0.8) 100%, transparent 0%);
+    background-color: yellow;
+}
+
+#energy-bar {
+    background-color: blue;
 }
 
 .bar span {
