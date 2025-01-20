@@ -26,19 +26,6 @@ function openMenu(menuId) {
             background.classList.remove('fade-out'); // Bild wieder einblenden
         }, 500); // xms warten, um den Übergang zu beenden
 
-    // Grundwert für die Balken festlegen
-    const baseBar = document.getElementById('base-bar');
-    const healthBar = document.getElementById('health-bar');
-    const hungerBar = document.getElementById('hunger-bar');
-    const energyBar = document.getElementById('energy-bar');
-
-    // Setze anfängliche Werte (Beispielwerte, du kannst sie nach Bedarf anpassen)
-    baseBar.style.width = '100%'; // Der Basistwert (100%)
-    healthBar.style.width = '100%'; // Der Gesundheitswert (100%)
-    hungerBar.style.width = '75%'; // Der Hungerwert (75%)
-    energyBar.style.width = '80%'; // Der Energielevel (80%)
-});
-        
         // Nach 3 Sekunden zum Hauptmenü zurückkehren und Tageszähler erhöhen
         setTimeout(() => {
             increaseDayCounter(); // Tageszähler erhöhen
