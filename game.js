@@ -38,27 +38,32 @@ function openMenu(menuId) {
     }
 
     // Munition aus dem Inventar auslesen
-    const munition = parseInt(document.getElementById('inventory').querySelector('p:nth-child(3)').textContent.split(': ')[1]);
+    const inventory = document.getElementById('inventory');
+    const munitionParagraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith('Munition'));
 
-    // Menü 111, 112 und 113: Überprüfen, ob genug Munition vorhanden ist und Buttons entsprechend anpassen
-    const munitionButtons = document.querySelectorAll('#menu-111 .menu-button, #menu-112 .menu-button, #menu-113 .menu-button');
+    if (munitionParagraph) {
+        const munition = parseInt(munitionParagraph.textContent.split(': ')[1], 10);
 
-    munitionButtons.forEach(button => {
-        if (button.textContent.includes('10 Schuss') || button.textContent.includes('20 Schuss')) {
-            const schussanzahl = parseInt(button.textContent.split(' ')[0]);
+        // Menü 111, 112 und 113: Überprüfen, ob genug Munition vorhanden ist und Buttons entsprechend anpassen
+        const munitionButtons = document.querySelectorAll('#menu-111 .menu-button, #menu-112 .menu-button, #menu-113 .menu-button');
 
-            // Wenn nicht genug Munition vorhanden ist, Button durchstreichen und deaktivieren
-            if (munition < schussanzahl) {
-                button.style.textDecoration = 'line-through';
-                button.disabled = true;
-                button.style.cursor = 'not-allowed'; // Optional: Cursor ändern, um Unklickbarkeit anzuzeigen
-            } else {
-                button.style.textDecoration = 'none';
-                button.disabled = false;
-                button.style.cursor = 'pointer';
+        munitionButtons.forEach(button => {
+            if (button.textContent.includes('10 Schuss') || button.textContent.includes('20 Schuss')) {
+                const schussanzahl = parseInt(button.textContent.split(' ')[0]);
+
+                // Wenn nicht genug Munition vorhanden ist, Button durchstreichen und deaktivieren
+                if (munition < schussanzahl) {
+                    button.style.textDecoration = 'line-through';
+                    button.disabled = true;
+                    button.style.cursor = 'not-allowed'; // Optional: Cursor ändern, um Unklickbarkeit anzuzeigen
+                } else {
+                    button.style.textDecoration = 'none';
+                    button.disabled = false;
+                    button.style.cursor = 'pointer';
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 // Funktion zum Erhöhen des Tageszählers
@@ -87,3 +92,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Funktion zum Anpassen des Inventars
+function updateInventory(item, amount) {
+    const inventory = document.getElementById('inventory');
+    const paragraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith(item));
+
+    if (paragraph) {
+        const currentAmount = parseInt(paragraph.textContent.split(': ')[1], 10);
+        const newAmount = currentAmount + amount;
+        paragraph.textContent = `${item}: ${Math.max(newAmount, 0)}`; // Keine negativen Werte zulassen
+    }
+}
+
+// Funktion für Verbrauchsaktionen
+function consumeMunition(amount) {
+    const inventory = document.getElementById('inventory');
+    const paragraph = Array.from(inventory.querySelectorAll('p')).find(p => p.textContent.startsWith('Munition'));
+
+    if (paragraph) {
+        const currentAmount = parseInt(paragraph.textContent.split(': ')[1], 10);
+
+        if (currentAmount >= amount) {
+            updateInventory('Munition', -amount); // Munition verringern
+            return true; // Aktion erfolgreich
+        } else {
+            return false; // Nicht genug Munition
+        }
+    }
+}
